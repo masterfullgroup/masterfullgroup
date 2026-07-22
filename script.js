@@ -21,6 +21,9 @@ document.addEventListener("DOMContentLoaded", function () {
   if (menuBtn && nav) {
     menuBtn.addEventListener("click", function () {
       nav.classList.toggle("active");
+      const menuAbierto = nav.classList.contains("active");
+      menuBtn.setAttribute("aria-expanded", String(menuAbierto));
+      menuBtn.setAttribute("aria-label", menuAbierto ? "Cerrar menú" : "Abrir menú");
     });
   }
 
@@ -38,6 +41,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
       if (nav) {
         nav.classList.remove("active");
+      }
+
+      if (menuBtn) {
+        menuBtn.setAttribute("aria-expanded", "false");
+        menuBtn.setAttribute("aria-label", "Abrir menú");
       }
     });
   });
@@ -173,7 +181,7 @@ document.addEventListener("DOMContentLoaded", function () {
      ========================================================= */
 
   const elementosParaAnimar = document.querySelectorAll(
-    ".tarjeta-servicio, .tarjeta-plan, .tarjeta-proceso, .tarjeta-portafolio, .tarjeta-caso, .tarjeta-testimonio, .beneficios-texto, .beneficios-caja, .contacto-texto, .formulario-contacto, .pregunta, .cta-contenido, .hero-texto, .hero-panel, .modulo-item, .animar, .animar-left, .animar-right, .animar-zoom"
+    ".tarjeta-servicio, .tarjeta-plan, .tarjeta-proceso, .tarjeta-portafolio, .tarjeta-caso, .tarjeta-testimonio, .beneficio-masterfull, .beneficios-texto, .beneficios-caja, .contacto-texto, .formulario-contacto, .pregunta, .cta-contenido, .hero-texto, .hero-panel, .modulo-item, .animar, .animar-left, .animar-right, .animar-zoom"
   );
 
   if (elementosParaAnimar.length > 0) {
