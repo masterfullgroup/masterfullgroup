@@ -1074,8 +1074,39 @@ section > h2,
 }
 .recomendado,
 .recomendado.empresa {
+  position: relative;
+  top: auto;
+  right: auto;
+  transform: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: max-content;
+  max-width: 100%;
+  min-height: 28px;
+  margin: -6px 0 20px;
+  padding: 8px 16px;
+  line-height: 1;
+  white-space: nowrap;
+  border-radius: 999px;
+  font-size: 10.5px;
+  letter-spacing: .55px;
   color: #fff;
   background: linear-gradient(135deg, #7d642d, #b89445);
+  box-shadow: 0 10px 22px rgba(32,36,40,.13), inset 0 1px 0 rgba(255,255,255,.22);
+}
+.tarjeta-plan.destacada .recomendado {
+  margin-top: 0;
+}
+@media (max-width: 560px) {
+  .recomendado,
+  .recomendado.empresa {
+    min-height: 27px;
+    margin-bottom: 18px;
+    padding: 8px 13px;
+    font-size: 9.8px;
+    letter-spacing: .45px;
+  }
 }
 .avatar {
   background: linear-gradient(145deg, #4a3f2a, #8b6f2f);
