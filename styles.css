@@ -205,6 +205,81 @@ section > h1, section > h2, .beneficios h2, .contacto h1, .contacto h2, .cta-fin
 .info-box strong { color: var(--cyan); font-size: 17px; line-height: 1.2; }
 .info-box span { margin-top: 5px; color: #91a9ba; font-size: 10px; line-height: 1.3; }
 
+.home-rutas {
+  padding-top: 78px;
+  padding-bottom: 88px;
+  background:
+    radial-gradient(circle at 16% 0%, rgba(215,175,87,.10), transparent 30%),
+    linear-gradient(180deg, #fffdf8, #f7fbfb);
+}
+.home-rutas > h2,
+.home-rutas > .etiqueta-home,
+.home-rutas-descripcion {
+  text-align: center;
+  margin-inline: auto;
+}
+.home-rutas-descripcion {
+  max-width: 620px;
+  margin-top: 18px;
+  color: #607488;
+  font-size: 14px;
+}
+.home-rutas-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  margin-top: 42px;
+}
+.home-ruta-card {
+  position: relative;
+  overflow: hidden;
+  min-height: 210px;
+  padding: 30px;
+  border: 1px solid rgba(220, 226, 224, .95);
+  border-radius: 26px;
+  background: linear-gradient(145deg, rgba(255,255,255,.98), rgba(249,250,248,.94) 58%, rgba(241,246,246,.88));
+  box-shadow: 0 22px 58px rgba(16,40,59,.075), inset 0 1px 0 rgba(255,255,255,.96);
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+.home-ruta-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(120deg, transparent 0%, rgba(255,255,255,.76) 20%, transparent 38%);
+  transform: translateX(-120%);
+  transition: transform .7s ease;
+}
+.home-ruta-card:hover {
+  transform: translateY(-7px);
+  border-color: rgba(215,175,87,.38);
+  box-shadow: 0 28px 72px rgba(16,40,59,.11), 0 0 24px rgba(215,175,87,.12), inset 0 1px 0 rgba(255,255,255,.96);
+}
+.home-ruta-card:hover::before { transform: translateX(120%); }
+.home-ruta-icono {
+  width: 54px;
+  height: 54px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 22px;
+  border-radius: 18px;
+  color: #168aa2;
+  background: linear-gradient(145deg, #ffffff, #f4f1e8);
+  box-shadow: 0 14px 26px rgba(16,40,59,.08), inset 0 1px 0 rgba(255,255,255,.95);
+}
+.home-ruta-card strong {
+  display: block;
+  margin-bottom: 10px;
+  color: #10283b;
+  font-size: 19px;
+}
+.home-ruta-card small {
+  display: block;
+  color: #607488;
+  font-size: 13px;
+  line-height: 1.65;
+}
+
 .servicios-descripcion, .modulos-descripcion {
   max-width: 690px;
   margin: 20px auto 48px;
@@ -593,6 +668,182 @@ body.sin-scroll { overflow: hidden; }
   100% { opacity: 0; transform: scale(1.28); }
 }
 
+/* Dirección visual refinada: porcelana clara, menos azul y acentos más elegantes */
+body {
+  background:
+    radial-gradient(circle at 18% 8%, rgba(218, 187, 118, .10), transparent 28%),
+    radial-gradient(circle at 88% 10%, rgba(132, 201, 216, .10), transparent 30%),
+    linear-gradient(180deg, #fffdf8 0%, #f8fbfb 46%, #f1f6f7 100%);
+}
+body::before {
+  opacity: .22;
+  background-image:
+    linear-gradient(rgba(16,40,59,.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(16,40,59,.035) 1px, transparent 1px);
+}
+.header {
+  background: rgba(255, 255, 255, .82);
+  border-bottom: 1px solid rgba(16, 40, 59, .08);
+  box-shadow: 0 18px 48px rgba(16, 40, 59, .08);
+}
+.logo { color: var(--ink); }
+.logo span, .footer h3 span { color: #1aa8c6; }
+.nav a { color: #40586a; }
+.nav a:hover, .nav a.active, .nav a[aria-current="page"] { color: var(--ink); }
+.nav a::after { background: linear-gradient(90deg, #d7af57, #43bdd5); }
+.nav a:hover::after, .nav a.active::after, .nav a[aria-current="page"]::after { box-shadow: 0 0 12px rgba(215,175,87,.3); }
+.menu-btn {
+  color: var(--ink);
+  border-color: rgba(16,40,59,.12);
+  background: rgba(255,255,255,.7);
+}
+.hero {
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 78% 22%, rgba(215,175,87,.13), transparent 30%),
+    radial-gradient(circle at 15% 85%, rgba(67,189,213,.12), transparent 34%),
+    linear-gradient(135deg, #fffdf8 0%, #f5fafb 55%, #eef5f6 100%);
+}
+.hero::before {
+  opacity: .22;
+  background-image:
+    linear-gradient(rgba(16,40,59,.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(16,40,59,.04) 1px, transparent 1px);
+  mask-image: radial-gradient(circle at 76% 28%, #000, transparent 72%);
+}
+.hero h1 { color: #092236; }
+.hero .descripcion { color: #52697a; }
+.hero-confianza { color: #536b7c; }
+.hero-confianza i { color: #1da7bf; }
+.btn-secundario {
+  color: var(--ink);
+  border: 1px solid rgba(16,40,59,.12);
+  background: rgba(255,255,255,.68);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.9);
+}
+.btn-secundario:hover { background: #fff; box-shadow: 0 14px 28px rgba(16,40,59,.08); }
+.hero-panel {
+  color: var(--ink);
+  border: 1px solid rgba(217, 186, 118, .25);
+  background:
+    linear-gradient(145deg, rgba(255,255,255,.92), rgba(247,250,250,.76)),
+    radial-gradient(circle at top left, rgba(215,175,87,.12), transparent 42%);
+  box-shadow: 0 30px 90px rgba(16,40,59,.12), inset 0 1px 0 rgba(255,255,255,.96);
+}
+.panel-top { border-bottom-color: rgba(16,40,59,.08); }
+.panel-top p, .info-box strong { color: #1d96ad; }
+.panel-top > span {
+  color: #13834d;
+  background: rgba(32,184,106,.1);
+  border-color: rgba(32,184,106,.2);
+}
+.funcion-item {
+  color: #314b5e;
+  background: rgba(255,255,255,.72);
+  border: 1px solid rgba(16,40,59,.06);
+}
+.funcion-item::first-letter { color: #1d96ad; }
+.info-box {
+  background: rgba(255,255,255,.68);
+  border-color: rgba(217,186,118,.22);
+}
+.info-box span { color: #637889; }
+.bloque-claro { background: linear-gradient(180deg, rgba(255,255,255,.92), rgba(250,252,251,.94)); }
+.bloque-claro-suave { background: linear-gradient(180deg, #f8fbfb, #fffdf8); }
+.etiqueta, [class^="etiqueta-"] { color: #9a7930; }
+.bloque-oscuro .etiqueta, .bloque-oscuro [class^="etiqueta-"] { color: #d8b35f; }
+.tarjeta-servicio, .tarjeta-proceso, .tarjeta-portafolio, .tarjeta-testimonio,
+.beneficio-masterfull, .modulo-item, .pregunta, .formulario-contacto {
+  border-color: rgba(220, 226, 224, .9);
+  background: linear-gradient(145deg, rgba(255,255,255,.98), rgba(249,250,248,.94) 58%, rgba(241,246,246,.88));
+  box-shadow: 0 22px 58px rgba(16,40,59,.075), inset 0 1px 0 rgba(255,255,255,.96);
+}
+.tarjeta-servicio:hover, .tarjeta-proceso:hover, .tarjeta-portafolio:hover, .tarjeta-testimonio:hover,
+.beneficio-masterfull:hover {
+  border-color: rgba(215,175,87,.38);
+  box-shadow: 0 28px 72px rgba(16,40,59,.11), 0 0 24px rgba(215,175,87,.12), inset 0 1px 0 rgba(255,255,255,.96);
+}
+.icono, .icono-masterfull {
+  color: #168aa2;
+  background: linear-gradient(145deg, #ffffff, #f4f1e8);
+  box-shadow: 0 14px 26px rgba(16,40,59,.08), inset 0 1px 0 rgba(255,255,255,.95);
+}
+.modulo-item::before, .beneficios-texto li::before, .tarjeta-plan li::before { color: var(--green); }
+.beneficios-caja {
+  color: var(--ink);
+  border-color: rgba(220,226,224,.9);
+  background: linear-gradient(145deg, rgba(255,255,255,.98), rgba(246,249,248,.92));
+  box-shadow: 0 26px 70px rgba(16,40,59,.1), inset 0 1px 0 rgba(255,255,255,.96);
+}
+.beneficios-caja h3 { color: var(--ink); }
+.item-beneficio { border-top-color: rgba(16,40,59,.08); }
+.item-beneficio strong { color: #168aa2; }
+.item-beneficio span { color: #607488; }
+.planes {
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 50% 0%, rgba(215,175,87,.14), transparent 34%),
+    radial-gradient(circle at 88% 92%, rgba(67,189,213,.10), transparent 30%),
+    linear-gradient(180deg, #fffdf8 0%, #f3f8f8 100%);
+}
+.planes::before {
+  opacity: .32;
+  background-image:
+    linear-gradient(rgba(16,40,59,.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(16,40,59,.035) 1px, transparent 1px);
+}
+.tarjeta-plan {
+  border-color: rgba(220,226,224,.9);
+  background: linear-gradient(145deg, #ffffff, #fbfbf7 55%, #edf6f6);
+  box-shadow: 0 24px 64px rgba(16,40,59,.09), inset 0 1px 0 rgba(255,255,255,.96);
+}
+.tarjeta-plan.destacada {
+  border-color: rgba(215,175,87,.72);
+  box-shadow: 0 30px 80px rgba(16,40,59,.13), 0 0 34px rgba(215,175,87,.16), inset 0 1px 0 rgba(255,255,255,.98);
+}
+.recomendado {
+  color: #3b2a06;
+  background: linear-gradient(135deg, #f2d37d, #d7af57);
+}
+.recomendado.empresa {
+  color: #fff;
+  background: linear-gradient(135deg, #123047, #1d7187);
+}
+.precio, .ver-proyecto, .pregunta-btn span { color: #126f86; }
+.plan-entrega {
+  color: #126f86;
+  border-color: rgba(215,175,87,.2);
+  background: linear-gradient(145deg, #fff, #f6f1e4);
+}
+.planes-nota { color: #627989; }
+.por-que-masterfull, .faq, .contacto {
+  background:
+    radial-gradient(circle at 18% 0%, rgba(215,175,87,.10), transparent 28%),
+    radial-gradient(circle at 82% 16%, rgba(67,189,213,.08), transparent 30%),
+    linear-gradient(180deg, #fffdf8 0%, #f4f9f9 100%);
+}
+.por-que-masterfull::before {
+  color: #7d6126;
+  border-color: rgba(215,175,87,.24);
+  background: rgba(255,255,255,.72);
+}
+.beneficio-masterfull::before,
+.tarjeta-testimonio::before {
+  background: linear-gradient(90deg, #d7af57, #91d4df);
+}
+.estrellas {
+  background: linear-gradient(145deg, #19a560, #22c775);
+}
+.formulario-contacto input, .formulario-contacto select, .formulario-contacto textarea {
+  border-color: rgba(220,226,224,.95);
+  background: rgba(255,255,255,.82);
+}
+.footer {
+  background:
+    radial-gradient(circle at 20% 0%, rgba(215,175,87,.10), transparent 30%),
+    linear-gradient(135deg, #101a20, #07131a);
+}
+
 .animar { opacity: 0; transform: translateY(20px); transition: opacity .6s ease, transform .6s ease; }
 .animar.mostrar { opacity: 1; transform: none; }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; } }
@@ -622,6 +873,7 @@ body.sin-scroll { overflow: hidden; }
   .hero .descripcion { margin-inline: auto; }
   .hero-botones, .hero-confianza { justify-content: center; }
   .hero-panel { max-width: 640px; width: 100%; margin: auto; }
+  .home-rutas-grid { grid-template-columns: 1fr; max-width: 640px; margin-inline: auto; }
   .beneficios, .contacto { grid-template-columns: 1fr; gap: 45px; }
   .contenedor-portafolio, .contenedor-testimonios { grid-template-columns: 1fr; max-width: 620px; margin-inline: auto; }
   .tarjeta-portafolio p, .tarjeta-testimonio > p { min-height: 0; }
@@ -638,6 +890,7 @@ body.sin-scroll { overflow: hidden; }
   .hero-botones a { width: 100%; }
   .hero-confianza { flex-direction: column; gap: 7px; }
   .hero-panel { padding: 20px; }
+  .home-ruta-card { min-height: auto; padding: 26px 22px; }
   .panel-funciones { grid-template-columns: 1fr; }
   .panel-info { grid-template-columns: 1fr; }
   .contenedor-servicios, .contenedor-proceso, .contenedor-modulos { grid-template-columns: 1fr; }
@@ -650,4 +903,205 @@ body.sin-scroll { overflow: hidden; }
   .footer-grid { grid-template-columns: 1fr; gap: 30px; }
   .imagen-portafolio { height: 190px; }
   .whatsapp-flotante { right: 18px; bottom: 18px; width: 56px; height: 56px; min-height: 56px; font-size: 27px; }
+}
+
+/* Limpieza final solicitada: sin azul/celeste, tipografía más legible y estilo moderno neutro */
+:root {
+  --navy: #1f2328;
+  --navy-2: #2b3036;
+  --blue: #8b6f2f;
+  --cyan: #b89445;
+  --ink: #202428;
+  --muted: #626a70;
+  --line: #e4e1da;
+  --surface: #f7f5ef;
+  --porcelain: linear-gradient(145deg, #ffffff 0%, #fbfaf6 58%, #f0eee7 100%);
+  --porcelain-line: rgba(214, 207, 194, .95);
+  --aura: 0 22px 58px rgba(32,36,40,.075), inset 0 1px 0 rgba(255,255,255,.96);
+}
+body {
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 16% 7%, rgba(184, 148, 69, .10), transparent 28%),
+    radial-gradient(circle at 88% 14%, rgba(40, 44, 48, .05), transparent 30%),
+    linear-gradient(180deg, #fffdf8 0%, #f8f6ef 50%, #f2f0e9 100%);
+}
+body::before {
+  opacity: .16;
+  background-image:
+    linear-gradient(rgba(32,36,40,.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(32,36,40,.035) 1px, transparent 1px);
+}
+.header {
+  background: rgba(255, 255, 255, .88);
+  border-bottom: 1px solid rgba(32,36,40,.09);
+  box-shadow: 0 18px 48px rgba(32,36,40,.08);
+}
+.logo,
+.nav a:hover,
+.nav a.active,
+.nav a[aria-current="page"] { color: var(--ink); }
+.logo span,
+.footer h3 span,
+.etiqueta,
+[class^="etiqueta-"],
+.bloque-oscuro .etiqueta,
+.bloque-oscuro [class^="etiqueta-"],
+.panel-top p,
+.info-box strong,
+.item-beneficio strong,
+.precio,
+.ver-proyecto,
+.pregunta-btn span,
+.tarjeta-proceso > span { color: #8b6f2f; }
+.nav a { color: #565d63; }
+.nav a::after,
+.beneficio-masterfull::before,
+.tarjeta-testimonio::before {
+  background: linear-gradient(90deg, #8b6f2f, #d8bf80);
+}
+.nav a:hover::after,
+.nav a.active::after,
+.nav a[aria-current="page"]::after {
+  box-shadow: 0 0 12px rgba(184,148,69,.28);
+}
+.hero {
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 78% 22%, rgba(184,148,69,.13), transparent 30%),
+    radial-gradient(circle at 15% 85%, rgba(32,36,40,.06), transparent 34%),
+    linear-gradient(135deg, #fffdf8 0%, #f8f6ef 55%, #efede6 100%);
+}
+.hero h1,
+section > h1,
+section > h2,
+.tarjeta-plan h3,
+.tarjeta-servicio h3,
+.tarjeta-portafolio h3,
+.beneficio-masterfull h3,
+.cliente h4,
+.form-header h3 {
+  color: #1f2328;
+  text-shadow: none;
+}
+.hero .descripcion,
+.tarjeta-servicio p,
+.tarjeta-portafolio p,
+.beneficio-masterfull p,
+.respuesta p,
+.form-header p,
+.home-ruta-card small,
+.plan-ideal,
+.plan-note,
+.planes-nota,
+.cliente span {
+  color: #5f676d;
+}
+.hero-confianza,
+.hero-confianza i,
+.funcion-item,
+.funcion-item::first-letter,
+.info-box span { color: #5f676d; }
+.hero-panel,
+.tarjeta-servicio,
+.tarjeta-proceso,
+.tarjeta-portafolio,
+.tarjeta-testimonio,
+.beneficio-masterfull,
+.modulo-item,
+.pregunta,
+.formulario-contacto,
+.tarjeta-plan,
+.home-ruta-card,
+.beneficios-caja {
+  color: var(--ink);
+  border-color: var(--porcelain-line);
+  background: var(--porcelain);
+  box-shadow: var(--aura);
+}
+.tarjeta-servicio:hover,
+.tarjeta-proceso:hover,
+.tarjeta-portafolio:hover,
+.tarjeta-testimonio:hover,
+.beneficio-masterfull:hover,
+.home-ruta-card:hover {
+  border-color: rgba(184,148,69,.42);
+  box-shadow: 0 28px 72px rgba(32,36,40,.11), 0 0 24px rgba(184,148,69,.12), inset 0 1px 0 rgba(255,255,255,.96);
+}
+.icono,
+.icono-masterfull,
+.home-ruta-icono {
+  color: #8b6f2f;
+  background: linear-gradient(145deg, #ffffff, #f4f0e5);
+  box-shadow: 0 14px 26px rgba(32,36,40,.08), inset 0 1px 0 rgba(255,255,255,.95);
+}
+.panel-top,
+.cliente { border-color: rgba(32,36,40,.08); }
+.funcion-item,
+.info-box,
+.plan-entrega,
+.formulario-contacto input,
+.formulario-contacto select,
+.formulario-contacto textarea {
+  color: var(--ink);
+  border-color: rgba(214,207,194,.9);
+  background: rgba(255,255,255,.78);
+}
+.planes,
+.por-que-masterfull,
+.faq,
+.contacto,
+.home-rutas,
+.bloque-claro,
+.bloque-claro-suave {
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 18% 0%, rgba(184,148,69,.08), transparent 28%),
+    linear-gradient(180deg, #fffdf8 0%, #f4f2ec 100%);
+}
+.planes::before {
+  opacity: .18;
+  background-image:
+    linear-gradient(rgba(32,36,40,.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(32,36,40,.035) 1px, transparent 1px);
+}
+.tarjeta-plan.destacada {
+  border-color: rgba(184,148,69,.78);
+  box-shadow: 0 30px 80px rgba(32,36,40,.13), 0 0 28px rgba(184,148,69,.15), inset 0 1px 0 rgba(255,255,255,.98);
+}
+.tarjeta-plan::before {
+  background: radial-gradient(circle at 18% 0%, rgba(255,255,255,.95), transparent 30%), linear-gradient(120deg, transparent 8%, rgba(184,148,69,.08), transparent 42%);
+}
+.recomendado,
+.recomendado.empresa {
+  color: #fff;
+  background: linear-gradient(135deg, #7d642d, #b89445);
+}
+.avatar {
+  background: linear-gradient(145deg, #4a3f2a, #8b6f2f);
+  box-shadow: 0 8px 18px rgba(32,36,40,.14);
+}
+.cta-final {
+  color: #fff;
+  background: linear-gradient(135deg, #24272b, #141719);
+}
+.cta-contenido {
+  border-color: rgba(255,255,255,.12);
+  background: rgba(255,255,255,.055);
+}
+.cta-contenido > p:not([class]),
+.cta-nota { color: #d6d1c6; }
+.footer {
+  color: #c8c3b8;
+  background:
+    radial-gradient(circle at 20% 0%, rgba(184,148,69,.12), transparent 30%),
+    linear-gradient(135deg, #202428, #121416);
+}
+.footer a:hover { color: #d8bf80; }
+.formulario-contacto input:focus,
+.formulario-contacto select:focus,
+.formulario-contacto textarea:focus {
+  border-color: #b89445;
+  box-shadow: 0 0 0 3px rgba(184,148,69,.12);
+  background: #fff;
 }
