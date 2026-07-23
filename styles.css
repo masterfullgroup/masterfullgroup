@@ -1429,6 +1429,188 @@ a[href*="wa.me"].whatsapp-flotante:hover {
   box-shadow: 0 18px 42px rgba(34,197,94,.26);
 }
 
+/* MASTERFULL PRIORIDAD FINAL: patrón de círculos 3D respirando en fondos negros */
+section.hero::after,
+section.cta-final::after {
+  content: "" !important;
+  position: absolute !important;
+  inset: -12% -8% !important;
+  z-index: 0 !important;
+  pointer-events: none !important;
+  display: block !important;
+  opacity: .68 !important;
+  background-color: transparent !important;
+  background-image:
+    radial-gradient(circle at 50% 48%,
+      rgba(255,255,255,.12) 0 2%,
+      rgba(64,64,64,.96) 3% 31%,
+      rgba(38,40,44,.98) 32% 43%,
+      rgba(5,6,8,.98) 44% 49%,
+      transparent 50%),
+    radial-gradient(circle at 54% 57%,
+      rgba(0,0,0,.80) 0 33%,
+      rgba(0,0,0,.48) 34% 46%,
+      transparent 54%) !important;
+  background-size: 170px 122px, 170px 122px !important;
+  background-position: 0 0, 10px 13px !important;
+  background-repeat: repeat !important;
+  transform: perspective(900px) translate3d(0, 0, 0) scale(1) !important;
+  transform-origin: center !important;
+  filter: drop-shadow(0 18px 22px rgba(0,0,0,.48)) brightness(.92) !important;
+  animation: masterfullCircleBreathFinal 7.5s ease-in-out infinite !important;
+}
+
+section.cta-final::after {
+  inset: -18% -10% !important;
+  opacity: .72 !important;
+  background-size: 150px 108px, 150px 108px !important;
+  animation-duration: 8.5s !important;
+}
+
+section.home-rutas::after,
+section.servicios::after,
+section.planes::after,
+section.proceso::after,
+section.portafolio::after,
+section.contacto::after,
+section.por-que-masterfull::after,
+section.bloque-claro::after,
+section.bloque-claro-suave::after {
+  content: none !important;
+  display: none !important;
+  animation: none !important;
+}
+
+@keyframes masterfullCircleBreathFinal {
+  0% {
+    background-size: 166px 119px, 166px 119px;
+    background-position: 0 0, 9px 12px;
+    transform: perspective(900px) translate3d(0, 0, -26px) scale(.985);
+    filter: drop-shadow(0 14px 18px rgba(0,0,0,.58)) brightness(.78);
+  }
+
+  48% {
+    background-size: 178px 128px, 178px 128px;
+    background-position: 10px -6px, 22px 8px;
+    transform: perspective(900px) translate3d(0, -8px, 34px) scale(1.035);
+    filter: drop-shadow(0 26px 28px rgba(0,0,0,.52)) brightness(1.08);
+  }
+
+  100% {
+    background-size: 166px 119px, 166px 119px;
+    background-position: 22px 8px, 31px 20px;
+    transform: perspective(900px) translate3d(0, 0, -22px) scale(.99);
+    filter: drop-shadow(0 16px 20px rgba(0,0,0,.56)) brightness(.82);
+  }
+}
+
+@media (max-width: 768px) {
+  section.hero::after,
+  section.cta-final::after {
+    inset: -10% -24% !important;
+    opacity: .46 !important;
+    background-size: 136px 98px, 136px 98px !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  section.hero::after,
+  section.cta-final::after {
+    animation: none !important;
+  }
+}
+
+/* MASTERFULL FINAL: fondo negro con círculos 3D animados */
+section.hero::after,
+section.cta-final::after {
+  content: "";
+  position: absolute;
+  inset: -12% -8%;
+  z-index: 0;
+  pointer-events: none;
+  display: block;
+  opacity: .68;
+  background-color: transparent;
+  background-image:
+    radial-gradient(circle at 50% 48%,
+      rgba(255,255,255,.12) 0 2%,
+      rgba(64,64,64,.96) 3% 31%,
+      rgba(38,40,44,.98) 32% 43%,
+      rgba(5,6,8,.98) 44% 49%,
+      transparent 50%),
+    radial-gradient(circle at 54% 57%,
+      rgba(0,0,0,.80) 0 33%,
+      rgba(0,0,0,.48) 34% 46%,
+      transparent 54%);
+  background-size: 170px 122px, 170px 122px;
+  background-position: 0 0, 10px 13px;
+  background-repeat: repeat;
+  transform: perspective(900px) translate3d(0, 0, 0) scale(1);
+  transform-origin: center;
+  filter: drop-shadow(0 18px 22px rgba(0,0,0,.48)) brightness(.92);
+  animation: masterfullCircleBreath 7.5s ease-in-out infinite;
+}
+
+section.cta-final::after {
+  inset: -18% -10%;
+  opacity: .72;
+  background-size: 150px 108px, 150px 108px;
+  animation-duration: 8.5s;
+}
+
+section.home-rutas::after,
+section.servicios::after,
+section.planes::after,
+section.proceso::after,
+section.portafolio::after,
+section.contacto::after,
+section.por-que-masterfull::after,
+section.bloque-claro::after,
+section.bloque-claro-suave::after {
+  content: none;
+  display: none;
+  animation: none;
+}
+
+@keyframes masterfullCircleBreath {
+  0% {
+    background-size: 166px 119px, 166px 119px;
+    background-position: 0 0, 9px 12px;
+    transform: perspective(900px) translate3d(0, 0, -26px) scale(.985);
+    filter: drop-shadow(0 14px 18px rgba(0,0,0,.58)) brightness(.78);
+  }
+
+  48% {
+    background-size: 178px 128px, 178px 128px;
+    background-position: 10px -6px, 22px 8px;
+    transform: perspective(900px) translate3d(0, -8px, 34px) scale(1.035);
+    filter: drop-shadow(0 26px 28px rgba(0,0,0,.52)) brightness(1.08);
+  }
+
+  100% {
+    background-size: 166px 119px, 166px 119px;
+    background-position: 22px 8px, 31px 20px;
+    transform: perspective(900px) translate3d(0, 0, -22px) scale(.99);
+    filter: drop-shadow(0 16px 20px rgba(0,0,0,.56)) brightness(.82);
+  }
+}
+
+@media (max-width: 768px) {
+  section.hero::after,
+  section.cta-final::after {
+    inset: -10% -24%;
+    opacity: .46;
+    background-size: 136px 98px, 136px 98px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  section.hero::after,
+  section.cta-final::after {
+    animation: none;
+  }
+}
+
 /* MASTERFULL FINAL VISUAL: círculos planos suaves solo en fondos oscuros */
 section.hero::after,
 section.cta-final::after {
@@ -1578,20 +1760,17 @@ section.por-que-masterfull::after {
   z-index: 0;
   display: block;
   pointer-events: none;
-  opacity: .72;
+  opacity: .68;
   background:
-    radial-gradient(circle at 12% 42%, rgba(255,255,255,.14) 0 2%, rgba(38,38,38,.96) 3% 16%, rgba(10,10,10,.98) 17% 18%, transparent 19%),
-    radial-gradient(circle at 35% 26%, rgba(255,255,255,.16) 0 2%, rgba(45,45,45,.98) 3% 19%, rgba(8,8,8,.98) 20% 21%, transparent 22%),
-    radial-gradient(circle at 63% 48%, rgba(255,255,255,.13) 0 2%, rgba(42,42,42,.96) 3% 18%, rgba(7,7,7,.98) 19% 20%, transparent 21%),
-    radial-gradient(circle at 86% 22%, rgba(255,255,255,.12) 0 2%, rgba(36,36,36,.94) 3% 15%, rgba(6,6,6,.98) 16% 17%, transparent 18%),
-    radial-gradient(circle at 78% 78%, rgba(255,255,255,.11) 0 2%, rgba(34,34,34,.92) 3% 14%, rgba(5,5,5,.96) 15% 16%, transparent 17%);
-  background-repeat: no-repeat;
-  background-size: 920px 520px, 860px 500px, 900px 540px, 760px 450px, 740px 440px;
-  background-position: -230px 80px, 80px -80px, 410px 120px, 760px -20px, 620px 360px;
-  filter: drop-shadow(0 32px 34px rgba(0,0,0,.70)) drop-shadow(0 2px 8px rgba(255,255,255,.06));
+    radial-gradient(circle at 50% 48%, rgba(255,255,255,.12) 0 2%, rgba(64,64,64,.96) 3% 31%, rgba(38,40,44,.98) 32% 43%, rgba(5,6,8,.98) 44% 49%, transparent 50%),
+    radial-gradient(circle at 54% 57%, rgba(0,0,0,.80) 0 33%, rgba(0,0,0,.48) 34% 46%, transparent 54%);
+  background-repeat: repeat;
+  background-size: 170px 122px, 170px 122px;
+  background-position: 0 0, 10px 13px;
+  filter: drop-shadow(0 18px 22px rgba(0,0,0,.48)) brightness(.92);
   mix-blend-mode: normal;
-  transform: translate3d(0,0,0);
-  animation: masterfullCircleDepthMove 18s ease-in-out infinite alternate;
+  transform: perspective(900px) translate3d(0,0,0) scale(1);
+  animation: masterfullCircleDepthMove 7.5s ease-in-out infinite;
 }
 
 .cta-final::after {
@@ -1600,16 +1779,22 @@ section.por-que-masterfull::after {
 
 @keyframes masterfullCircleDepthMove {
   0% {
-    background-position: -250px 88px, 64px -92px, 390px 132px, 780px -24px, 650px 372px;
-    transform: translate3d(-1.4%, .6%, 0) scale(1);
+    background-size: 166px 119px, 166px 119px;
+    background-position: 0 0, 9px 12px;
+    transform: perspective(900px) translate3d(0, 0, -26px) scale(.985);
+    filter: drop-shadow(0 14px 18px rgba(0,0,0,.58)) brightness(.78);
   }
   50% {
-    background-position: -185px 52px, 110px -46px, 450px 92px, 720px 18px, 590px 330px;
-    transform: translate3d(1.2%, -1%, 0) scale(1.018);
+    background-size: 178px 128px, 178px 128px;
+    background-position: 10px -6px, 22px 8px;
+    transform: perspective(900px) translate3d(0, -8px, 34px) scale(1.035);
+    filter: drop-shadow(0 26px 28px rgba(0,0,0,.52)) brightness(1.08);
   }
   100% {
-    background-position: -140px 102px, 154px -72px, 510px 150px, 675px -8px, 540px 390px;
-    transform: translate3d(2%, .4%, 0) scale(1.035);
+    background-size: 166px 119px, 166px 119px;
+    background-position: 22px 8px, 31px 20px;
+    transform: perspective(900px) translate3d(0, 0, -22px) scale(.99);
+    filter: drop-shadow(0 16px 20px rgba(0,0,0,.56)) brightness(.82);
   }
 }
 
@@ -1617,9 +1802,9 @@ section.por-que-masterfull::after {
   .hero::after,
   .cta-final::after {
     inset: -8% -35%;
-    opacity: .58;
-    background-size: 620px 360px, 600px 350px, 640px 380px, 520px 320px, 500px 310px;
-    background-position: -250px 80px, -10px -40px, 170px 190px, 330px 0, 300px 400px;
+    opacity: .46;
+    background-size: 136px 98px, 136px 98px;
+    background-position: 0 0, 8px 11px;
   }
 
   .cta-final::after {
