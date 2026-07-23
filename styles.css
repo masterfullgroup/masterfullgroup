@@ -1349,27 +1349,35 @@ section.planes::after {
   margin-top: 50px;
 }
 
+/* Borde tecnológico luminoso de las tarjetas de beneficios */
 .tarjeta-testimonio::after {
   content: "";
   position: absolute;
-  z-index: -1;
-  right: -62px;
-  bottom: -72px;
-  width: 190px;
-  height: 190px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(56,189,248,.16), rgba(37,99,235,.04) 58%, transparent 60%);
+  inset: 0;
+  z-index: 3;
+  padding: 1px;
+  border-radius: inherit;
+  pointer-events: none;
+  background: conic-gradient(
+    from var(--angulo-borde-beneficio),
+    color-mix(in srgb, var(--color-tech) 18%, transparent) 0 34%,
+    var(--color-tech) 46%,
+    var(--color-tech-hover) 52%,
+    color-mix(in srgb, var(--color-tech) 18%, transparent) 64% 100%
+  );
+  opacity: .32;
+  -webkit-mask: linear-gradient(var(--color-text-light) 0 0) content-box, linear-gradient(var(--color-text-light) 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(var(--color-text-light) 0 0) content-box, linear-gradient(var(--color-text-light) 0 0);
+  mask-composite: exclude;
 }
 
 .tarjeta-testimonio > p {
-  position: relative;
-  min-height: 104px;
-  margin: 24px 0 26px;
-  padding-left: 17px;
-  border-left: 3px solid rgba(37,99,235,.28);
-  color: #334155;
-  font-size: 15.5px;
-  font-weight: 600;
+  min-height: 86px;
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: 14.5px;
+  font-weight: 500;
   line-height: 1.7;
 }
 
@@ -1408,30 +1416,48 @@ section.proceso::after {
   left: 0;
   width: 100%;
   height: 4px;
-  z-index: 2;
+  z-index: 4;
   pointer-events: none;
-  background: linear-gradient(90deg, var(--color-primary), #38bdf8 52%, #22c775);
+  background: linear-gradient(90deg, var(--color-tech), var(--color-tech-hover), var(--color-tech));
   transform: none;
 }
 
-.cliente {
+.identificador-beneficio {
   display: flex;
   align-items: center;
-  gap: 14px;
-  margin-top: auto;
-  padding: 15px;
-  border: 1px solid rgba(148,163,184,.18);
-  border-radius: 17px;
-  background: rgba(248,250,252,.82);
-  box-shadow: inset 0 1px 0 rgba(255,255,255,.9);
+  justify-content: space-between;
+  width: 78px;
+  min-height: 42px;
+  margin-bottom: 24px;
+  padding: 0 12px;
+  border: 1px solid color-mix(in srgb, var(--color-tech-hover) 42%, var(--color-bg-light));
+  border-radius: 13px;
+  color: var(--color-text-light);
+  background: linear-gradient(145deg, var(--color-tech-hover), var(--color-tech));
+  box-shadow: var(--shadow-tech);
+  font-size: 12px;
+  font-weight: 900;
+  line-height: 1;
 }
 
-.cliente h4 {
-  color: var(--color-text-dark);
+.identificador-beneficio span:last-child {
+  display: grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  padding-left: 9px;
+  border-left: 1px solid color-mix(in srgb, var(--color-text-light) 38%, transparent);
   font-size: 15px;
+}
+
+.tarjeta-testimonio h3 {
+  min-height: 58px;
+  margin: 0 0 14px;
+  color: var(--color-text-dark);
+  font-size: 21px;
   font-weight: 800;
-  line-height: 1.3;
-  letter-spacing: -.015em;
+  line-height: 1.28;
+  letter-spacing: -.025em;
   text-shadow: none;
 }
 
@@ -1457,17 +1483,17 @@ section.proceso::after {
 .tarjeta-testimonio {
   position: relative;
   overflow: hidden;
-  border: 1px solid rgba(148,163,184,.24);
+  border: 1px solid color-mix(in srgb, var(--color-tech) 18%, var(--color-border-light));
   border-radius: 24px;
   background:
-    radial-gradient(circle at 100% 0%, rgba(56,189,248,.10), transparent 34%),
-    linear-gradient(145deg, #ffffff 0%, #fbfdff 58%, #f5faff 100%);
-  box-shadow: 0 18px 48px rgba(15,23,42,.09), 0 2px 8px rgba(15,23,42,.04);
+    radial-gradient(circle at 100% 0%, color-mix(in srgb, var(--color-tech-hover) 10%, transparent), transparent 34%),
+    linear-gradient(145deg, var(--color-bg-light), var(--color-bg-light-secondary));
+  box-shadow: var(--shadow-soft), 0 0 18px color-mix(in srgb, var(--color-tech) 7%, transparent);
   transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
   isolation: isolate;
   display: flex;
   flex-direction: column;
-  min-height: 336px;
+  min-height: 305px;
   padding: 32px;
   color: var(--color-text-dark);
   backdrop-filter: blur(16px);
@@ -1484,17 +1510,21 @@ section.proceso::after {
 }
 
 .tarjeta-testimonio:hover {
-  border-color: rgba(37,99,235,.42);
-  box-shadow: 0 24px 60px rgba(15,23,42,.13), 0 8px 22px rgba(37,99,235,.08);
+  border-color: color-mix(in srgb, var(--color-tech-hover) 62%, var(--color-border-light));
+  box-shadow: var(--shadow-medium), var(--shadow-tech);
 }
 
-.cliente span {
-  display: block;
-  margin-top: 4px;
-  color: #64748b;
-  font-size: 12px;
-  font-weight: 500;
-  line-height: 1.4;
+.tarjeta-testimonio:hover::after {
+  opacity: .92;
+  animation: recorrerBordeBeneficio 3.8s linear infinite;
+}
+
+.tarjeta-testimonio:nth-child(2):hover::after {
+  animation-delay: -1.25s;
+}
+
+.tarjeta-testimonio:nth-child(3):hover::after {
+  animation-delay: -2.5s;
 }
 
 .proceso::after {
@@ -1513,21 +1543,6 @@ section.proceso::after {
   filter: drop-shadow(0 26px 28px rgba(15,23,42,.26)) drop-shadow(0 4px 12px rgba(255,255,255,.10));
   mix-blend-mode: normal;
   transform: translate3d(0,0,0);
-}
-
-.avatar {
-  width: 50px;
-  height: 50px;
-  flex: 0 0 50px;
-  display: grid;
-  place-items: center;
-  border: 1px solid rgba(255,255,255,.7);
-  border-radius: 15px;
-  color: #fff;
-  background: linear-gradient(145deg, #0ea5e9, #2563eb 58%, #4f46e5);
-  box-shadow: 0 10px 22px rgba(37,99,235,.24);
-  font-size: 12px;
-  font-weight: 900;
 }
 
 /* ==================== PORTAFOLIO ==================== */
@@ -2142,21 +2157,6 @@ section.cta-final::after {
   border-color: rgba(215,175,87,.24);
 }
 
-.estrellas {
-  position: relative;
-  width: 48px;
-  height: 48px;
-  display: grid;
-  place-items: center;
-  color: #fff;
-  border: 1px solid rgba(255,255,255,.72);
-  border-radius: 15px;
-  background: linear-gradient(145deg, #0ea968, #20c979);
-  box-shadow: 0 12px 26px rgba(16,185,107,.25), 0 0 0 6px rgba(16,185,107,.07);
-  font-size: 21px;
-  font-weight: 900;
-}
-
 .circle-grid-bg,
 .circle-node {
   display: none !important;
@@ -2247,6 +2247,18 @@ section.por-que-masterfull::after {
   transform: translate3d(0,0,0);
 }
 /* ==================== ANIMACIONES ==================== */
+@property --angulo-borde-beneficio {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+@keyframes recorrerBordeBeneficio {
+  to {
+    --angulo-borde-beneficio: 360deg;
+  }
+}
+
 @keyframes zoomIn { from { opacity: 0; transform: scale(.94); } }
 @keyframes pulsoWhatsapp {
   0% { opacity: .7; transform: scale(.9); }
@@ -2342,6 +2354,12 @@ section.por-que-masterfull::after {
     grid-template-columns: 1fr;
     max-width: 620px;
     margin-inline: auto;
+  }
+
+  .tarjeta-testimonio::after,
+  .tarjeta-testimonio:hover::after {
+    opacity: .38;
+    animation: none;
   }
 
   .faq > .etiqueta-faq {
@@ -2591,6 +2609,11 @@ section.por-que-masterfull::after {
 
   section.hero::after,
   section.cta-final::after {
+    animation: none !important;
+  }
+
+  .tarjeta-testimonio:hover::after {
+    opacity: .46;
     animation: none !important;
   }
 
