@@ -1353,6 +1353,580 @@ section > h2,
   color: #f8fafc;
 }
 
+/* Cierre definitivo de prioridad visual oficial */
+.btn-principal,
+.boton-plan,
+.boton-cta,
+.boton-whatsapp,
+a[href*="wa.me"].btn-principal,
+a[href*="wa.me"].boton-plan,
+a[href*="wa.me"].boton-cta,
+a[href*="wa.me"].boton-whatsapp {
+  color: var(--color-text-light);
+  background: var(--color-primary);
+  box-shadow: var(--shadow-primary);
+}
+
+.btn-principal:hover,
+.boton-plan:hover,
+.boton-cta:hover,
+.boton-whatsapp:hover,
+a[href*="wa.me"].btn-principal:hover,
+a[href*="wa.me"].boton-plan:hover,
+a[href*="wa.me"].boton-cta:hover,
+a[href*="wa.me"].boton-whatsapp:hover {
+  color: var(--color-text-light);
+  background: var(--color-primary-hover);
+  box-shadow: 0 16px 34px rgba(255,90,31,.28);
+}
+
+.btn-secundario {
+  color: var(--color-tech);
+  border: 1px solid var(--color-tech);
+  background: transparent;
+  box-shadow: none;
+}
+
+.btn-secundario:hover {
+  color: var(--color-text-light);
+  border-color: var(--color-tech);
+  background: var(--color-tech);
+  box-shadow: var(--shadow-tech);
+}
+
+.recomendado,
+.recomendado.empresa {
+  color: var(--color-text-light);
+  background: var(--color-primary);
+  box-shadow: var(--shadow-primary);
+}
+
+.tarjeta-plan.destacada {
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-primary), var(--shadow-soft);
+}
+
+.home-rutas-descripcion,
+.tarjeta-servicio .sub-servicio,
+.item-beneficio span {
+  color: var(--color-text-muted);
+}
+
+.home-ruta-card strong {
+  color: var(--color-text-dark);
+}
+
+.beneficios-caja h3 {
+  color: var(--color-text-light);
+}
+
+.whatsapp-flotante,
+.whatsapp-flotante:hover,
+a[href*="wa.me"].whatsapp-flotante,
+a[href*="wa.me"].whatsapp-flotante:hover {
+  color: var(--color-text-light);
+  background: linear-gradient(145deg, var(--color-success), #16A34A);
+  box-shadow: 0 18px 42px rgba(34,197,94,.26);
+}
+
+/* Prioridad final de la paleta oficial: naranja CTA, azul acento, WhatsApp flotante verde */
+.btn-principal,
+.boton-plan,
+.boton-cta,
+.boton-whatsapp,
+a[href*="wa.me"].btn-principal,
+a[href*="wa.me"].boton-plan,
+a[href*="wa.me"].boton-cta,
+a[href*="wa.me"].boton-whatsapp {
+  color: var(--color-text-light);
+  background: var(--color-primary);
+  box-shadow: var(--shadow-primary);
+}
+
+.btn-principal:hover,
+.boton-plan:hover,
+.boton-cta:hover,
+.boton-whatsapp:hover,
+a[href*="wa.me"].btn-principal:hover,
+a[href*="wa.me"].boton-plan:hover,
+a[href*="wa.me"].boton-cta:hover,
+a[href*="wa.me"].boton-whatsapp:hover {
+  color: var(--color-text-light);
+  background: var(--color-primary-hover);
+  box-shadow: 0 16px 34px rgba(255,90,31,.28);
+}
+
+.btn-secundario {
+  color: var(--color-tech);
+  border-color: var(--color-tech);
+  background: transparent;
+  box-shadow: none;
+}
+
+.btn-secundario:hover {
+  color: var(--color-text-light);
+  border-color: var(--color-tech);
+  background: var(--color-tech);
+  box-shadow: var(--shadow-tech);
+}
+
+.nav a[href="contacto.html"] {
+  padding: 10px 16px;
+  color: var(--color-text-light);
+  background: var(--color-primary);
+  border-radius: 999px;
+  box-shadow: var(--shadow-primary);
+}
+
+.nav a[href="contacto.html"]:hover,
+.nav a[href="contacto.html"][aria-current="page"] {
+  color: var(--color-text-light);
+  background: var(--color-primary-hover);
+}
+
+.nav a[href="contacto.html"]::after {
+  display: none;
+}
+
+a[href*="wa.me"].whatsapp-flotante,
+a[href*="wa.me"].whatsapp-flotante:hover {
+  color: var(--color-text-light);
+  background: linear-gradient(145deg, var(--color-success), #16A34A);
+  box-shadow: 0 18px 42px rgba(34,197,94,.26);
+}
+
+@media (max-width: 760px) {
+  .nav {
+    background: rgba(255,255,255,.98);
+    border-top: 1px solid var(--color-border-light);
+    box-shadow: var(--shadow-soft);
+  }
+
+  .nav a {
+    color: var(--color-text-dark);
+    border-bottom-color: var(--color-border-light);
+  }
+
+  .nav a:hover,
+  .nav a.active,
+  .nav a[aria-current="page"] {
+    color: var(--color-tech);
+    background: var(--color-bg-light-secondary);
+  }
+
+  .nav a[href="contacto.html"],
+  .nav a[href="contacto.html"]:hover,
+  .nav a[href="contacto.html"][aria-current="page"] {
+    color: var(--color-text-light);
+    background: var(--color-primary);
+  }
+}
+
+/* Paleta oficial UI/UX: tecnológica premium, limpia y con conversión naranja */
+:root {
+  --color-bg-dark: #0B0F19;
+  --color-bg-dark-secondary: #111827;
+  --color-card-dark: #1F2937;
+  --color-bg-light: #FFFFFF;
+  --color-bg-light-secondary: #F8FAFC;
+  --color-text-dark: #111827;
+  --color-text-muted: #64748B;
+  --color-text-light: #FFFFFF;
+  --color-text-light-secondary: #D1D5DB;
+  --color-primary: #FF5A1F;
+  --color-primary-hover: #FF7A45;
+  --color-tech: #2563EB;
+  --color-tech-hover: #3B82F6;
+  --color-border-light: #E5E7EB;
+  --color-border-dark: #374151;
+  --color-success: #22C55E;
+  --color-warning: #FACC15;
+  --shadow-soft: 0 10px 30px rgba(15, 23, 42, 0.08);
+  --shadow-medium: 0 18px 45px rgba(15, 23, 42, 0.14);
+  --shadow-primary: 0 12px 30px rgba(255, 90, 31, 0.22);
+  --shadow-tech: 0 12px 30px rgba(37, 99, 235, 0.18);
+
+  --navy: var(--color-bg-dark);
+  --navy-2: var(--color-bg-dark-secondary);
+  --blue: var(--color-tech);
+  --cyan: var(--color-primary);
+  --green: var(--color-success);
+  --ink: var(--color-text-dark);
+  --muted: var(--color-text-muted);
+  --line: var(--color-border-light);
+  --surface: var(--color-bg-light-secondary);
+  --white: var(--color-bg-light);
+  --porcelain: var(--color-bg-light);
+  --porcelain-line: var(--color-border-light);
+  --aura: var(--shadow-soft);
+}
+
+body {
+  color: var(--color-text-dark);
+  background:
+    radial-gradient(circle at 12% 4%, rgba(37, 99, 235, .08), transparent 30%),
+    linear-gradient(180deg, var(--color-bg-light) 0%, var(--color-bg-light-secondary) 100%);
+}
+
+body::before {
+  opacity: .18;
+  background-image:
+    linear-gradient(rgba(37,99,235,.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(37,99,235,.045) 1px, transparent 1px);
+}
+
+.header {
+  background: rgba(255,255,255,.92);
+  border-bottom-color: var(--color-border-light);
+  box-shadow: var(--shadow-soft);
+  backdrop-filter: blur(14px) saturate(130%);
+}
+
+.logo,
+.nav a,
+.nav a:hover,
+.nav a.active,
+.nav a[aria-current="page"] {
+  color: var(--color-text-dark);
+}
+
+.logo span,
+.footer h3 span,
+.etiqueta,
+[class^="etiqueta-"],
+.panel-top p,
+.info-box strong,
+.tarjeta-proceso > span,
+.ver-proyecto,
+.pregunta-btn span {
+  color: var(--color-tech);
+}
+
+.nav a::after,
+.beneficio-masterfull::before,
+.tarjeta-testimonio::before {
+  background: var(--color-tech);
+}
+
+.nav a:hover {
+  color: var(--color-tech);
+}
+
+.nav a:hover::after,
+.nav a.active::after,
+.nav a[aria-current="page"]::after {
+  box-shadow: 0 0 0 transparent;
+}
+
+.hero {
+  color: var(--color-text-light);
+  background:
+    linear-gradient(rgba(11,15,25,.66), rgba(11,15,25,.72)),
+    radial-gradient(circle at 76% 20%, rgba(37,99,235,.22), transparent 32%),
+    radial-gradient(circle at 15% 92%, rgba(255,90,31,.16), transparent 35%),
+    var(--color-bg-dark);
+}
+
+.hero h1 {
+  color: var(--color-text-light);
+}
+
+.hero .descripcion,
+.hero-confianza,
+.funcion-item,
+.info-box span {
+  color: var(--color-text-light-secondary);
+}
+
+.hero-confianza i {
+  color: var(--color-primary);
+}
+
+.hero-panel,
+.beneficios-caja {
+  color: var(--color-text-light);
+  border-color: var(--color-border-dark);
+  background: linear-gradient(145deg, rgba(31,41,55,.94), rgba(17,24,39,.92));
+  box-shadow: 0 24px 60px rgba(0,0,0,.28), inset 0 1px 0 rgba(255,255,255,.08);
+}
+
+.panel-top,
+.item-beneficio,
+.cliente {
+  border-color: rgba(209,213,219,.16);
+}
+
+.panel-top > span,
+.funcion-item,
+.info-box {
+  color: var(--color-text-light-secondary);
+  border-color: var(--color-border-dark);
+  background: rgba(31,41,55,.72);
+}
+
+.panel-top > span {
+  color: var(--color-success);
+}
+
+section > h1,
+section > h2,
+.tarjeta-plan h3,
+.tarjeta-servicio h3,
+.tarjeta-portafolio h3,
+.beneficio-masterfull h3,
+.cliente h4,
+.form-header h3,
+.home-ruta-card strong,
+.beneficios-caja h3 {
+  color: var(--color-text-dark);
+}
+
+.hero h1,
+.cta-final h2,
+.footer h3,
+.footer h4,
+.beneficios-caja h3 {
+  color: var(--color-text-light);
+}
+
+.bloque-claro,
+.bloque-claro-suave,
+.home-rutas,
+.servicios,
+.planes,
+.proceso,
+.portafolio,
+.contacto,
+.faq,
+.por-que-masterfull {
+  color: var(--color-text-dark);
+  background:
+    radial-gradient(circle at 12% 0%, rgba(37,99,235,.05), transparent 28%),
+    linear-gradient(180deg, var(--color-bg-light) 0%, var(--color-bg-light-secondary) 100%);
+}
+
+.home-rutas:nth-of-type(even),
+.modulos,
+.faq {
+  background: var(--color-bg-light-secondary);
+}
+
+.tarjeta-servicio,
+.tarjeta-proceso,
+.tarjeta-portafolio,
+.tarjeta-testimonio,
+.beneficio-masterfull,
+.modulo-item,
+.pregunta,
+.formulario-contacto,
+.tarjeta-plan,
+.home-ruta-card {
+  color: var(--color-text-dark);
+  border-color: var(--color-border-light);
+  background: var(--color-bg-light);
+  box-shadow: var(--shadow-soft);
+}
+
+.tarjeta-servicio:hover,
+.tarjeta-proceso:hover,
+.tarjeta-portafolio:hover,
+.tarjeta-testimonio:hover,
+.beneficio-masterfull:hover,
+.home-ruta-card:hover,
+.tarjeta-plan:hover,
+.pregunta:hover {
+  transform: translateY(-4px);
+  border-color: rgba(37,99,235,.35);
+  box-shadow: var(--shadow-medium);
+}
+
+.tarjeta-servicio p,
+.tarjeta-servicio .sub-servicio,
+.tarjeta-portafolio p,
+.beneficio-masterfull p,
+.respuesta p,
+.form-header p,
+.home-ruta-card small,
+.plan-ideal,
+.plan-note,
+.planes-nota,
+.cliente span,
+.home-rutas-descripcion,
+.tarjeta-plan li,
+.beneficios-texto li,
+.contacto-beneficios,
+.modulo-item,
+.item-beneficio span {
+  color: var(--color-text-muted);
+}
+
+.icono,
+.icono-masterfull,
+.home-ruta-icono {
+  color: var(--color-tech);
+  background: rgba(37,99,235,.10);
+  box-shadow: none;
+}
+
+.modulo-item::before,
+.beneficios-texto li::before,
+.tarjeta-plan li::before {
+  color: var(--color-success);
+}
+
+.precio,
+.item-beneficio strong {
+  color: var(--color-primary);
+}
+
+.tarjeta-plan.destacada {
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-primary), var(--shadow-soft);
+}
+
+.recomendado,
+.recomendado.empresa {
+  color: var(--color-text-light);
+  background: var(--color-primary);
+  box-shadow: var(--shadow-primary);
+}
+
+.plan-entrega {
+  color: var(--color-tech);
+  border-color: rgba(37,99,235,.18);
+  background: rgba(37,99,235,.08);
+}
+
+.pregunta.activa .pregunta-btn span {
+  color: var(--color-primary);
+}
+
+.formulario-contacto input,
+.formulario-contacto select,
+.formulario-contacto textarea {
+  color: var(--color-text-dark);
+  border-color: var(--color-border-light);
+  background: var(--color-bg-light-secondary);
+}
+
+.formulario-contacto input::placeholder,
+.formulario-contacto textarea::placeholder {
+  color: var(--color-text-muted);
+}
+
+.formulario-contacto input:focus,
+.formulario-contacto select:focus,
+.formulario-contacto textarea:focus {
+  border-color: var(--color-tech);
+  box-shadow: 0 0 0 3px rgba(37,99,235,.15);
+  background: var(--color-bg-light);
+}
+
+.btn-principal,
+.boton-plan,
+.boton-cta,
+.boton-whatsapp {
+  color: var(--color-text-light);
+  background: var(--color-primary);
+  box-shadow: var(--shadow-primary);
+}
+
+.btn-principal:hover,
+.boton-plan:hover,
+.boton-cta:hover,
+.boton-whatsapp:hover {
+  background: var(--color-primary-hover);
+  box-shadow: 0 16px 34px rgba(255,90,31,.28);
+}
+
+.btn-secundario {
+  color: var(--color-tech);
+  border-color: var(--color-tech);
+  background: transparent;
+  box-shadow: none;
+}
+
+.btn-secundario:hover {
+  color: var(--color-text-light);
+  border-color: var(--color-tech);
+  background: var(--color-tech);
+  box-shadow: var(--shadow-tech);
+}
+
+a[href*="wa.me"].whatsapp-flotante,
+a[href*="wa.me"].whatsapp-flotante:hover {
+  color: var(--color-text-light);
+  background: linear-gradient(145deg, var(--color-success), #16A34A);
+  box-shadow: 0 18px 42px rgba(34,197,94,.26);
+}
+
+.cta-final,
+.footer {
+  color: var(--color-text-light-secondary);
+  background:
+    radial-gradient(circle at 18% 0%, rgba(37,99,235,.12), transparent 30%),
+    var(--color-bg-dark);
+}
+
+.cta-contenido {
+  border-color: var(--color-border-dark);
+  background: rgba(17,24,39,.72);
+}
+
+.cta-contenido > p:not([class]),
+.cta-nota,
+.footer,
+.footer p,
+.footer a {
+  color: var(--color-text-light-secondary);
+}
+
+.footer a:hover {
+  color: var(--color-tech-hover);
+}
+
+.imagen-portafolio:hover {
+  filter: brightness(.92) saturate(1.02);
+  transform: scale(1.02);
+}
+
+.hero::after,
+.home-rutas::after,
+.servicios::after,
+.planes::after,
+.proceso::after,
+.portafolio::after,
+.contacto::after,
+.por-que-masterfull::after,
+.cta-final::after {
+  opacity: .10;
+}
+
+.hero::after {
+  opacity: .24;
+}
+
+.bloque-claro::after,
+.bloque-claro-suave::after,
+.home-rutas::after,
+.servicios::after,
+.planes::after,
+.proceso::after,
+.portafolio::after,
+.contacto::after,
+.por-que-masterfull::after {
+  mix-blend-mode: multiply;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid rgba(37,99,235,.35);
+  outline-offset: 3px;
+}
+
 /* Escena abstracta 3D animada inspirada en fondos tecnológicos premium */
 section {
   isolation: isolate;
@@ -1577,4 +2151,80 @@ a[href*="wa.me"].whatsapp-flotante:hover {
 .home-ruta-card strong,
 .beneficios-caja h3 {
   color: #f8fafc;
+}
+
+/* Cierre definitivo de prioridad visual oficial */
+.btn-principal,
+.boton-plan,
+.boton-cta,
+.boton-whatsapp,
+a[href*="wa.me"].btn-principal,
+a[href*="wa.me"].boton-plan,
+a[href*="wa.me"].boton-cta,
+a[href*="wa.me"].boton-whatsapp {
+  color: var(--color-text-light);
+  background: var(--color-primary);
+  box-shadow: var(--shadow-primary);
+}
+
+.btn-principal:hover,
+.boton-plan:hover,
+.boton-cta:hover,
+.boton-whatsapp:hover,
+a[href*="wa.me"].btn-principal:hover,
+a[href*="wa.me"].boton-plan:hover,
+a[href*="wa.me"].boton-cta:hover,
+a[href*="wa.me"].boton-whatsapp:hover {
+  color: var(--color-text-light);
+  background: var(--color-primary-hover);
+  box-shadow: 0 16px 34px rgba(255,90,31,.28);
+}
+
+.btn-secundario {
+  color: var(--color-tech);
+  border: 1px solid var(--color-tech);
+  background: transparent;
+  box-shadow: none;
+}
+
+.btn-secundario:hover {
+  color: var(--color-text-light);
+  border-color: var(--color-tech);
+  background: var(--color-tech);
+  box-shadow: var(--shadow-tech);
+}
+
+.recomendado,
+.recomendado.empresa {
+  color: var(--color-text-light);
+  background: var(--color-primary);
+  box-shadow: var(--shadow-primary);
+}
+
+.tarjeta-plan.destacada {
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-primary), var(--shadow-soft);
+}
+
+.home-rutas-descripcion,
+.tarjeta-servicio .sub-servicio,
+.item-beneficio span {
+  color: var(--color-text-muted);
+}
+
+.home-ruta-card strong {
+  color: var(--color-text-dark);
+}
+
+.beneficios-caja h3 {
+  color: var(--color-text-light);
+}
+
+.whatsapp-flotante,
+.whatsapp-flotante:hover,
+a[href*="wa.me"].whatsapp-flotante,
+a[href*="wa.me"].whatsapp-flotante:hover {
+  color: var(--color-text-light);
+  background: linear-gradient(145deg, var(--color-success), #16A34A);
+  box-shadow: 0 18px 42px rgba(34,197,94,.26);
 }
