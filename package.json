@@ -1,0 +1,9 @@
+{
+  "name": "masterfull-web",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "test": "node --test tests/site.test.mjs"
+  }
+}
