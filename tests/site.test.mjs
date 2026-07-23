@@ -16,7 +16,7 @@ test("todas las páginas cargan el fondo tecnológico", async () => {
   for (const pagina of paginas) {
     const html = await readFile(new URL(pagina, raiz), "utf8");
     assert.match(html, /class="fondo-tecnologico"/);
-    assert.match(html, /<script src="fondo-3d\.js"><\/script>/);
+    assert.match(html, /<script src="fondo-3d\.js\?v=1"><\/script>/);
   }
 });
 
