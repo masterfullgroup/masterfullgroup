@@ -1429,6 +1429,87 @@ a[href*="wa.me"].whatsapp-flotante:hover {
   box-shadow: 0 18px 42px rgba(34,197,94,.26);
 }
 
+/* MASTERFULL FINAL VISUAL: círculos planos suaves solo en fondos oscuros */
+section.hero::after,
+section.cta-final::after {
+  content: "";
+  position: absolute;
+  inset: -14% -10%;
+  z-index: 0;
+  display: block;
+  pointer-events: none;
+  opacity: .66;
+  background-image:
+    radial-gradient(circle at 10% 42%, rgba(255,255,255,.10) 0 2%, rgba(47,47,47,.95) 3% 17%, rgba(30,30,30,.92) 18% 22%, transparent 23%),
+    radial-gradient(circle at 32% 22%, rgba(255,255,255,.11) 0 2%, rgba(52,52,52,.96) 3% 19%, rgba(31,31,31,.92) 20% 24%, transparent 25%),
+    radial-gradient(circle at 55% 50%, rgba(255,255,255,.09) 0 2%, rgba(45,45,45,.94) 3% 18%, rgba(28,28,28,.90) 19% 23%, transparent 24%),
+    radial-gradient(circle at 80% 28%, rgba(255,255,255,.09) 0 2%, rgba(43,43,43,.93) 3% 16%, rgba(26,26,26,.88) 17% 21%, transparent 22%),
+    radial-gradient(circle at 88% 76%, rgba(255,255,255,.08) 0 2%, rgba(39,39,39,.90) 3% 15%, rgba(24,24,24,.84) 16% 20%, transparent 21%);
+  background-repeat: no-repeat;
+  background-size: 980px 560px, 900px 520px, 940px 560px, 820px 480px, 780px 460px;
+  background-position: -260px 86px, 30px -96px, 330px 112px, 675px -24px, 620px 360px;
+  filter:
+    drop-shadow(0 26px 24px rgba(0,0,0,.52))
+    drop-shadow(0 1px 2px rgba(255,255,255,.045));
+  mix-blend-mode: normal;
+  transform: translate3d(0,0,0);
+  animation: masterfullSoftCircleDepth 20s ease-in-out infinite alternate;
+}
+
+section.cta-final::after {
+  opacity: .34;
+}
+
+section.home-rutas::after,
+section.servicios::after,
+section.planes::after,
+section.proceso::after,
+section.portafolio::after,
+section.contacto::after,
+section.por-que-masterfull::after,
+section.bloque-claro::after,
+section.bloque-claro-suave::after {
+  content: none;
+  display: none;
+  animation: none;
+}
+
+@keyframes masterfullSoftCircleDepth {
+  0% {
+    background-position: -280px 92px, 16px -108px, 306px 126px, 694px -30px, 646px 374px;
+    transform: translate3d(-1.2%, .5%, 0) scale(1);
+  }
+  50% {
+    background-position: -220px 54px, 76px -62px, 374px 86px, 638px 20px, 590px 332px;
+    transform: translate3d(1%, -1%, 0) scale(1.012);
+  }
+  100% {
+    background-position: -172px 104px, 126px -82px, 432px 142px, 590px -6px, 538px 386px;
+    transform: translate3d(1.8%, .4%, 0) scale(1.025);
+  }
+}
+
+@media (max-width: 720px) {
+  section.hero::after,
+  section.cta-final::after {
+    inset: -8% -38%;
+    opacity: .52;
+    background-size: 660px 390px, 620px 370px, 650px 390px, 540px 330px, 520px 320px;
+    background-position: -276px 80px, -18px -44px, 148px 185px, 336px 0, 300px 398px;
+  }
+
+  section.cta-final::after {
+    opacity: .28;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  section.hero::after,
+  section.cta-final::after {
+    animation: none;
+  }
+}
+
 /* PRIORIDAD MÁXIMA: círculos 3D solo en secciones oscuras */
 section.hero::after,
 section.cta-final::after {
