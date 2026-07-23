@@ -1353,6 +1353,116 @@ section > h2,
   color: #f8fafc;
 }
 
+/* Escena abstracta 3D animada inspirada en fondos tecnológicos premium */
+section {
+  isolation: isolate;
+  overflow: hidden;
+}
+
+section > * {
+  position: relative;
+  z-index: 2;
+}
+
+.hero::after,
+.home-rutas::after,
+.servicios::after,
+.planes::after,
+.proceso::after,
+.portafolio::after,
+.contacto::after,
+.por-que-masterfull::after,
+.cta-final::after {
+  content: "";
+  position: absolute;
+  inset: -18% -10%;
+  z-index: 0;
+  pointer-events: none;
+  opacity: .34;
+  background:
+    radial-gradient(58% 82% at 7% 52%, rgba(255,255,255,.10) 0 16%, rgba(24,28,36,.74) 17% 34%, transparent 35%),
+    radial-gradient(48% 88% at 31% 25%, rgba(255,255,255,.08) 0 15%, rgba(34,39,49,.78) 16% 34%, transparent 35%),
+    radial-gradient(62% 92% at 57% 74%, rgba(255,255,255,.09) 0 18%, rgba(23,28,38,.82) 19% 38%, transparent 39%),
+    radial-gradient(48% 76% at 82% 28%, rgba(255,255,255,.08) 0 17%, rgba(30,35,45,.76) 18% 35%, transparent 36%),
+    linear-gradient(90deg, transparent 0 10%, rgba(255,255,255,.035) 10.4% 10.7%, transparent 11% 28%, rgba(255,255,255,.03) 28.3% 28.7%, transparent 29% 100%);
+  background-size: 920px 320px, 760px 360px, 860px 340px, 720px 340px, 620px 100%;
+  background-position: -120px 20%, 180px 10%, 420px 92%, 720px 18%, 0 0;
+  filter: blur(.2px) drop-shadow(0 30px 42px rgba(0,0,0,.55));
+  transform: translate3d(0,0,0) perspective(900px) rotateX(0deg);
+  animation: masterfull3dDrift 18s ease-in-out infinite alternate;
+  mix-blend-mode: screen;
+}
+
+.hero::after {
+  inset: 0 -8%;
+  opacity: .55;
+  background-size: 1040px 380px, 900px 410px, 980px 390px, 820px 370px, 720px 100%;
+  animation-duration: 15s;
+}
+
+.home-rutas::after,
+.servicios::after,
+.planes::after,
+.proceso::after,
+.portafolio::after,
+.contacto::after,
+.por-que-masterfull::after {
+  opacity: .22;
+}
+
+.cta-final::after {
+  opacity: .28;
+}
+
+@keyframes masterfull3dDrift {
+  0% {
+    background-position: -160px 20%, 150px 8%, 400px 92%, 720px 18%, 0 0;
+    transform: translate3d(-1.8%, 0, 0) perspective(900px) rotateX(0deg) rotateY(-2deg);
+  }
+  50% {
+    background-position: -40px 28%, 235px 14%, 520px 86%, 620px 24%, 40px 0;
+    transform: translate3d(1.6%, -1.2%, 0) perspective(900px) rotateX(1deg) rotateY(2deg);
+  }
+  100% {
+    background-position: 70px 18%, 330px 11%, 610px 96%, 535px 16%, 80px 0;
+    transform: translate3d(2.4%, .8%, 0) perspective(900px) rotateX(-1deg) rotateY(3deg);
+  }
+}
+
+@media (max-width: 720px) {
+  .hero::after,
+  .home-rutas::after,
+  .servicios::after,
+  .planes::after,
+  .proceso::after,
+  .portafolio::after,
+  .contacto::after,
+  .por-que-masterfull::after,
+  .cta-final::after {
+    inset: -12% -36%;
+    opacity: .24;
+    background-size: 620px 260px, 560px 260px, 620px 280px, 520px 250px, 420px 100%;
+  }
+
+  .hero::after {
+    opacity: .38;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero::after,
+  .home-rutas::after,
+  .servicios::after,
+  .planes::after,
+  .proceso::after,
+  .portafolio::after,
+  .contacto::after,
+  .por-que-masterfull::after,
+  .cta-final::after {
+    animation: none;
+  }
+}
+
 .btn-secundario {
   color: #f8fafc;
   border: 1px solid rgba(56,189,248,.38);
