@@ -1429,8 +1429,52 @@ a[href*="wa.me"].whatsapp-flotante:hover {
   box-shadow: 0 18px 42px rgba(34,197,94,.26);
 }
 
-/* MASTERFULL OVERRIDE FINAL: cubos 3D claros y en movimiento */
-.hero::after,
+/* PRIORIDAD MÁXIMA: círculos 3D solo en secciones oscuras */
+section.hero::after,
+section.cta-final::after {
+  content: "";
+  position: absolute;
+  inset: -12% -8%;
+  z-index: 0;
+  display: block;
+  pointer-events: none;
+  opacity: .72;
+  background-image:
+    radial-gradient(circle at 12% 42%, rgba(255,255,255,.14) 0 2%, rgba(38,38,38,.96) 3% 16%, rgba(10,10,10,.98) 17% 18%, transparent 19%),
+    radial-gradient(circle at 35% 26%, rgba(255,255,255,.16) 0 2%, rgba(45,45,45,.98) 3% 19%, rgba(8,8,8,.98) 20% 21%, transparent 22%),
+    radial-gradient(circle at 63% 48%, rgba(255,255,255,.13) 0 2%, rgba(42,42,42,.96) 3% 18%, rgba(7,7,7,.98) 19% 20%, transparent 21%),
+    radial-gradient(circle at 86% 22%, rgba(255,255,255,.12) 0 2%, rgba(36,36,36,.94) 3% 15%, rgba(6,6,6,.98) 16% 17%, transparent 18%),
+    radial-gradient(circle at 78% 78%, rgba(255,255,255,.11) 0 2%, rgba(34,34,34,.92) 3% 14%, rgba(5,5,5,.96) 15% 16%, transparent 17%);
+  background-repeat: no-repeat;
+  background-size: 920px 520px, 860px 500px, 900px 540px, 760px 450px, 740px 440px;
+  background-position: -230px 80px, 80px -80px, 410px 120px, 760px -20px, 620px 360px;
+  filter: drop-shadow(0 32px 34px rgba(0,0,0,.70)) drop-shadow(0 2px 8px rgba(255,255,255,.06));
+  mix-blend-mode: normal;
+  transform: translate3d(0,0,0);
+  animation-name: masterfullCircleDepthMove;
+  animation-duration: 18s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+section.cta-final::after {
+  opacity: .38;
+}
+
+section.home-rutas::after,
+section.servicios::after,
+section.planes::after,
+section.proceso::after,
+section.portafolio::after,
+section.contacto::after,
+section.por-que-masterfull::after {
+  content: none;
+  display: none;
+  animation: none;
+}
+
+/* MASTERFULL FINAL REQUEST: círculos planos con profundidad solo en fondos negros */
 .home-rutas::after,
 .servicios::after,
 .planes::after,
@@ -1438,25 +1482,100 @@ a[href*="wa.me"].whatsapp-flotante:hover {
 .portafolio::after,
 .contacto::after,
 .por-que-masterfull::after,
+.bloque-claro::after,
+.bloque-claro-suave::after {
+  content: none;
+  display: none;
+  animation: none;
+}
+
+.hero::after,
 .cta-final::after {
   content: "";
   position: absolute;
-  inset: -16% -12%;
+  inset: -12% -8%;
+  z-index: 0;
+  display: block;
+  pointer-events: none;
+  opacity: .72;
+  background:
+    radial-gradient(circle at 12% 42%, rgba(255,255,255,.14) 0 2%, rgba(38,38,38,.96) 3% 16%, rgba(10,10,10,.98) 17% 18%, transparent 19%),
+    radial-gradient(circle at 35% 26%, rgba(255,255,255,.16) 0 2%, rgba(45,45,45,.98) 3% 19%, rgba(8,8,8,.98) 20% 21%, transparent 22%),
+    radial-gradient(circle at 63% 48%, rgba(255,255,255,.13) 0 2%, rgba(42,42,42,.96) 3% 18%, rgba(7,7,7,.98) 19% 20%, transparent 21%),
+    radial-gradient(circle at 86% 22%, rgba(255,255,255,.12) 0 2%, rgba(36,36,36,.94) 3% 15%, rgba(6,6,6,.98) 16% 17%, transparent 18%),
+    radial-gradient(circle at 78% 78%, rgba(255,255,255,.11) 0 2%, rgba(34,34,34,.92) 3% 14%, rgba(5,5,5,.96) 15% 16%, transparent 17%);
+  background-repeat: no-repeat;
+  background-size: 920px 520px, 860px 500px, 900px 540px, 760px 450px, 740px 440px;
+  background-position: -230px 80px, 80px -80px, 410px 120px, 760px -20px, 620px 360px;
+  filter: drop-shadow(0 32px 34px rgba(0,0,0,.70)) drop-shadow(0 2px 8px rgba(255,255,255,.06));
+  mix-blend-mode: normal;
+  transform: translate3d(0,0,0);
+  animation: masterfullCircleDepthMove 18s ease-in-out infinite alternate;
+}
+
+.cta-final::after {
+  opacity: .38;
+}
+
+@keyframes masterfullCircleDepthMove {
+  0% {
+    background-position: -250px 88px, 64px -92px, 390px 132px, 780px -24px, 650px 372px;
+    transform: translate3d(-1.4%, .6%, 0) scale(1);
+  }
+  50% {
+    background-position: -185px 52px, 110px -46px, 450px 92px, 720px 18px, 590px 330px;
+    transform: translate3d(1.2%, -1%, 0) scale(1.018);
+  }
+  100% {
+    background-position: -140px 102px, 154px -72px, 510px 150px, 675px -8px, 540px 390px;
+    transform: translate3d(2%, .4%, 0) scale(1.035);
+  }
+}
+
+@media (max-width: 720px) {
+  .hero::after,
+  .cta-final::after {
+    inset: -8% -35%;
+    opacity: .58;
+    background-size: 620px 360px, 600px 350px, 640px 380px, 520px 320px, 500px 310px;
+    background-position: -250px 80px, -10px -40px, 170px 190px, 330px 0, 300px 400px;
+  }
+
+  .cta-final::after {
+    opacity: .30;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero::after,
+  .cta-final::after {
+    animation: none;
+  }
+}
+
+/* MASTERFULL OVERRIDE FINAL: cubos 3D claros y en movimiento */
+.hero::after,
+.home-rutas::after,
+.hero::after,
+.cta-final::after {
+  content: "";
+  position: absolute;
+  inset: -12% -8%;
   z-index: 0;
   pointer-events: none;
-  opacity: .30;
+  opacity: .72;
   background:
-    conic-gradient(from 30deg at 18% 22%, rgba(255,255,255,.34) 0 33%, rgba(148,163,184,.23) 0 66%, rgba(17,24,39,.36) 0 100%),
-    conic-gradient(from 30deg at 48% 38%, rgba(255,255,255,.28) 0 33%, rgba(148,163,184,.20) 0 66%, rgba(17,24,39,.32) 0 100%),
-    conic-gradient(from 30deg at 76% 18%, rgba(255,255,255,.26) 0 33%, rgba(148,163,184,.18) 0 66%, rgba(17,24,39,.34) 0 100%),
-    conic-gradient(from 30deg at 28% 72%, rgba(255,255,255,.24) 0 33%, rgba(148,163,184,.17) 0 66%, rgba(17,24,39,.30) 0 100%),
-    conic-gradient(from 30deg at 84% 78%, rgba(255,255,255,.22) 0 33%, rgba(148,163,184,.16) 0 66%, rgba(17,24,39,.28) 0 100%);
+    radial-gradient(circle at 12% 42%, rgba(255,255,255,.14) 0 2%, rgba(38,38,38,.96) 3% 16%, rgba(10,10,10,.98) 17% 18%, transparent 19%),
+    radial-gradient(circle at 35% 26%, rgba(255,255,255,.16) 0 2%, rgba(45,45,45,.98) 3% 19%, rgba(8,8,8,.98) 20% 21%, transparent 22%),
+    radial-gradient(circle at 63% 48%, rgba(255,255,255,.13) 0 2%, rgba(42,42,42,.96) 3% 18%, rgba(7,7,7,.98) 19% 20%, transparent 21%),
+    radial-gradient(circle at 86% 22%, rgba(255,255,255,.12) 0 2%, rgba(36,36,36,.94) 3% 15%, rgba(6,6,6,.98) 16% 17%, transparent 18%),
+    radial-gradient(circle at 78% 78%, rgba(255,255,255,.11) 0 2%, rgba(34,34,34,.92) 3% 14%, rgba(5,5,5,.96) 15% 16%, transparent 17%);
   background-repeat: no-repeat;
-  background-size: 360px 360px, 420px 420px, 380px 380px, 330px 330px, 390px 390px;
-  background-position: -40px 20px, 210px 90px, 520px -20px, 80px 350px, 650px 330px;
-  filter: drop-shadow(0 26px 28px rgba(15,23,42,.26)) drop-shadow(0 4px 12px rgba(255,255,255,.10));
+  background-size: 920px 520px, 860px 500px, 900px 540px, 760px 450px, 740px 440px;
+  background-position: -230px 80px, 80px -80px, 410px 120px, 760px -20px, 620px 360px;
+  filter: drop-shadow(0 32px 34px rgba(0,0,0,.70)) drop-shadow(0 2px 8px rgba(255,255,255,.06));
   mix-blend-mode: normal;
-  animation: masterfullCubeFloatFinal 16s ease-in-out infinite alternate;
+  animation: masterfullCircleDepthMove 18s ease-in-out infinite alternate;
 }
 
 .hero::after {
@@ -2304,10 +2423,7 @@ section > * {
 }
 
 .hero::after {
-  inset: 0 -8%;
-  opacity: .52;
-  background-size: 380px 380px, 450px 450px, 410px 410px, 350px 350px, 420px 420px;
-  animation-duration: 15s;
+  opacity: .72;
 }
 
 .home-rutas::after,
