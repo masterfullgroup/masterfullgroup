@@ -1435,12 +1435,13 @@ a[href*="wa.me"].whatsapp-flotante:hover {
   color: #2563EB !important;
 }
 
-.logo {
-  color: #111827 !important;
+.logo,
+.footer h3 {
+  color: #2563EB !important;
 }
 
 .header .logo {
-  color: #111827 !important;
+  color: #2563EB !important;
 }
 
 .etiqueta,
