@@ -1355,17 +1355,20 @@ section.planes::after {
   position: absolute;
   inset: 0;
   z-index: 3;
-  padding: 1px;
+  padding: 2px;
   border-radius: inherit;
   pointer-events: none;
   background: conic-gradient(
     from var(--angulo-borde-beneficio),
-    color-mix(in srgb, var(--color-tech) 18%, transparent) 0 34%,
-    var(--color-tech) 46%,
-    var(--color-tech-hover) 52%,
-    color-mix(in srgb, var(--color-tech) 18%, transparent) 64% 100%
+    color-mix(in srgb, var(--color-tech) 20%, transparent) 0 62%,
+    var(--color-tech-hover) 72%,
+    var(--color-text-light) 78%,
+    var(--color-tech) 84%,
+    color-mix(in srgb, var(--color-tech) 20%, transparent) 92% 100%
   );
-  opacity: .32;
+  opacity: .24;
+  filter: drop-shadow(0 0 2px color-mix(in srgb, var(--color-tech-hover) 42%, transparent));
+  transition: opacity .25s ease, filter .25s ease;
   -webkit-mask: linear-gradient(var(--color-text-light) 0 0) content-box, linear-gradient(var(--color-text-light) 0 0);
   -webkit-mask-composite: xor;
   mask: linear-gradient(var(--color-text-light) 0 0) content-box, linear-gradient(var(--color-text-light) 0 0);
@@ -1413,12 +1416,14 @@ section.proceso::after {
   content: "";
   position: absolute;
   top: 0;
-  left: 0;
-  width: 100%;
-  height: 4px;
+  left: 26px;
+  width: calc(100% - 52px);
+  height: 3px;
   z-index: 4;
   pointer-events: none;
-  background: linear-gradient(90deg, var(--color-tech), var(--color-tech-hover), var(--color-tech));
+  border-radius: 0 0 999px 999px;
+  background: linear-gradient(90deg, transparent, var(--color-tech-hover) 36%, var(--color-tech) 64%, transparent);
+  box-shadow: 0 2px 8px color-mix(in srgb, var(--color-tech-hover) 24%, transparent);
   transform: none;
 }
 
@@ -1433,11 +1438,12 @@ section.proceso::after {
   border: 1px solid color-mix(in srgb, var(--color-tech-hover) 42%, var(--color-bg-light));
   border-radius: 13px;
   color: var(--color-text-light);
-  background: linear-gradient(145deg, var(--color-tech-hover), var(--color-tech));
-  box-shadow: var(--shadow-tech);
+  background: var(--color-bg-dark);
+  box-shadow: 0 10px 24px color-mix(in srgb, var(--color-bg-dark) 18%, transparent);
   font-size: 12px;
   font-weight: 900;
   line-height: 1;
+  transition: border-color .25s ease, box-shadow .25s ease, transform .25s ease;
 }
 
 .identificador-beneficio span:last-child {
@@ -1447,6 +1453,7 @@ section.proceso::after {
   height: 22px;
   padding-left: 9px;
   border-left: 1px solid color-mix(in srgb, var(--color-text-light) 38%, transparent);
+  color: var(--color-tech-hover);
   font-size: 15px;
 }
 
@@ -1482,13 +1489,11 @@ section.proceso::after {
 
 .tarjeta-testimonio {
   position: relative;
-  overflow: hidden;
-  border: 1px solid color-mix(in srgb, var(--color-tech) 18%, var(--color-border-light));
+  overflow: visible;
+  border: 1px solid var(--color-border-light);
   border-radius: 24px;
-  background:
-    radial-gradient(circle at 100% 0%, color-mix(in srgb, var(--color-tech-hover) 10%, transparent), transparent 34%),
-    linear-gradient(145deg, var(--color-bg-light), var(--color-bg-light-secondary));
-  box-shadow: var(--shadow-soft), 0 0 18px color-mix(in srgb, var(--color-tech) 7%, transparent);
+  background: var(--color-bg-light);
+  box-shadow: var(--shadow-soft);
   transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
   isolation: isolate;
   display: flex;
@@ -1510,12 +1515,27 @@ section.proceso::after {
 }
 
 .tarjeta-testimonio:hover {
-  border-color: color-mix(in srgb, var(--color-tech-hover) 62%, var(--color-border-light));
-  box-shadow: var(--shadow-medium), var(--shadow-tech);
+  border-color: color-mix(in srgb, var(--color-tech-hover) 72%, var(--color-border-light));
+  box-shadow:
+    var(--shadow-medium),
+    0 0 12px color-mix(in srgb, var(--color-tech-hover) 52%, transparent),
+    0 0 30px color-mix(in srgb, var(--color-tech) 34%, transparent);
+}
+
+.tarjeta-testimonio:hover .identificador-beneficio {
+  transform: translateY(-1px);
+  border-color: var(--color-tech-hover);
+  box-shadow:
+    0 10px 24px color-mix(in srgb, var(--color-bg-dark) 18%, transparent),
+    0 0 15px color-mix(in srgb, var(--color-tech-hover) 52%, transparent);
 }
 
 .tarjeta-testimonio:hover::after {
-  opacity: .92;
+  opacity: 1;
+  filter:
+    drop-shadow(0 0 4px var(--color-tech-hover))
+    drop-shadow(0 0 10px color-mix(in srgb, var(--color-tech-hover) 82%, transparent))
+    drop-shadow(0 0 18px color-mix(in srgb, var(--color-tech) 64%, transparent));
   animation: recorrerBordeBeneficio 3.8s linear infinite;
 }
 
@@ -2358,7 +2378,8 @@ section.por-que-masterfull::after {
 
   .tarjeta-testimonio::after,
   .tarjeta-testimonio:hover::after {
-    opacity: .38;
+    opacity: .44;
+    filter: drop-shadow(0 0 3px color-mix(in srgb, var(--color-tech-hover) 44%, transparent));
     animation: none;
   }
 
@@ -2613,7 +2634,8 @@ section.por-que-masterfull::after {
   }
 
   .tarjeta-testimonio:hover::after {
-    opacity: .46;
+    opacity: .52;
+    filter: drop-shadow(0 0 4px color-mix(in srgb, var(--color-tech-hover) 52%, transparent));
     animation: none !important;
   }
 
