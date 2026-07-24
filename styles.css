@@ -1349,30 +1349,23 @@ section.planes::after {
   margin-top: 50px;
 }
 
-/* Borde tecnológico luminoso de las tarjetas de beneficios */
+/* Trama tecnológica estática de las tarjetas de beneficios */
 .tarjeta-testimonio::after {
   content: "";
   position: absolute;
   inset: 0;
-  z-index: 3;
-  padding: 2px;
+  z-index: 0;
   border-radius: inherit;
   pointer-events: none;
-  background: conic-gradient(
-    from var(--angulo-borde-beneficio),
-    color-mix(in srgb, var(--color-tech) 20%, transparent) 0 62%,
-    var(--color-tech-hover) 72%,
-    var(--color-text-light) 78%,
-    var(--color-tech) 84%,
-    color-mix(in srgb, var(--color-tech) 20%, transparent) 92% 100%
-  );
-  opacity: .24;
-  filter: drop-shadow(0 0 2px color-mix(in srgb, var(--color-tech-hover) 42%, transparent));
-  transition: opacity .25s ease, filter .25s ease;
-  -webkit-mask: linear-gradient(var(--color-text-light) 0 0) content-box, linear-gradient(var(--color-text-light) 0 0);
-  -webkit-mask-composite: xor;
-  mask: linear-gradient(var(--color-text-light) 0 0) content-box, linear-gradient(var(--color-text-light) 0 0);
-  mask-composite: exclude;
+  background-image:
+    linear-gradient(color-mix(in srgb, var(--color-tech) 7%, transparent) 1px, transparent 1px),
+    linear-gradient(90deg, color-mix(in srgb, var(--color-tech) 7%, transparent) 1px, transparent 1px),
+    radial-gradient(circle at 92% 10%, color-mix(in srgb, var(--color-primary) 14%, transparent), transparent 32%);
+  background-size: 28px 28px, 28px 28px, 100% 100%;
+  opacity: .48;
+  -webkit-mask-image: linear-gradient(135deg, transparent 28%, var(--color-text-light));
+  mask-image: linear-gradient(135deg, transparent 28%, var(--color-text-light));
+  transition: opacity .25s ease;
 }
 
 .tarjeta-testimonio > p {
@@ -1422,9 +1415,14 @@ section.proceso::after {
   z-index: 4;
   pointer-events: none;
   border-radius: 0 0 999px 999px;
-  background: linear-gradient(90deg, transparent, var(--color-tech-hover) 36%, var(--color-tech) 64%, transparent);
-  box-shadow: 0 2px 8px color-mix(in srgb, var(--color-tech-hover) 24%, transparent);
+  background: linear-gradient(90deg, transparent, var(--color-primary) 22%, var(--color-primary-hover) 46%, var(--color-tech) 74%, transparent);
+  box-shadow: 0 2px 8px color-mix(in srgb, var(--color-primary) 24%, transparent);
   transform: none;
+}
+
+.tarjeta-testimonio > * {
+  position: relative;
+  z-index: 1;
 }
 
 .identificador-beneficio {
@@ -1435,11 +1433,11 @@ section.proceso::after {
   min-height: 42px;
   margin-bottom: 24px;
   padding: 0 12px;
-  border: 1px solid color-mix(in srgb, var(--color-tech-hover) 42%, var(--color-bg-light));
+  border: 1px solid color-mix(in srgb, var(--color-primary-hover) 50%, var(--color-bg-light));
   border-radius: 13px;
   color: var(--color-text-light);
-  background: var(--color-bg-dark);
-  box-shadow: 0 10px 24px color-mix(in srgb, var(--color-bg-dark) 18%, transparent);
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-hover));
+  box-shadow: var(--shadow-primary);
   font-size: 12px;
   font-weight: 900;
   line-height: 1;
@@ -1453,7 +1451,7 @@ section.proceso::after {
   height: 22px;
   padding-left: 9px;
   border-left: 1px solid color-mix(in srgb, var(--color-text-light) 38%, transparent);
-  color: var(--color-tech-hover);
+  color: var(--color-text-light);
   font-size: 15px;
 }
 
@@ -1489,10 +1487,12 @@ section.proceso::after {
 
 .tarjeta-testimonio {
   position: relative;
-  overflow: visible;
-  border: 1px solid var(--color-border-light);
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--color-primary) 16%, var(--color-border-light));
   border-radius: 24px;
-  background: var(--color-bg-light);
+  background:
+    radial-gradient(circle at 100% 0%, color-mix(in srgb, var(--color-primary) 10%, transparent), transparent 34%),
+    linear-gradient(145deg, var(--color-bg-light), color-mix(in srgb, var(--color-primary) 4%, var(--color-bg-light-secondary)));
   box-shadow: var(--shadow-soft);
   transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
   isolation: isolate;
@@ -1515,36 +1515,18 @@ section.proceso::after {
 }
 
 .tarjeta-testimonio:hover {
-  border-color: color-mix(in srgb, var(--color-tech-hover) 72%, var(--color-border-light));
-  box-shadow:
-    var(--shadow-medium),
-    0 0 12px color-mix(in srgb, var(--color-tech-hover) 52%, transparent),
-    0 0 30px color-mix(in srgb, var(--color-tech) 34%, transparent);
+  border-color: color-mix(in srgb, var(--color-primary) 52%, var(--color-border-light));
+  box-shadow: var(--shadow-medium), var(--shadow-primary);
 }
 
 .tarjeta-testimonio:hover .identificador-beneficio {
   transform: translateY(-1px);
-  border-color: var(--color-tech-hover);
-  box-shadow:
-    0 10px 24px color-mix(in srgb, var(--color-bg-dark) 18%, transparent),
-    0 0 15px color-mix(in srgb, var(--color-tech-hover) 52%, transparent);
+  border-color: var(--color-primary-hover);
+  box-shadow: 0 14px 30px color-mix(in srgb, var(--color-primary) 30%, transparent);
 }
 
 .tarjeta-testimonio:hover::after {
-  opacity: 1;
-  filter:
-    drop-shadow(0 0 4px var(--color-tech-hover))
-    drop-shadow(0 0 10px color-mix(in srgb, var(--color-tech-hover) 82%, transparent))
-    drop-shadow(0 0 18px color-mix(in srgb, var(--color-tech) 64%, transparent));
-  animation: recorrerBordeBeneficio 3.8s linear infinite;
-}
-
-.tarjeta-testimonio:nth-child(2):hover::after {
-  animation-delay: -1.25s;
-}
-
-.tarjeta-testimonio:nth-child(3):hover::after {
-  animation-delay: -2.5s;
+  opacity: .72;
 }
 
 .proceso::after {
@@ -2267,18 +2249,6 @@ section.por-que-masterfull::after {
   transform: translate3d(0,0,0);
 }
 /* ==================== ANIMACIONES ==================== */
-@property --angulo-borde-beneficio {
-  syntax: "<angle>";
-  inherits: false;
-  initial-value: 0deg;
-}
-
-@keyframes recorrerBordeBeneficio {
-  to {
-    --angulo-borde-beneficio: 360deg;
-  }
-}
-
 @keyframes zoomIn { from { opacity: 0; transform: scale(.94); } }
 @keyframes pulsoWhatsapp {
   0% { opacity: .7; transform: scale(.9); }
@@ -2378,9 +2348,7 @@ section.por-que-masterfull::after {
 
   .tarjeta-testimonio::after,
   .tarjeta-testimonio:hover::after {
-    opacity: .44;
-    filter: drop-shadow(0 0 3px color-mix(in srgb, var(--color-tech-hover) 44%, transparent));
-    animation: none;
+    opacity: .42;
   }
 
   .faq > .etiqueta-faq {
@@ -2630,12 +2598,6 @@ section.por-que-masterfull::after {
 
   section.hero::after,
   section.cta-final::after {
-    animation: none !important;
-  }
-
-  .tarjeta-testimonio:hover::after {
-    opacity: .52;
-    filter: drop-shadow(0 0 4px color-mix(in srgb, var(--color-tech-hover) 52%, transparent));
     animation: none !important;
   }
 
