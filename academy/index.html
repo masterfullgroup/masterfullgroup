@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Masterfull Academy: plataforma educativa moderna para gestionar cursos, clases, tareas, evaluaciones y progreso académico.">
+  <meta name="theme-color" content="#08111f">
+  <title>Masterfull Academy | Plataforma educativa</title>
+
+  <script>
+    /* Mantiene una misma base de recursos en producción y GitHub Pages */
+    window.ACADEMY_BASE = location.pathname.includes("/masterfullgroup/")
+      ? "/masterfullgroup/academy/"
+      : "/academy/";
+    document.write('<base href="' + window.ACADEMY_BASE + '">');
+  </script>
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Masterfull Academy">
+  <meta property="og:description" content="Aprende. Crea. Avanza. Una experiencia educativa moderna y organizada.">
+  <meta property="og:image" content="og-academy.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="styles.css?v=1">
+</head>
+
+<body>
+  <div class="academy-app">
+    <!-- Navegación lateral principal -->
+    <aside class="academy-sidebar" id="academySidebar">
+      <div class="academy-brand">
+        <span class="academy-brand-mark" aria-hidden="true">
+          <span></span><span></span><span></span>
+        </span>
+        <span class="academy-brand-copy">
+          <strong>MASTERFULL</strong>
+          <small>ACADEMY</small>
+        </span>
+      </div>
+
+      <div class="role-switch" aria-label="Cambiar vista de demostración">
+        <button class="role-option active" type="button" data-role="teacher">
+          <i class="fa-solid fa-chalkboard-user"></i>
+          Docente
+        </button>
+        <button class="role-option" type="button" data-role="student">
+          <i class="fa-solid fa-graduation-cap"></i>
+          Alumno
+        </button>
+      </div>
+
+      <nav class="academy-nav" aria-label="Navegación de Academy">
+        <p class="nav-section-label">Masterfull Academy</p>
+        <button class="nav-item active" type="button" data-view="dashboard">
+          <i class="fa-solid fa-table-columns"></i>
+          <span id="dashboardNavLabel">Dashboard</span>
+        </button>
+        <button class="nav-item" type="button" data-view="courses">
+          <i class="fa-solid fa-book-open"></i>
+          <span id="coursesNavLabel">Cursos</span>
+          <span class="nav-count">3</span>
+        </button>
+        <button class="nav-item" type="button" data-view="calendar">
+          <i class="fa-regular fa-calendar-days"></i>
+          <span>Calendario</span>
+        </button>
+        <button class="nav-item" type="button" data-view="evaluations">
+          <i class="fa-regular fa-rectangle-list"></i>
+          <span>Evaluaciones</span>
+        </button>
+        <button class="nav-item" type="button" data-view="grades">
+          <i class="fa-solid fa-chart-column"></i>
+          <span>Calificaciones</span>
+        </button>
+        <button class="nav-item" type="button" data-view="messages">
+          <i class="fa-regular fa-comments"></i>
+          <span>Mensajes</span>
+          <span class="nav-dot" aria-label="2 mensajes nuevos"></span>
+        </button>
+        <button class="nav-item" type="button" data-view="profile">
+          <i class="fa-regular fa-user"></i>
+          <span>Perfil</span>
+        </button>
+      </nav>
+
+      <div class="academy-sidebar-footer">
+        <button class="support-card" type="button" data-action="support">
+          <span class="support-icon"><i class="fa-regular fa-life-ring"></i></span>
+          <span>
+            <strong>Centro de ayuda</strong>
+            <small>Estamos para orientarte</small>
+          </span>
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+
+        <div class="sidebar-user">
+          <span class="user-avatar" id="sidebarAvatar">AM</span>
+          <span class="user-copy">
+            <strong id="sidebarUserName">Andrea Mendoza</strong>
+            <small id="sidebarUserRole">Docente</small>
+          </span>
+          <button type="button" aria-label="Opciones de usuario" data-action="profile-menu">
+            <i class="fa-solid fa-ellipsis"></i>
+          </button>
+        </div>
+      </div>
+    </aside>
+
+    <button class="sidebar-backdrop" id="sidebarBackdrop" type="button" aria-label="Cerrar menú"></button>
+
+    <!-- Área de trabajo -->
+    <div class="academy-workspace">
+      <header class="academy-topbar">
+        <div class="topbar-start">
+          <button class="mobile-menu-btn" id="mobileMenuBtn" type="button" aria-label="Abrir menú" aria-expanded="false">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+          <div class="topbar-context">
+            <span id="pageEyebrow">Panel principal</span>
+            <strong id="pageTitle">Inicio</strong>
+          </div>
+        </div>
+
+        <div class="topbar-actions">
+          <label class="global-search">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input id="globalSearch" type="search" placeholder="Buscar cursos, tareas o personas">
+            <kbd>Ctrl K</kbd>
+          </label>
+          <button class="icon-button" type="button" aria-label="Abrir calendario" data-view="calendar">
+            <i class="fa-regular fa-calendar"></i>
+          </button>
+          <button class="icon-button notification-button" type="button" aria-label="Ver notificaciones" data-action="notifications">
+            <i class="fa-regular fa-bell"></i>
+            <span></span>
+          </button>
+          <button class="topbar-profile" type="button" data-action="profile-menu" aria-label="Abrir perfil">
+            <span class="user-avatar" id="topbarAvatar">AM</span>
+            <span>
+              <strong id="topbarUserName">Andrea</strong>
+              <small id="topbarUserRole">Docente</small>
+            </span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+        </div>
+      </header>
+
+      <main class="academy-content" id="academyContent" tabindex="-1" aria-live="polite"></main>
+    </div>
+  </div>
+
+  <!-- Panel de notificaciones -->
+  <aside class="notification-panel" id="notificationPanel" aria-hidden="true">
+    <div class="panel-header">
+      <div>
+        <span>Centro de actividad</span>
+        <h2>Notificaciones</h2>
+      </div>
+      <button type="button" aria-label="Cerrar notificaciones" data-action="close-notifications">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+    <div class="notification-list" id="notificationList"></div>
+  </aside>
+
+  <!-- Modal reutilizable -->
+  <div class="academy-modal" id="academyModal" aria-hidden="true">
+    <div class="modal-backdrop" data-action="close-modal"></div>
+    <section class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <header>
+        <div>
+          <span id="modalEyebrow">Masterfull Academy</span>
+          <h2 id="modalTitle">Nueva actividad</h2>
+        </div>
+        <button type="button" aria-label="Cerrar ventana" data-action="close-modal">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </header>
+      <div id="modalContent"></div>
+    </section>
+  </div>
+
+  <div class="academy-toast" id="academyToast" role="status" aria-live="polite">
+    <i class="fa-solid fa-circle-check"></i>
+    <span>Acción completada</span>
+  </div>
+
+  <script src="app.js?v=1"></script>
+</body>
+</html>

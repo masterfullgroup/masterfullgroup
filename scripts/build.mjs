@@ -13,6 +13,10 @@ const archivos = [
   "styles.css",
   "script.js",
   "fondo-3d.js",
+  "academy/index.html",
+  "academy/styles.css",
+  "academy/app.js",
+  "academy/og-academy.png",
   "img/pagina-web-basica.webp",
   "img/plataforma-profesional.webp",
   "img/web-profesional-modelo.webp",
@@ -68,6 +72,10 @@ export default {
 
     if (ruta === "/") ruta = "/index.html";
     if (ruta.endsWith("/")) ruta += "index.html";
+
+    if (!recursos[ruta] && ruta.startsWith("/academy/cursos/")) {
+      ruta = "/academy/index.html";
+    }
 
     const recurso = recursos[ruta];
     if (!recurso) {
