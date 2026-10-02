@@ -13,6 +13,8 @@ const archivos = [
   "styles.css",
   "script.js",
   "fondo-3d.js",
+  "firebase-config.js",
+  "productos-firestore.js",
   "academy/index.html",
   "academy/styles.css",
   "academy/app.js",
