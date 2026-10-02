@@ -2,8 +2,8 @@ import { collection, getDocs, orderBy, query, where } from "https://www.gstatic.
 import { db } from "./firebase-config.js";
 
 async function cargarProductoDePrueba() {
-  const elemento = document.querySelector('[data-firestore-product="pagina-web"]');
-  if (!elemento) return;
+  const tarjeta = document.querySelector('[data-firestore-product="pagina-web"]')?.closest(".tarjeta-servicio");
+  if (!tarjeta) return;
 
   try {
     const consulta = query(
@@ -18,8 +18,13 @@ async function cargarProductoDePrueba() {
     }));
     const paginaWeb = productos.find((producto) => producto.id === "pagina-web");
 
-    if (paginaWeb && typeof paginaWeb.descripcion === "string") {
-      elemento.textContent = paginaWeb.descripcion;
+    if (paginaWeb) {
+      for (const campo of ["nombre", "subtitulo", "descripcion"]) {
+        const elemento = tarjeta.querySelector(`[data-firestore-field="${campo}"]`);
+        if (elemento && typeof paginaWeb[campo] === "string") {
+          elemento.textContent = paginaWeb[campo];
+        }
+      }
     }
   } catch (error) {
     // El texto original del HTML permanece visible si Firestore no responde.
