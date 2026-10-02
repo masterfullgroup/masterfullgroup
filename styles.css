@@ -2946,6 +2946,63 @@ section > h2,
     animation: none !important;
   }
 }
+
+/* ==================== BORDES GLOW PARA TARJETAS ==================== */
+.home-ruta-card,
+.tarjeta-servicio,
+.beneficio-masterfull,
+.tarjeta-plan,
+.tarjeta-proceso,
+.tarjeta-testimonio,
+.tarjeta-portafolio,
+.pregunta {
+  border: 1px solid transparent;
+  background-image:
+    linear-gradient(145deg, #0D263B, #091C2D),
+    linear-gradient(135deg, rgba(37, 99, 235, .64), rgba(34, 211, 238, .2) 52%, rgba(34, 211, 238, .48));
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease, background-image .25s ease;
+}
+
+.home-ruta-card:hover,
+.tarjeta-servicio:hover,
+.beneficio-masterfull:hover,
+.tarjeta-plan:hover,
+.tarjeta-proceso:hover,
+.tarjeta-testimonio:hover,
+.tarjeta-portafolio:hover,
+.pregunta:hover {
+  transform: translateY(-2px);
+  background-image:
+    linear-gradient(145deg, #0F2B42, #091C2D),
+    linear-gradient(135deg, rgba(37, 99, 235, .92), rgba(34, 211, 238, .72) 52%, rgba(34, 211, 238, .9));
+  box-shadow: 0 20px 44px rgba(0, 7, 18, .42), 0 0 24px rgba(34, 211, 238, .16), inset 0 1px 0 rgba(255,255,255,.055);
+}
+
+.home-ruta-card:active,
+.tarjeta-servicio:active,
+.beneficio-masterfull:active,
+.tarjeta-plan:active,
+.tarjeta-proceso:active,
+.tarjeta-testimonio:active,
+.tarjeta-portafolio:active,
+.pregunta:active {
+  transform: translateY(1px) scale(.99);
+  box-shadow: 0 8px 20px rgba(0, 7, 18, .36), inset 0 2px 5px rgba(1, 10, 20, .25);
+}
+
+.home-ruta-card:focus-visible,
+.tarjeta-servicio:focus-visible,
+.beneficio-masterfull:focus-visible,
+.tarjeta-plan:focus-within,
+.tarjeta-proceso:focus-visible,
+.tarjeta-testimonio:focus-visible,
+.tarjeta-portafolio:focus-visible,
+.pregunta:focus-within {
+  outline: 3px solid #67E8F9;
+  outline-offset: 3px;
+}
 /* ==================== ACCESIBILIDAD ==================== */
 @media (prefers-reduced-motion: reduce) {
   *,
