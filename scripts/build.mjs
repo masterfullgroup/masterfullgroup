@@ -14,6 +14,7 @@ const archivos = [
   "script.js",
   "fondo-3d.js",
   "firebase-config.js",
+  "comercial-config.js",
   "academy/index.html",
   "academy/styles.css",
   "academy/app.js",

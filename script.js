@@ -75,7 +75,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const textoCodificado = encodeURIComponent(textoWhatsApp);
 
       window.open(
-        `https://wa.me/51989927055?text=${textoCodificado}`,
+        `https://wa.me/${window.masterfullWhatsapp || "51989927055"}?text=${textoCodificado}`,
         "_blank"
       );
 
