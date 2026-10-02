@@ -106,21 +106,24 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   color: var(--text-secondary);
   font-size: 13px;
   font-weight: 600;
-  transition: color .2s var(--ease-out), background .2s var(--ease-out), border-color .2s var(--ease-out);
+  transition: color .22s var(--ease-out), background .22s var(--ease-out), border-color .22s var(--ease-out), transform .22s var(--ease-out);
 }
 .nav a::after {
   position: absolute;
-  right: 100%;
+  right: 0;
   bottom: 2px;
   left: 0;
   height: 2px;
   content: "";
   border-radius: var(--radius-pill);
   background: linear-gradient(90deg, var(--electric), var(--cyan));
-  transition: right .22s var(--ease-out);
+  transform: scaleX(0);
+  transform-origin: right center;
+  transition: transform .28s var(--ease-out);
 }
 .nav a:hover, .nav a.active, .nav a[aria-current="page"] { color: var(--white); }
-.nav a:hover::after, .nav a.active::after, .nav a[aria-current="page"]::after { right: 0; }
+.nav a:hover { transform: translateY(-1px); }
+.nav a:hover::after, .nav a.active::after, .nav a[aria-current="page"]::after { transform: scaleX(1); transform-origin: left center; }
 .nav a[href="contacto.html"] {
   min-height: 42px;
   padding: 0 17px;
