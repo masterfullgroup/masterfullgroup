@@ -629,6 +629,185 @@ section > p:not([class^="etiqueta-"]) { max-width: 760px; color: var(--text-seco
   .footer-bottom { align-items: flex-start; flex-direction: column; gap: 6px; }
   .whatsapp-flotante { right: 17px; bottom: 17px; width: 54px; height: 54px; font-size: 25px; }
 }
+
+/* Ondas laterales inspiradas en Uiverse, adaptadas al lenguaje MASTERFULL */
+.btn-principal,
+.btn-secundario,
+.boton-plan,
+.boton-cta,
+.boton-whatsapp,
+.formulario-contacto button,
+.ver-proyecto {
+  --wave-color: rgba(34, 211, 238, .54);
+  --wave-active: #0891B2;
+  isolation: isolate;
+  overflow: hidden;
+}
+.btn-principal::before,
+.btn-principal::after,
+.btn-secundario::before,
+.btn-secundario::after,
+.boton-plan::before,
+.boton-plan::after,
+.boton-cta::before,
+.boton-cta::after,
+.boton-whatsapp::before,
+.boton-whatsapp::after,
+.formulario-contacto button::before,
+.formulario-contacto button::after,
+.ver-proyecto::before,
+.ver-proyecto::after {
+  position: absolute;
+  z-index: -1;
+  top: 50%;
+  width: 9em;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  content: "";
+  background: var(--wave-color);
+  opacity: .42;
+  pointer-events: none;
+  transition: transform .5s var(--ease-out), background-color .3s ease, opacity .3s ease;
+}
+.btn-principal::before,
+.btn-secundario::before,
+.boton-plan::before,
+.boton-cta::before,
+.boton-whatsapp::before,
+.formulario-contacto button::before,
+.ver-proyecto::before {
+  left: 0;
+  transform: translate(-8em, -50%);
+}
+.btn-principal::after,
+.btn-secundario::after,
+.boton-plan::after,
+.boton-cta::after,
+.boton-whatsapp::after,
+.formulario-contacto button::after,
+.ver-proyecto::after {
+  right: 0;
+  transform: translate(8em, -50%);
+}
+.btn-principal:hover::before,
+.btn-secundario:hover::before,
+.boton-plan:hover::before,
+.boton-cta:hover::before,
+.boton-whatsapp:hover::before,
+.formulario-contacto button:hover::before,
+.ver-proyecto:hover::before {
+  transform: translate(-1em, -50%);
+  opacity: .55;
+}
+.btn-principal:hover::after,
+.btn-secundario:hover::after,
+.boton-plan:hover::after,
+.boton-cta:hover::after,
+.boton-whatsapp:hover::after,
+.formulario-contacto button:hover::after,
+.ver-proyecto:hover::after {
+  transform: translate(1em, -50%);
+  opacity: .55;
+}
+.btn-principal:active::before,
+.btn-principal:active::after,
+.btn-secundario:active::before,
+.btn-secundario:active::after,
+.boton-plan:active::before,
+.boton-plan:active::after,
+.boton-cta:active::before,
+.boton-cta:active::after,
+.boton-whatsapp:active::before,
+.boton-whatsapp:active::after,
+.formulario-contacto button:active::before,
+.formulario-contacto button:active::after,
+.ver-proyecto:active::before,
+.ver-proyecto:active::after {
+  background: var(--wave-active);
+  opacity: .7;
+}
+.boton-plan,
+.boton-whatsapp,
+.btn-principal[href*="wa.me"],
+.boton-cta[href*="wa.me"] {
+  --wave-color: rgba(76, 224, 145, .62);
+  --wave-active: #118653;
+}
+.btn-principal[href*="wa.me"] {
+  border-color: rgba(76, 212, 140, .48);
+  background: linear-gradient(145deg, #16814A, #105D3B);
+  box-shadow: 0 9px 22px rgba(13, 94, 55, .22), 0 3px 0 rgba(3, 40, 24, .72), inset 0 1px 0 rgba(255, 255, 255, .18);
+}
+.btn-principal[href*="wa.me"]:hover { border-color: rgba(100, 234, 159, .68); box-shadow: 0 12px 25px rgba(13, 94, 55, .26), 0 4px 0 rgba(3, 40, 24, .62), 0 0 18px rgba(32, 184, 106, .13); }
+
+/* El mismo gesto se aplica también a los controles compactos e iconográficos */
+:is(.menu-btn, .pregunta-btn, .visor-cerrar, .whatsapp-flotante),
+.header .nav a[href="contacto.html"] {
+  --wave-color: rgba(34, 211, 238, .54);
+  --wave-active: #0891B2;
+  isolation: isolate;
+  overflow: hidden;
+}
+.menu-btn { --wave-diameter: 4em; --wave-offset: 3.5em; --wave-inset: .45em; }
+.pregunta-btn { --wave-diameter: 9em; --wave-offset: 8em; --wave-inset: 1em; }
+.visor-cerrar { --wave-diameter: 3.5em; --wave-offset: 3em; --wave-inset: .4em; }
+.whatsapp-flotante { --wave-color: rgba(76, 224, 145, .62); --wave-active: #118653; --wave-diameter: 2em; --wave-offset: 1.75em; --wave-inset: .3em; }
+.header .nav a[href="contacto.html"] { --wave-diameter: 4em; --wave-offset: 3.5em; --wave-inset: .45em; }
+:is(.menu-btn, .pregunta-btn, .visor-cerrar, .whatsapp-flotante)::before,
+:is(.menu-btn, .pregunta-btn, .visor-cerrar, .whatsapp-flotante)::after,
+.header .nav a[href="contacto.html"]::before,
+.header .nav a[href="contacto.html"]::after {
+  position: absolute;
+  z-index: -1;
+  top: 50%;
+  bottom: auto;
+  display: block;
+  width: var(--wave-diameter);
+  height: auto;
+  aspect-ratio: 1;
+  border: 0;
+  border-radius: 50%;
+  content: "";
+  background: var(--wave-color);
+  box-shadow: none;
+  opacity: .42;
+  pointer-events: none;
+  transition: transform .5s var(--ease-out), background-color .3s ease, opacity .3s ease;
+}
+:is(.menu-btn, .pregunta-btn, .visor-cerrar, .whatsapp-flotante)::before,
+.header .nav a[href="contacto.html"]::before {
+  right: auto;
+  left: 0;
+  transform: translate(calc(-1 * var(--wave-offset)), -50%);
+}
+:is(.menu-btn, .pregunta-btn, .visor-cerrar, .whatsapp-flotante)::after,
+.header .nav a[href="contacto.html"]::after {
+  right: 0;
+  left: auto;
+  transform: translate(var(--wave-offset), -50%);
+}
+:is(.menu-btn, .pregunta-btn, .visor-cerrar, .whatsapp-flotante):hover::before,
+.header .nav a[href="contacto.html"]:hover::before {
+  transform: translate(calc(-1 * var(--wave-inset)), -50%);
+  opacity: .55;
+}
+:is(.menu-btn, .pregunta-btn, .visor-cerrar, .whatsapp-flotante):hover::after,
+.header .nav a[href="contacto.html"]:hover::after {
+  transform: translate(var(--wave-inset), -50%);
+  opacity: .55;
+}
+:is(.menu-btn, .pregunta-btn, .visor-cerrar, .whatsapp-flotante):active::before,
+:is(.menu-btn, .pregunta-btn, .visor-cerrar, .whatsapp-flotante):active::after,
+.header .nav a[href="contacto.html"]:active::before,
+.header .nav a[href="contacto.html"]:active::after {
+  background: var(--wave-active);
+  opacity: .7;
+}
+:is(.menu-btn, .pregunta-btn, .visor-cerrar, .whatsapp-flotante):focus-visible,
+.header .nav a[href="contacto.html"]:focus-visible {
+  outline: 3px solid var(--cyan);
+  outline-offset: 3px;
+}
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
   .animar, .animar-left, .animar-right, .animar-zoom { opacity: 1; transform: none; }
