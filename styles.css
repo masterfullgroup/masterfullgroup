@@ -5,8 +5,8 @@
 /* ==================== VARIABLES ==================== */
 :root {
   --color-bg-dark: #071827;
-  --color-bg-light: #0A1E30;
-  --color-bg-light-secondary: #0D2438;
+  --color-bg-light: #0B1626;
+  --color-bg-light-secondary: #0F1F32;
   --color-text-dark: #EAF6FF;
   --color-text-muted: #A9C3D4;
   --color-text-light: #FFFFFF;
@@ -1327,7 +1327,7 @@ section.planes::after {
   letter-spacing: .55px;
   line-height: 1;
   white-space: nowrap;
-  box-shadow: 0 9px 20px rgba(255,90,31,.22);
+  box-shadow: 0 9px 20px rgba(37,99,235,.22);
 }
 
 .tarjeta-plan.destacada {
@@ -2829,6 +2829,121 @@ section > h2,
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+  }
+}
+
+/* ==================== HERO HONEYCOMB ==================== */
+.hero {
+  position: relative;
+  isolation: isolate;
+  background:
+    radial-gradient(ellipse at 75% 42%, rgba(37, 99, 235, .12), transparent 40%),
+    linear-gradient(135deg, #071827 0%, #08111F 58%, #071827 100%) !important;
+}
+
+.hero::before {
+  content: "" !important;
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  display: block !important;
+  pointer-events: none;
+  background-image:
+    linear-gradient(90deg, #071827 0%, rgba(7, 24, 39, .94) 24%, rgba(7, 24, 39, .54) 52%, rgba(7, 24, 39, .2) 100%),
+    linear-gradient(0deg, #071827 0%, rgba(7, 24, 39, .2) 22%, transparent 58%, rgba(7, 24, 39, .24) 100%),
+    url("img/honeycomb-hero.svg") !important;
+  background-repeat: no-repeat;
+  background-size: cover, cover, min(1060px, 92vw) auto;
+  background-position: center, center, right 45%;
+  opacity: .96;
+  animation: heroHoneycombAmbient 52s ease-in-out infinite alternate !important;
+  -webkit-mask-image: linear-gradient(180deg, #000 0%, #000 62%, transparent 100%);
+  mask-image: linear-gradient(180deg, #000 0%, #000 62%, transparent 100%);
+}
+
+.hero-acento {
+  color: #22D3EE;
+  background: linear-gradient(100deg, #60A5FA 8%, #22D3EE 86%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero .hero-panel {
+  border-color: rgba(34, 211, 238, .22);
+  background: linear-gradient(145deg, rgba(15, 31, 50, .94), rgba(7, 24, 39, .94));
+  box-shadow: 0 28px 74px rgba(0, 7, 18, .5), 0 0 34px rgba(37, 99, 235, .1), inset 0 1px 0 rgba(196, 244, 255, .09);
+}
+
+.hero .btn-principal {
+  background: linear-gradient(135deg, #2563EB, #0891B2 72%, #22D3EE);
+  box-shadow: 0 10px 24px rgba(37, 99, 235, .22), 0 3px 0 rgba(4, 19, 36, .8), inset 0 1px 0 rgba(255,255,255,.24), inset 0 -2px 0 rgba(3, 18, 36, .26);
+}
+
+.hero .btn-principal:hover {
+  background: linear-gradient(135deg, #3B82F6, #06B6D4 72%, #22D3EE);
+  box-shadow: 0 14px 28px rgba(34, 211, 238, .27), 0 4px 0 rgba(4, 19, 36, .72), inset 0 1px 0 rgba(255,255,255,.28);
+}
+
+.hero .btn-principal:active {
+  box-shadow: 0 4px 10px rgba(37, 99, 235, .16), inset 0 2px 5px rgba(1, 10, 20, .38);
+}
+
+.hero .btn-secundario {
+  color: #D9F2FF;
+  border-color: rgba(34, 211, 238, .44);
+  background: linear-gradient(145deg, rgba(11, 31, 50, .92), rgba(7, 24, 39, .96));
+  box-shadow: 0 7px 18px rgba(0, 7, 18, .28), inset 0 1px 0 rgba(255,255,255,.07);
+}
+
+.hero .btn-secundario:hover {
+  border-color: rgba(103, 232, 249, .78);
+  box-shadow: 0 10px 22px rgba(34, 211, 238, .14), inset 0 1px 0 rgba(255,255,255,.09);
+}
+
+.hero .btn-principal:focus-visible,
+.hero .btn-secundario:focus-visible {
+  outline: 3px solid #67E8F9;
+  outline-offset: 4px;
+}
+
+@keyframes heroHoneycombAmbient {
+  from { background-position: center, center, right 45%; }
+  to { background-position: center, center, right 47%; }
+}
+
+@media (max-width: 820px) {
+  .hero::before {
+    background-image:
+      linear-gradient(90deg, rgba(7, 24, 39, .76), rgba(7, 24, 39, .38)),
+      linear-gradient(0deg, #071827 0%, rgba(7, 24, 39, .16) 38%, rgba(7, 24, 39, .3) 100%),
+      url("img/honeycomb-hero.svg") !important;
+    background-size: cover, cover, min(790px, 116vw) auto;
+    background-position: center, center, 72% 28%;
+    opacity: .72;
+  }
+}
+
+@media (max-width: 560px) {
+  .hero::before {
+    background-image:
+      linear-gradient(90deg, rgba(7, 24, 39, .84), rgba(7, 24, 39, .48)),
+      linear-gradient(0deg, #071827 0%, rgba(7, 24, 39, .2) 42%, rgba(7, 24, 39, .32) 100%),
+      url("img/honeycomb-hero.svg");
+    background-size: cover, cover, 680px auto;
+    background-position: center, center, 68% 18%;
+    opacity: .56;
+    animation-duration: 72s !important;
+  }
+
+  .hero-acento {
+    background-image: linear-gradient(100deg, #7DD3FC, #22D3EE);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero::before {
+    animation: none !important;
   }
 }
 /* ==================== ACCESIBILIDAD ==================== */

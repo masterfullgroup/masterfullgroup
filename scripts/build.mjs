@@ -25,6 +25,7 @@ const archivos = [
   "img/pagina-web-basica.webp",
   "img/plataforma-profesional.webp",
   "img/web-profesional-modelo.webp",
+  "img/honeycomb-hero.svg",
 ];
 
 const tipos = {
@@ -32,6 +33,7 @@ const tipos = {
   ".css": "text/css; charset=utf-8",
   ".js": "text/javascript; charset=utf-8",
   ".webp": "image/webp",
+  ".svg": "image/svg+xml",
 };
 
 await rm(destino, { recursive: true, force: true });

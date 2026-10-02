@@ -109,7 +109,7 @@
         ctx.beginPath();
         ctx.moveTo(centro + i * 12, horizonte);
         ctx.lineTo(centro + i * this.ancho * 0.18, base);
-        ctx.strokeStyle = "rgba(50, 197, 233, 0.11)";
+        ctx.strokeStyle = "rgba(34, 211, 238, 0.09)";
         ctx.stroke();
       }
 
@@ -119,7 +119,7 @@
         ctx.beginPath();
         ctx.moveTo(0, yPerspectiva);
         ctx.lineTo(this.ancho, yPerspectiva);
-        ctx.strokeStyle = `rgba(50, 197, 233, ${0.035 + progreso * 0.09})`;
+        ctx.strokeStyle = `rgba(34, 211, 238, ${0.025 + progreso * 0.07})`;
         ctx.stroke();
       }
 
@@ -152,7 +152,7 @@
             ctx.beginPath();
             ctx.moveTo(particula.x, particula.y);
             ctx.lineTo(vecina.x, vecina.y);
-            ctx.strokeStyle = `rgba(50, 197, 233, ${opacidad})`;
+            ctx.strokeStyle = `rgba(37, 99, 235, ${opacidad * 0.78})`;
             ctx.lineWidth = 0.55 + Math.min(particula.z, vecina.z) * 0.45;
             ctx.stroke();
             conexiones += 1;
@@ -169,15 +169,15 @@
         ctx.beginPath();
         ctx.arc(particula.x, particula.y, radio * 3.4, 0, Math.PI * 2);
         ctx.fillStyle = particula.acento
-          ? "rgba(32, 216, 122, 0.045)"
-          : "rgba(50, 197, 233, 0.04)";
+          ? "rgba(37, 99, 235, 0.045)"
+          : "rgba(34, 211, 238, 0.035)";
         ctx.fill();
 
         ctx.beginPath();
         ctx.arc(particula.x, particula.y, radio, 0, Math.PI * 2);
         ctx.fillStyle = particula.acento
-          ? `rgba(78, 236, 156, ${0.42 + particula.z * 0.35})`
-          : `rgba(100, 220, 248, ${0.34 + particula.z * 0.45})`;
+          ? `rgba(96, 165, 250, ${0.36 + particula.z * 0.3})`
+          : `rgba(103, 232, 249, ${0.3 + particula.z * 0.36})`;
         ctx.fill();
       });
     }
