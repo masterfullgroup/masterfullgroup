@@ -6,13 +6,13 @@
       <stop offset="1" stop-color="#061421" stop-opacity=".82"/>
     </linearGradient>
     <linearGradient id="facet" x1="0" y1="0" x2="0.9" y2="1">
-      <stop stop-color="#9CEFFF" stop-opacity=".12"/>
-      <stop offset="1" stop-color="#2563EB" stop-opacity=".015"/>
+      <stop stop-color="#9CEFFF" stop-opacity=".18"/>
+      <stop offset="1" stop-color="#2563EB" stop-opacity=".035"/>
     </linearGradient>
     <linearGradient id="edge" x1="0" y1="0" x2="1" y2="1">
-      <stop stop-color="#22D3EE" stop-opacity=".52"/>
-      <stop offset=".5" stop-color="#2563EB" stop-opacity=".28"/>
-      <stop offset="1" stop-color="#22D3EE" stop-opacity=".08"/>
+      <stop stop-color="#22D3EE" stop-opacity=".74"/>
+      <stop offset=".5" stop-color="#2563EB" stop-opacity=".42"/>
+      <stop offset="1" stop-color="#22D3EE" stop-opacity=".16"/>
     </linearGradient>
     <radialGradient id="light">
       <stop stop-color="#2563EB" stop-opacity=".25"/>
@@ -38,7 +38,7 @@
   <ellipse cx="672" cy="283" rx="350" ry="315" fill="url(#light)"/>
   <g filter="url(#shadow)">
     <rect width="960" height="720" fill="url(#cells)"/>
-    <path d="m601 3 24 40-22 40m94 0 22 41-23 41m-165 43 23 41-23 41m191 0 22 41-22 40" stroke="#22D3EE" stroke-opacity=".82" stroke-width="1.7" filter="url(#glow)"/>
+    <path d="m601 3 24 40-22 40m94 0 22 41-23 41m-165 43 23 41-23 41m191 0 22 41-22 40" stroke="#22D3EE" stroke-opacity=".92" stroke-width="1.9" filter="url(#glow)"/>
     <path d="m625 43 24 41m94 0 23 41m-141 84 23 42m168-1 23 41" stroke="#2563EB" stroke-opacity=".78" stroke-width="1.4"/>
     <path d="M601 3 625 43l-22 40h-47l-24-41 23-39Zm118 80 24 41-23 41h-46l-23-41 22-41Zm-141 168 23 41-23 41h-47l-23-41 23-41Zm191 0 22 41-22 40h-47l-23-40 23-41Z" stroke="#22D3EE" stroke-opacity=".28" stroke-width="1.1"/>
     <circle cx="625" cy="43" r="3" fill="#9CF5FF" filter="url(#glow)"/>

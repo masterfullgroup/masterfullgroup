@@ -19,7 +19,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-  <link rel="stylesheet" href="styles.css?v=29">
+  <link rel="stylesheet" href="styles.css?v=30">
 </head>
 
 <body>
@@ -71,9 +71,12 @@
       <p>Completa el formulario y te responderemos por WhatsApp.</p>
     </div>
 
+    <label for="nombre">Nombre completo</label>
     <input type="text" id="nombre" placeholder="Nombre completo" required>
+    <label for="negocio">Tipo de empresa o negocio</label>
     <input type="text" id="negocio" placeholder="Tipo de empresa o negocio" required>
 
+    <label for="servicio">Servicio que necesitas</label>
     <select id="servicio" required>
       <option value="">Servicio que necesitas</option>
       <option value="Página web">Página web</option>
@@ -84,7 +87,9 @@
       <option value="No estoy seguro">No estoy seguro</option>
     </select>
 
+    <label for="telefono">Número de WhatsApp</label>
     <input type="tel" id="telefono" placeholder="Número de WhatsApp" required>
+    <label for="mensaje">Cuéntanos qué necesitas</label>
     <textarea id="mensaje" placeholder="Cuéntanos qué necesitas"></textarea>
 
     <button type="submit">Enviar solicitud</button>
