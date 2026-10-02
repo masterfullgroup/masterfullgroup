@@ -2,7 +2,7 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/12.19.0/fireba
 import { getFirestore } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore.js";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBMWNp104fwtLw1QyMXNFSrRgUCEu5VkYU",
+  apiKey: "AIzaSyDIL2Ck61QPrlCxp771TjxGnqSLDFqjpU0",
   authDomain: "masterfull-group.firebaseapp.com",
   projectId: "masterfull-group",
   storageBucket: "masterfull-group.firebasestorage.app",
