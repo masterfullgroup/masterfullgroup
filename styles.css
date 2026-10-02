@@ -2029,6 +2029,19 @@ section.cta-final::after {
   font-size: 10px;
 }
 
+.footer-admin-link {
+  display: block;
+  width: fit-content;
+  margin: 8px auto 0;
+  color: rgba(255,255,255,.48);
+  text-decoration: none;
+  transition: color .2s ease;
+}
+
+.footer-admin-link:hover {
+  color: rgba(255,255,255,.78);
+}
+
 .footer h3 span {
   color: #2563EB !important;
 }

@@ -65,6 +65,16 @@ button { cursor: pointer; }
 .brand-name { font-size: 14px; font-weight: 800; letter-spacing: 0.12em; }
 .brand-caption { margin-top: 3px; color: var(--admin-muted); font-size: 12px; }
 
+.admin-back-link {
+  margin-left: auto;
+  color: var(--admin-muted);
+  font-size: 13px;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.admin-back-link:hover { color: var(--admin-blue); }
+
 .login-card, .settings-card {
   border: 1px solid var(--admin-border);
   border-radius: var(--admin-radius);
@@ -202,7 +212,7 @@ button:focus-visible, a:focus-visible, input:focus-visible {
 
 @media (max-width: 760px) {
   .admin-shell { width: min(100% - 32px, 600px); }
-  .admin-brand { padding-block: 20px; }
+  .admin-brand { flex-wrap: wrap; padding-block: 20px; }
   .panel-heading { align-items: flex-start; flex-direction: column; gap: 18px; }
   .account-controls { width: 100%; justify-content: space-between; }
   .price-fields { grid-template-columns: 1fr; gap: 15px; }
