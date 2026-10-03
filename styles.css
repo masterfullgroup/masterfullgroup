@@ -254,7 +254,7 @@ section > p:not([class^="etiqueta-"]) { max-width: 760px; color: var(--text-seco
 .fondo-tecnologico canvas { display: block; width: 100%; height: 100%; }
 .hero-texto { max-width: 690px; }
 .hero-texto .etiqueta { margin-bottom: 22px; }
-.hero h1 { max-width: 720px; margin: 0; font-size: clamp(3rem, 6.15vw, 5.65rem); line-height: 1.02; }
+.hero h1 { max-width: 720px; margin: 0; font-size: clamp(2.8rem, 5.6vw, 5rem); line-height: 1.05; }
 .hero-acento {
   color: var(--orange);
   background: linear-gradient(100deg, var(--orange) 5%, var(--amber) 95%);
@@ -609,7 +609,7 @@ section > p:not([class^="etiqueta-"]) { max-width: 760px; color: var(--text-seco
   .nav a[href="contacto.html"] { justify-content: flex-start; margin-top: 5px; }
   .hero { min-height: auto; grid-template-columns: 1fr; gap: 48px; padding-top: calc(var(--header-height) + 75px); text-align: center; }
   .hero-texto, .hero .descripcion { margin-inline: auto; }
-  .hero h1 { margin-inline: auto; }
+  .hero h1 { margin-inline: auto; font-size: clamp(2.5rem, 6vw, 4rem); }
   .hero-botones, .hero-confianza { justify-content: center; }
   .hero-panel { justify-self: center; max-width: 620px; text-align: left; }
   .hero::before { background-image: linear-gradient(90deg, rgba(11, 13, 16, .82), rgba(11, 13, 16, .45)), linear-gradient(0deg, #0B0D10 0%, rgba(11, 13, 16, .18) 40%, rgba(11, 13, 16, .35) 100%), url("img/honeycomb-hero.svg"); background-position: center, center, 72% 24%; background-size: cover, cover, min(790px, 116vw) auto; opacity: .74; }
@@ -635,7 +635,7 @@ section > p:not([class^="etiqueta-"]) { max-width: 760px; color: var(--text-seco
   section { padding-right: 6%; padding-left: 6%; }
   section > h1, section > h2 { font-size: clamp(1.95rem, 9vw, 2.7rem); }
   .hero { gap: 36px; padding-top: calc(var(--header-height) + 60px); padding-bottom: 72px; }
-  .hero h1 { font-size: clamp(2.65rem, 12vw, 3.75rem); }
+  .hero h1 { font-size: clamp(2.25rem, 10vw, 3.2rem); }
   .hero .descripcion { font-size: 15px; }
   .hero-botones { flex-direction: column; align-items: stretch; }
   .hero-botones a { width: 100%; min-height: 52px; }
