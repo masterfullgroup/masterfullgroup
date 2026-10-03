@@ -329,12 +329,12 @@ section > p:not([class^="etiqueta-"]) { max-width: 760px; color: var(--text-seco
   padding: 1px;
   border-radius: inherit;
   content: "";
-  background: conic-gradient(from var(--hero-panel-angle), transparent 0deg 286deg, rgba(249, 115, 22, .24) 310deg, #F97316 328deg, #FBBF24 340deg, rgba(251, 146, 60, .24) 351deg, transparent 360deg);
+  background: conic-gradient(from var(--hero-panel-angle), transparent 0deg 260deg, rgba(249, 115, 22, .42) 282deg, #F97316 305deg, #FBBF24 324deg, rgba(251, 146, 60, .4) 344deg, transparent 360deg);
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   mask-composite: exclude;
-  animation: hero-panel-border 8s linear infinite;
+  animation: hero-panel-border 7s linear infinite;
   pointer-events: none;
 }
 .panel-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-bottom: 20px; border-bottom: 1px solid var(--line-subtle); }
