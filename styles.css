@@ -534,6 +534,13 @@ section > p:not([class^="etiqueta-"]) { max-width: 760px; color: var(--text-seco
 .whatsapp-flotante:active { transform: translateY(1px); }
 
 /* Aparición, ampliación de portafolio */
+/* Transición entre páginas: el indicador activo se desplaza por la navegación. */
+@view-transition { navigation: auto; }
+.nav a[aria-current="page"]::after { view-transition-name: indicador-nav-activo; }
+::view-transition-old(root),
+::view-transition-new(root) { animation-duration: .22s; }
+::view-transition-group(indicador-nav-activo) { animation-duration: .3s; animation-timing-function: var(--ease-out); }
+
 .animar { opacity: 0; transform: translateY(16px); transition: opacity .48s var(--ease-out), transform .48s var(--ease-out); }
 .animar.mostrar { opacity: 1; transform: translateY(0); }
 .animar-left { opacity: 0; transform: translateX(-16px); transition: opacity .48s var(--ease-out), transform .48s var(--ease-out); }
@@ -813,6 +820,7 @@ section > p:not([class^="etiqueta-"]) { max-width: 760px; color: var(--text-seco
 }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+  ::view-transition-group(*), ::view-transition-old(root), ::view-transition-new(root) { animation-duration: .01ms !important; }
   .animar, .animar-left, .animar-right, .animar-zoom { opacity: 1; transform: none; }
 }
 @media (forced-colors: active) {
