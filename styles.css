@@ -750,10 +750,10 @@ section > p:not([class^="etiqueta-"]) { max-width: 760px; color: var(--text-seco
   transition: color .24s var(--ease-out), border-color .24s var(--ease-out), box-shadow .24s var(--ease-out);
 }
 .btn-secundario.btn-ejemplos::after { display: none; }
-.btn-ejemplos-texto { position: relative; z-index: 2; }
+.btn-ejemplos-texto { position: relative; z-index: 1; }
 .btn-ejemplos-icono {
   position: absolute;
-  z-index: 1;
+  z-index: 2;
   top: 4px;
   right: 4px;
   display: grid;
