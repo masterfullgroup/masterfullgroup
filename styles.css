@@ -481,6 +481,29 @@ section > p:not([class^="etiqueta-"]) { max-width: 760px; color: var(--text-seco
 .plan-entrega { margin-top: auto; padding: 11px 12px; border: 1px solid var(--line-subtle); border-radius: 10px; color: #D0CBC5; background: rgba(11, 13, 16, .56); font-size: 11px; }
 .plan-note { margin: 10px 0; color: var(--text-tertiary); font-size: 11px; }
 .boton-plan { width: 100%; margin-top: 15px; }
+.boton-plan { overflow: visible; isolation: isolate; }
+.plan-boton-texto { position: relative; z-index: 2; }
+.plan-destello {
+  position: absolute;
+  z-index: 3;
+  top: 50%;
+  left: 50%;
+  color: var(--amber);
+  font-size: 15px;
+  line-height: 1;
+  opacity: 0;
+  pointer-events: none;
+  filter: drop-shadow(0 0 0 rgba(255, 255, 255, 0));
+  transform: translate(-50%, -50%) scale(.2) rotate(0deg);
+  transition: top .62s cubic-bezier(.05, .83, .43, .96), right .62s cubic-bezier(.05, .83, .43, .96), bottom .62s cubic-bezier(.05, .83, .43, .96), left .62s cubic-bezier(.05, .83, .43, .96), opacity .2s ease, filter .4s ease, transform .62s cubic-bezier(.05, .83, .43, .96);
+}
+.boton-plan:is(:hover, :focus-visible) .plan-destello { opacity: 1; filter: drop-shadow(0 0 7px rgba(251, 191, 36, .8)); }
+.boton-plan:is(:hover, :focus-visible) .destello-1 { top: -8px; left: 14%; transform: translate(-50%, -50%) scale(1.05) rotate(45deg); }
+.boton-plan:is(:hover, :focus-visible) .destello-2 { top: -10px; left: 48%; transform: translate(-50%, -50%) scale(.9) rotate(-20deg); }
+.boton-plan:is(:hover, :focus-visible) .destello-3 { top: 28%; right: -7px; left: auto; transform: translate(50%, -50%) scale(1.1) rotate(35deg); }
+.boton-plan:is(:hover, :focus-visible) .destello-4 { top: auto; right: 17%; bottom: -7px; left: auto; transform: translate(50%, 50%) scale(.85) rotate(-35deg); }
+.boton-plan:is(:hover, :focus-visible) .destello-5 { top: auto; bottom: -9px; left: 43%; transform: translate(-50%, 50%) scale(1.1) rotate(20deg); }
+.boton-plan:is(:hover, :focus-visible) .destello-6 { top: 60%; left: -8px; transform: translate(-50%, -50%) scale(.9) rotate(-45deg); }
 .tarjeta-plan.destacada .boton-plan { border-color: transparent; color: #0B0D10; background: linear-gradient(135deg, #F97316, #FB923C); box-shadow: 0 8px 20px rgba(249, 115, 22, .17), inset 0 1px 0 rgba(255, 255, 255, .20); }
 .tarjeta-plan.destacada .boton-plan:hover { box-shadow: 0 11px 24px rgba(249, 115, 22, .24), inset 0 1px 0 rgba(255, 255, 255, .24); }
 .planes-nota { max-width: 830px; margin: 24px auto 0; color: var(--text-tertiary); font-size: 12px; text-align: center; }
