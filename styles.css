@@ -819,10 +819,12 @@ section > p:not([class^="etiqueta-"]) { max-width: 760px; color: var(--text-seco
 
 /* Relleno animado reservado al CTA principal de WhatsApp del Hero */
 .boton-cta-whatsapp {
-  --wave-color: rgba(251, 191, 36, .72);
-  --wave-active: #F97316;
+  --wave-color: #FBBF24;
+  --wave-active: #C2410C;
   isolation: isolate;
   overflow: hidden;
+  user-select: none;
+  transition: border-color 300ms, color 300ms, transform .22s var(--ease-out), box-shadow .22s var(--ease-out);
 }
 .boton-cta-whatsapp::before,
 .boton-cta-whatsapp::after {
@@ -839,7 +841,7 @@ section > p:not([class^="etiqueta-"]) { max-width: 760px; color: var(--text-seco
   content: "";
   background: var(--wave-color);
   box-shadow: none;
-  opacity: .48;
+  opacity: .5;
   pointer-events: none;
   transition: transform 500ms, background 300ms;
 }
@@ -855,13 +857,14 @@ section > p:not([class^="etiqueta-"]) { max-width: 760px; color: var(--text-seco
 }
 .boton-cta-whatsapp:hover::before { transform: translate(-1em, -50%); }
 .boton-cta-whatsapp:hover::after { transform: translate(1em, -50%); }
-.boton-cta-whatsapp:hover { color: #15110D; }
+.boton-cta-whatsapp:hover { color: #212121; }
 .boton-cta-texto { position: relative; z-index: 1; }
 .boton-cta-whatsapp:active::before,
 .boton-cta-whatsapp:active::after {
   background: var(--wave-active);
   opacity: .7;
 }
+.boton-cta-whatsapp:active { border-color: var(--wave-active); }
 .boton-cta-whatsapp:focus-visible {
   outline: 3px solid var(--orange);
   outline-offset: 3px;
