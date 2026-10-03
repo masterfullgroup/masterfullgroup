@@ -215,9 +215,9 @@ section > p:not([class^="etiqueta-"]) { max-width: 760px; color: var(--text-seco
 /* Hero de inicio: honeycomb firmado */
 .hero {
   display: grid;
-  grid-template-columns: minmax(0, 1.05fr) minmax(360px, .85fr);
+  grid-template-columns: minmax(0, .95fr) minmax(420px, 1.05fr);
   align-items: center;
-  gap: clamp(44px, 7vw, 92px);
+  gap: clamp(32px, 5vw, 72px);
   min-height: min(850px, 100svh);
   padding-top: calc(var(--header-height) + 74px);
   padding-bottom: 100px;
@@ -311,10 +311,10 @@ section > p:not([class^="etiqueta-"]) { max-width: 760px; color: var(--text-seco
 .hero-panel {
   position: relative;
   width: 100%;
-  max-width: 510px;
+  max-width: 620px;
   justify-self: end;
   overflow: hidden;
-  padding: clamp(23px, 3vw, 36px);
+  padding: clamp(28px, 3.3vw, 42px);
   border: 1px solid rgba(248, 250, 252, .2);
   border-radius: var(--radius-lg);
   background: linear-gradient(145deg, rgba(34, 39, 46, .94), rgba(18, 21, 26, .96) 55%, rgba(11, 13, 16, .98));
@@ -642,8 +642,8 @@ section > p:not([class^="etiqueta-"]) { max-width: 760px; color: var(--text-seco
   .header { gap: 18px; }
   .nav { gap: 15px; }
   .nav a { font-size: 12px; }
-  .hero { grid-template-columns: minmax(0, 1fr) minmax(330px, .82fr); gap: 38px; }
-  .hero-panel { padding: 25px; }
+  .hero { grid-template-columns: minmax(0, .9fr) minmax(380px, 1fr); gap: 30px; }
+  .hero-panel { padding: 29px; }
   .contenedor-masterfull { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .tarjeta-plan { padding-inline: 20px; }
   .tarjeta-plan li { font-size: 11px; }
