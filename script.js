@@ -50,6 +50,47 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
+  /* Tarjetas de servicios: giro con control accesible para mouse, teclado y móvil */
+  document.querySelectorAll(".tarjeta-servicio").forEach(function (tarjeta) {
+    const botonAbrir = tarjeta.querySelector(".servicio-card-toggle");
+    const botonVolver = tarjeta.querySelector(".servicio-card-volver");
+    const frente = tarjeta.querySelector(".servicio-frente");
+    const reverso = tarjeta.querySelector(".servicio-reverso");
+
+    if (!botonAbrir || !botonVolver || !frente || !reverso) return;
+
+    let fijadaAbierta = false;
+
+    function mostrarReverso(mostrar) {
+      tarjeta.classList.toggle("volteada", mostrar);
+      botonAbrir.setAttribute("aria-expanded", String(mostrar));
+      frente.setAttribute("aria-hidden", String(mostrar));
+      reverso.setAttribute("aria-hidden", String(!mostrar));
+      frente.inert = mostrar;
+      reverso.inert = !mostrar;
+    }
+
+    botonAbrir.addEventListener("click", function () {
+      fijadaAbierta = true;
+      mostrarReverso(true);
+      botonVolver.focus();
+    });
+
+    botonVolver.addEventListener("click", function () {
+      fijadaAbierta = false;
+      mostrarReverso(false);
+      botonAbrir.focus();
+    });
+
+    tarjeta.addEventListener("pointerenter", function (event) {
+      if (event.pointerType === "mouse" && !fijadaAbierta) mostrarReverso(true);
+    });
+
+    tarjeta.addEventListener("pointerleave", function (event) {
+      if (event.pointerType === "mouse" && !fijadaAbierta) mostrarReverso(false);
+    });
+  });
+
   /* =========================================================
      FORMULARIO A WHATSAPP
      ========================================================= */

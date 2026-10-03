@@ -46,8 +46,8 @@
     }
 
     cantidadParticulas() {
-      if (esMovil.matches) return this.esHero ? 24 : 16;
-      return this.esHero ? 54 : 30;
+      if (esMovil.matches) return this.esHero ? 12 : 8;
+      return this.esHero ? 28 : 18;
     }
 
     crearParticula(indice) {
@@ -58,8 +58,8 @@
         y: Math.random() * this.alto,
         z: profundidad,
         radio: 0.7 + profundidad * 1.55,
-        velocidadX: (Math.random() - 0.5) * (0.12 + profundidad * 0.18),
-        velocidadY: (Math.random() - 0.5) * (0.08 + profundidad * 0.12),
+        velocidadX: (Math.random() - 0.5) * (0.045 + profundidad * 0.07),
+        velocidadY: (Math.random() - 0.5) * (0.035 + profundidad * 0.055),
         pulso: Math.random() * Math.PI * 2,
         acento: indice % 11 === 0,
       };
@@ -109,7 +109,7 @@
         ctx.beginPath();
         ctx.moveTo(centro + i * 12, horizonte);
         ctx.lineTo(centro + i * this.ancho * 0.18, base);
-        ctx.strokeStyle = "rgba(34, 211, 238, 0.09)";
+        ctx.strokeStyle = "rgba(249, 115, 22, 0.065)";
         ctx.stroke();
       }
 
@@ -119,7 +119,7 @@
         ctx.beginPath();
         ctx.moveTo(0, yPerspectiva);
         ctx.lineTo(this.ancho, yPerspectiva);
-        ctx.strokeStyle = `rgba(34, 211, 238, ${0.025 + progreso * 0.07})`;
+        ctx.strokeStyle = `rgba(249, 115, 22, ${0.018 + progreso * 0.045})`;
         ctx.stroke();
       }
 
@@ -152,7 +152,7 @@
             ctx.beginPath();
             ctx.moveTo(particula.x, particula.y);
             ctx.lineTo(vecina.x, vecina.y);
-            ctx.strokeStyle = `rgba(37, 99, 235, ${opacidad * 0.78})`;
+            ctx.strokeStyle = `rgba(249, 115, 22, ${opacidad * 0.46})`;
             ctx.lineWidth = 0.55 + Math.min(particula.z, vecina.z) * 0.45;
             ctx.stroke();
             conexiones += 1;
@@ -169,15 +169,15 @@
         ctx.beginPath();
         ctx.arc(particula.x, particula.y, radio * 3.4, 0, Math.PI * 2);
         ctx.fillStyle = particula.acento
-          ? "rgba(37, 99, 235, 0.045)"
-          : "rgba(34, 211, 238, 0.035)";
+          ? "rgba(249, 115, 22, 0.03)"
+          : "rgba(249, 115, 22, 0.018)";
         ctx.fill();
 
         ctx.beginPath();
         ctx.arc(particula.x, particula.y, radio, 0, Math.PI * 2);
         ctx.fillStyle = particula.acento
-          ? `rgba(96, 165, 250, ${0.36 + particula.z * 0.3})`
-          : `rgba(103, 232, 249, ${0.3 + particula.z * 0.36})`;
+          ? `rgba(251, 191, 36, ${0.22 + particula.z * 0.2})`
+          : `rgba(251, 191, 36, ${0.18 + particula.z * 0.22})`;
         ctx.fill();
       });
     }

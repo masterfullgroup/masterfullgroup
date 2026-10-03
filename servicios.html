@@ -19,7 +19,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-  <link rel="stylesheet" href="styles.css?v=30">
+  <link rel="stylesheet" href="styles.css?v=31">
 </head>
 
 <body>
@@ -50,26 +50,53 @@
     </p>
 
     <div class="contenedor-servicios">
-      <div class="tarjeta-servicio">
-        <div class="icono"><i class="fas fa-globe"></i></div>
-        <h3>Páginas Web Profesionales</h3>
-        <p class="sub-servicio">Ideal para empresas que necesitan una presencia profesional en internet.</p>
-        <p>Diseñamos páginas web corporativas, landing pages, portales empresariales y sitios conectados a WhatsApp, formularios, redes sociales, hosting y dominio.</p>
-      </div>
+      <article class="tarjeta-servicio">
+        <div class="servicio-card-rotor">
+          <div class="servicio-cara servicio-frente">
+            <div class="icono"><i class="fas fa-globe"></i></div>
+            <h3>Páginas Web Profesionales</h3>
+            <p class="sub-servicio">Ideal para empresas que necesitan una presencia profesional en internet.</p>
+            <button class="servicio-card-toggle" type="button" aria-expanded="false">Ver servicio <span aria-hidden="true">↗</span></button>
+          </div>
+          <div class="servicio-cara servicio-reverso" aria-hidden="true" inert>
+            <p>Diseñamos páginas web corporativas, landing pages, portales empresariales y sitios conectados a WhatsApp, formularios, redes sociales, hosting y dominio.</p>
+            <a class="ver-proyecto" href="#modulos">Ver módulos <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+            <button class="servicio-card-volver" type="button">Volver</button>
+          </div>
+        </div>
+      </article>
 
-      <div class="tarjeta-servicio">
-        <div class="icono"><i class="fas fa-server"></i></div>
-        <h3>Plataformas y Sistemas Empresariales</h3>
-        <p class="sub-servicio">Ideal para empresas que buscan organizar procesos y gestionar información.</p>
-        <p>Desarrollamos sistemas para clínicas, plataformas educativas, sistemas de ventas, CRM, paneles administrativos, reportes y soluciones a medida.</p>
-      </div>
+      <article class="tarjeta-servicio">
+        <div class="servicio-card-rotor">
+          <div class="servicio-cara servicio-frente">
+            <div class="icono"><i class="fas fa-server"></i></div>
+            <h3>Plataformas y Sistemas Empresariales</h3>
+            <p class="sub-servicio">Ideal para empresas que buscan organizar procesos y gestionar información.</p>
+            <button class="servicio-card-toggle" type="button" aria-expanded="false">Ver servicio <span aria-hidden="true">↗</span></button>
+          </div>
+          <div class="servicio-cara servicio-reverso" aria-hidden="true" inert>
+            <p>Desarrollamos sistemas para clínicas, plataformas educativas, sistemas de ventas, CRM, paneles administrativos, reportes y soluciones a medida.</p>
+            <a class="ver-proyecto" href="#modulos">Ver módulos <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+            <button class="servicio-card-volver" type="button">Volver</button>
+          </div>
+        </div>
+      </article>
 
-      <div class="tarjeta-servicio">
-        <div class="icono"><i class="fas fa-robot"></i></div>
-        <h3>Automatización e IA</h3>
-        <p class="sub-servicio">Ideal para empresas que desean ahorrar tiempo, responder más rápido y ordenar la atención de sus clientes.</p>
-        <p>Creamos chatbots, formularios inteligentes, respuestas automáticas, integración con WhatsApp, CRM y asistentes virtuales para mejorar la comunicación con tus clientes.</p>
-      </div>
+      <article class="tarjeta-servicio">
+        <div class="servicio-card-rotor">
+          <div class="servicio-cara servicio-frente">
+            <div class="icono"><i class="fas fa-robot"></i></div>
+            <h3>Automatización e IA</h3>
+            <p class="sub-servicio">Ideal para empresas que desean ahorrar tiempo, responder más rápido y ordenar la atención de sus clientes.</p>
+            <button class="servicio-card-toggle" type="button" aria-expanded="false">Ver servicio <span aria-hidden="true">↗</span></button>
+          </div>
+          <div class="servicio-cara servicio-reverso" aria-hidden="true" inert>
+            <p>Creamos chatbots, formularios inteligentes, respuestas automáticas, integración con WhatsApp, CRM y asistentes virtuales para mejorar la comunicación con tus clientes.</p>
+            <a class="ver-proyecto" href="#modulos">Ver módulos <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+            <button class="servicio-card-volver" type="button">Volver</button>
+          </div>
+        </div>
+      </article>
     </div>
   </section>
 
