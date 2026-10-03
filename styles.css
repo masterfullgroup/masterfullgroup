@@ -640,7 +640,7 @@ section > p:not([class^="etiqueta-"]) { max-width: 760px; color: var(--text-seco
   .whatsapp-flotante { right: 17px; bottom: 17px; width: 54px; height: 54px; font-size: 25px; }
 }
 
-/* Ondas laterales inspiradas en Uiverse, adaptadas al lenguaje MASTERFULL */
+/* Botones de acción: volumen oscuro con acentos laterales inspirados en la referencia */
 .btn-principal,
 .btn-secundario,
 .boton-plan,
@@ -648,36 +648,15 @@ section > p:not([class^="etiqueta-"]) { max-width: 760px; color: var(--text-seco
 .boton-whatsapp,
 .formulario-contacto button,
 .ver-proyecto {
-  --wave-color: rgba(34, 211, 238, .54);
-  --wave-active: #0891B2;
+  --btn-accent: #22D3EE;
+  position: relative;
+  border-color: rgba(218, 239, 248, .82);
+  border-radius: 12px;
+  color: #F4FAFF;
+  background: linear-gradient(145deg, #0B1928, #07111D);
+  box-shadow: 0 5px 12px rgba(0, 0, 0, .24), inset 0 1px 0 rgba(255, 255, 255, .07);
   isolation: isolate;
   overflow: hidden;
-}
-.btn-principal::before,
-.btn-principal::after,
-.btn-secundario::before,
-.btn-secundario::after,
-.boton-plan::before,
-.boton-plan::after,
-.boton-cta::before,
-.boton-cta::after,
-.boton-whatsapp::before,
-.boton-whatsapp::after,
-.formulario-contacto button::before,
-.formulario-contacto button::after,
-.ver-proyecto::before,
-.ver-proyecto::after {
-  position: absolute;
-  z-index: -1;
-  top: 50%;
-  width: 9em;
-  aspect-ratio: 1;
-  border-radius: 50%;
-  content: "";
-  background: var(--wave-color);
-  opacity: .42;
-  pointer-events: none;
-  transition: transform .5s var(--ease-out), background-color .3s ease, opacity .3s ease;
 }
 .btn-principal::before,
 .btn-secundario::before,
@@ -686,8 +665,19 @@ section > p:not([class^="etiqueta-"]) { max-width: 760px; color: var(--text-seco
 .boton-whatsapp::before,
 .formulario-contacto button::before,
 .ver-proyecto::before {
-  left: 0;
-  transform: translate(-8em, -50%);
+  position: absolute;
+  z-index: -1;
+  top: 3px;
+  bottom: 3px;
+  left: 4px;
+  width: 12px;
+  border-radius: 999px;
+  content: "";
+  background: var(--btn-accent);
+  opacity: .34;
+  pointer-events: none;
+  transform: translateX(0) scaleY(.88);
+  transition: transform .32s var(--ease-out), opacity .25s ease;
 }
 .btn-principal::after,
 .btn-secundario::after,
@@ -696,59 +686,33 @@ section > p:not([class^="etiqueta-"]) { max-width: 760px; color: var(--text-seco
 .boton-whatsapp::after,
 .formulario-contacto button::after,
 .ver-proyecto::after {
-  right: 0;
-  transform: translate(8em, -50%);
+  position: absolute;
+  z-index: -1;
+  top: 3px;
+  right: 4px;
+  bottom: 3px;
+  width: 12px;
+  border-radius: 999px;
+  content: "";
+  background: var(--btn-accent);
+  opacity: .34;
+  pointer-events: none;
+  transform: translateX(0) scaleY(.88);
+  transition: transform .32s var(--ease-out), opacity .25s ease;
 }
-.btn-principal:hover::before,
-.btn-secundario:hover::before,
-.boton-plan:hover::before,
-.boton-cta:hover::before,
-.boton-whatsapp:hover::before,
-.formulario-contacto button:hover::before,
-.ver-proyecto:hover::before {
-  transform: translate(-1em, -50%);
-  opacity: .55;
+:is(.btn-principal, .btn-secundario, .boton-plan, .boton-cta, .boton-whatsapp, .formulario-contacto button, .ver-proyecto):hover::before {
+  transform: translateX(-7px) scaleY(.72);
+  opacity: .68;
 }
-.btn-principal:hover::after,
-.btn-secundario:hover::after,
-.boton-plan:hover::after,
-.boton-cta:hover::after,
-.boton-whatsapp:hover::after,
-.formulario-contacto button:hover::after,
-.ver-proyecto:hover::after {
-  transform: translate(1em, -50%);
-  opacity: .55;
+:is(.btn-principal, .btn-secundario, .boton-plan, .boton-cta, .boton-whatsapp, .formulario-contacto button, .ver-proyecto):hover::after {
+  transform: translateX(7px) scaleY(.72);
+  opacity: .68;
 }
-.btn-principal:active::before,
-.btn-principal:active::after,
-.btn-secundario:active::before,
-.btn-secundario:active::after,
-.boton-plan:active::before,
-.boton-plan:active::after,
-.boton-cta:active::before,
-.boton-cta:active::after,
-.boton-whatsapp:active::before,
-.boton-whatsapp:active::after,
-.formulario-contacto button:active::before,
-.formulario-contacto button:active::after,
-.ver-proyecto:active::before,
-.ver-proyecto:active::after {
-  background: var(--wave-active);
-  opacity: .7;
+:is(.boton-plan, .boton-whatsapp, .btn-principal[href*="wa.me"], .boton-cta[href*="wa.me"]) {
+  --btn-accent: #39D98A;
 }
-.boton-plan,
-.boton-whatsapp,
-.btn-principal[href*="wa.me"],
-.boton-cta[href*="wa.me"] {
-  --wave-color: rgba(76, 224, 145, .62);
-  --wave-active: #118653;
-}
-.btn-principal[href*="wa.me"] {
-  border-color: rgba(76, 212, 140, .48);
-  background: linear-gradient(145deg, #16814A, #105D3B);
-  box-shadow: 0 9px 22px rgba(13, 94, 55, .22), 0 3px 0 rgba(3, 40, 24, .72), inset 0 1px 0 rgba(255, 255, 255, .18);
-}
-.btn-principal[href*="wa.me"]:hover { border-color: rgba(100, 234, 159, .68); box-shadow: 0 12px 25px rgba(13, 94, 55, .26), 0 4px 0 rgba(3, 40, 24, .62), 0 0 18px rgba(32, 184, 106, .13); }
+:is(.boton-plan, .boton-whatsapp, .btn-principal[href*="wa.me"], .boton-cta[href*="wa.me"]):hover::before,
+:is(.boton-plan, .boton-whatsapp, .btn-principal[href*="wa.me"], .boton-cta[href*="wa.me"]):hover::after { opacity: .62; }
 
 /* El mismo gesto se aplica también a los controles compactos e iconográficos */
 :is(.menu-btn, .pregunta-btn, .visor-cerrar, .whatsapp-flotante),
