@@ -119,7 +119,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   color: var(--text-secondary);
   font-size: 13px;
   font-weight: 600;
-  transition: color .22s var(--ease-out), background .22s var(--ease-out), border-color .22s var(--ease-out), transform .22s var(--ease-out);
+  transition: color .12s var(--ease-out), background .12s var(--ease-out), border-color .12s var(--ease-out), transform .12s var(--ease-out);
 }
 .nav a::after {
   position: absolute;
@@ -132,7 +132,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   background: linear-gradient(90deg, var(--orange), var(--amber));
   transform: scaleX(0);
   transform-origin: right center;
-  transition: transform .28s var(--ease-out);
+  transition: transform .12s var(--ease-out);
 }
 .nav a:hover, .nav a.active, .nav a[aria-current="page"] { color: var(--white); }
 .nav a.active, .nav a[aria-current="page"] { padding-inline: 12px; border-radius: var(--radius-pill); background: rgba(249, 115, 22, .10); }
@@ -571,18 +571,13 @@ section > p:not([class^="etiqueta-"]) { max-width: 760px; color: var(--text-seco
 @keyframes whatsapp-tap { 50% { transform: scale(1.16) rotate(-6deg); } }
 
 /* Aparición, ampliación de portafolio */
-/* Transición entre páginas: el indicador activo se desplaza por la navegación. */
-@view-transition { navigation: auto; }
-.nav a[aria-current="page"]::after { view-transition-name: indicador-nav-activo; }
-::view-transition-old(root),
-::view-transition-new(root) { animation-duration: .22s; }
-::view-transition-group(indicador-nav-activo) { animation-duration: .3s; animation-timing-function: var(--ease-out); }
+/* Navegación inmediata: se conservan microtransiciones locales del menú. */
 
-.animar { opacity: 0; transform: translateY(16px); transition: opacity .48s var(--ease-out), transform .48s var(--ease-out); }
+.animar { opacity: 0; transform: translateY(16px); transition: opacity .18s var(--ease-out), transform .18s var(--ease-out); }
 .animar.mostrar { opacity: 1; transform: translateY(0); }
-.animar-left { opacity: 0; transform: translateX(-16px); transition: opacity .48s var(--ease-out), transform .48s var(--ease-out); }
-.animar-right { opacity: 0; transform: translateX(16px); transition: opacity .48s var(--ease-out), transform .48s var(--ease-out); }
-.animar-zoom { opacity: 0; transform: scale(.97); transition: opacity .48s var(--ease-out), transform .48s var(--ease-out); }
+.animar-left { opacity: 0; transform: translateX(-16px); transition: opacity .18s var(--ease-out), transform .18s var(--ease-out); }
+.animar-right { opacity: 0; transform: translateX(16px); transition: opacity .18s var(--ease-out), transform .18s var(--ease-out); }
+.animar-zoom { opacity: 0; transform: scale(.97); transition: opacity .18s var(--ease-out), transform .18s var(--ease-out); }
 .animar-left.mostrar, .animar-right.mostrar, .animar-zoom.mostrar { opacity: 1; transform: none; }
 .visor-imagen { position: fixed; z-index: 2000; inset: 0; display: grid; place-items: center; padding: 5vh 5vw; background: rgba(2, 9, 17, .92); opacity: 0; visibility: hidden; transition: opacity .2s, visibility .2s; }
 .visor-imagen.activo { opacity: 1; visibility: visible; }
@@ -798,7 +793,6 @@ section > p:not([class^="etiqueta-"]) { max-width: 760px; color: var(--text-seco
 }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
-  ::view-transition-group(*), ::view-transition-old(root), ::view-transition-new(root) { animation-duration: .01ms !important; }
   .animar, .animar-left, .animar-right, .animar-zoom { opacity: 1; transform: none; }
 }
 @media (forced-colors: active) {
