@@ -266,13 +266,11 @@ section > p:not([class^="etiqueta-"]) { max-width: 760px; color: var(--text-seco
   transition: transform .22s var(--ease-out), box-shadow .22s var(--ease-out), border-color .22s var(--ease-out), filter .22s var(--ease-out);
 }
 .btn-principal:hover, .boton-cta:hover, .formulario-contacto button:hover {
-  transform: translateY(-2px);
   border-color: rgba(34, 211, 238, .85);
   filter: brightness(1.08);
   box-shadow: 0 14px 30px rgba(37, 99, 235, .27), 0 4px 0 rgba(3, 17, 34, .68), 0 0 24px rgba(34, 211, 238, .16), inset 0 1px 0 rgba(255, 255, 255, .28);
 }
 .btn-principal:active, .btn-secundario:active, .boton-plan:active, .boton-cta:active, .boton-whatsapp:active, .formulario-contacto button:active {
-  transform: translateY(1px);
   box-shadow: 0 5px 12px rgba(0, 8, 20, .3), inset 0 2px 5px rgba(0, 8, 20, .3);
 }
 .btn-secundario {
@@ -281,7 +279,7 @@ section > p:not([class^="etiqueta-"]) { max-width: 760px; color: var(--text-seco
   background: linear-gradient(145deg, rgba(15, 31, 50, .95), rgba(8, 20, 34, .98));
   box-shadow: 0 8px 20px rgba(0, 8, 20, .24), inset 0 1px 0 rgba(255, 255, 255, .07);
 }
-.btn-secundario:hover { transform: translateY(-2px); border-color: rgba(34, 211, 238, .68); box-shadow: 0 12px 25px rgba(0, 8, 20, .3), 0 0 18px rgba(34, 211, 238, .10), inset 0 1px 0 rgba(255, 255, 255, .08); }
+.btn-secundario:hover { border-color: rgba(34, 211, 238, .68); box-shadow: 0 12px 25px rgba(0, 8, 20, .3), 0 0 18px rgba(34, 211, 238, .10), inset 0 1px 0 rgba(255, 255, 255, .08); }
 .btn-principal:focus-visible, .btn-secundario:focus-visible, .boton-plan:focus-visible, .boton-cta:focus-visible, .boton-whatsapp:focus-visible { outline: 3px solid var(--cyan); outline-offset: 4px; }
 .hero-confianza { display: flex; flex-wrap: wrap; gap: 12px 22px; margin-top: 26px; color: #B7C9D7; font-size: 12px; }
 .hero-confianza span { display: inline-flex; align-items: center; gap: 7px; }
@@ -428,7 +426,7 @@ section > p:not([class^="etiqueta-"]) { max-width: 760px; color: var(--text-seco
 .plan-entrega { margin-top: auto; padding: 11px 12px; border: 1px solid var(--line-subtle); border-radius: 10px; color: #C9D9E4; background: rgba(7, 24, 39, .56); font-size: 11px; }
 .plan-note { margin: 10px 0; color: var(--text-tertiary); font-size: 11px; }
 .boton-plan { width: 100%; margin-top: 15px; background: linear-gradient(145deg, #15804A, #11633E); border-color: rgba(82, 212, 143, .4); box-shadow: 0 8px 18px rgba(13, 94, 55, .20), 0 3px 0 rgba(3, 40, 24, .7), inset 0 1px 0 rgba(255, 255, 255, .19); }
-.boton-plan:hover { transform: translateY(-2px); border-color: rgba(100, 234, 159, .65); box-shadow: 0 12px 24px rgba(13, 94, 55, .25), 0 4px 0 rgba(3, 40, 24, .64), 0 0 18px rgba(32, 184, 106, .12); }
+.boton-plan:hover { border-color: rgba(100, 234, 159, .65); box-shadow: 0 12px 24px rgba(13, 94, 55, .25), 0 4px 0 rgba(3, 40, 24, .64), 0 0 18px rgba(32, 184, 106, .12); }
 .planes-nota { max-width: 830px; margin: 24px auto 0; color: var(--text-tertiary); font-size: 12px; text-align: center; }
 
 /* Proceso como línea de entrega digital */
@@ -468,7 +466,7 @@ section > p:not([class^="etiqueta-"]) { max-width: 760px; color: var(--text-seco
 .contenedor-faq { grid-column: 2; grid-row: 1 / span 2; display: grid; gap: 10px; }
 .pregunta { border-radius: 13px; }
 .pregunta-btn { display: flex; width: 100%; min-height: 58px; align-items: center; justify-content: space-between; gap: 18px; padding: 16px 19px; border: 0; color: var(--text-primary); background: transparent; font-size: 14px; font-weight: 600; text-align: left; cursor: pointer; }
-.pregunta-btn span { color: var(--cyan); font-size: 20px; font-weight: 400; transition: transform .2s; }
+.pregunta-btn span { color: var(--cyan); font-size: 20px; font-weight: 400; }
 .pregunta.activa { border-color: rgba(34, 211, 238, .30); }
 .pregunta.activa .pregunta-btn span { transform: rotate(45deg); }
 .respuesta { max-height: 0; overflow: hidden; transition: max-height .28s var(--ease-out); }
@@ -482,7 +480,7 @@ section > p:not([class^="etiqueta-"]) { max-width: 760px; color: var(--text-seco
 .contacto-beneficios span { padding: 7px 10px; border: 1px solid var(--line-subtle); border-radius: var(--radius-pill); background: rgba(15, 31, 50, .6); }
 .contacto-beneficios span::first-letter { color: var(--cyan); }
 .boton-whatsapp { border-color: rgba(76, 212, 140, .42); background: linear-gradient(145deg, #16814A, #105D3B); box-shadow: 0 9px 22px rgba(13, 94, 55, .20), 0 3px 0 rgba(3, 40, 24, .72), inset 0 1px 0 rgba(255, 255, 255, .18); }
-.boton-whatsapp:hover { transform: translateY(-2px); border-color: rgba(100, 234, 159, .68); box-shadow: 0 12px 25px rgba(13, 94, 55, .24), 0 4px 0 rgba(3, 40, 24, .62), 0 0 18px rgba(32, 184, 106, .12); }
+.boton-whatsapp:hover { border-color: rgba(100, 234, 159, .68); box-shadow: 0 12px 25px rgba(13, 94, 55, .24), 0 4px 0 rgba(3, 40, 24, .62), 0 0 18px rgba(32, 184, 106, .12); }
 .formulario-contacto { display: grid; gap: 13px; padding: clamp(24px, 3.4vw, 38px); border: 1px solid var(--line-default); border-radius: var(--radius-lg); background: linear-gradient(150deg, rgba(15, 31, 50, .96), rgba(8, 21, 36, .98)); box-shadow: 0 25px 65px rgba(0, 8, 20, .34), inset 0 1px 0 rgba(255, 255, 255, .045); }
 .form-header { margin-bottom: 8px; }
 .form-header h3 { margin: 0 0 5px; color: var(--text-primary); font: 600 22px/1.25 "Space Grotesk", sans-serif; letter-spacing: -.025em; }
@@ -529,9 +527,8 @@ section > p:not([class^="etiqueta-"]) { max-width: 760px; color: var(--text-seco
 .footer-bottom { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-top: 18px; border-top: 1px solid var(--line-subtle); color: #8298AA; font-size: 11px; }
 .footer .footer-admin-link { color: #8298AA; font-size: 11px; }
 .footer .footer-admin-link:hover { color: #B3CAD9; }
-.whatsapp-flotante { position: fixed; z-index: 900; right: 24px; bottom: 24px; display: grid; width: 58px; height: 58px; place-items: center; border: 1px solid rgba(124, 239, 172, .65); border-radius: 50%; color: var(--white); background: linear-gradient(145deg, #27C978, #13824D); box-shadow: 0 10px 22px rgba(10, 85, 49, .30), 0 3px 0 rgba(3, 48, 27, .72), inset 0 1px 0 rgba(255, 255, 255, .3); font-size: 27px; transition: transform .2s, box-shadow .2s; }
-.whatsapp-flotante:hover { transform: translateY(-3px); box-shadow: 0 14px 26px rgba(10, 85, 49, .34), 0 4px 0 rgba(3, 48, 27, .64), 0 0 18px rgba(32, 184, 106, .17); }
-.whatsapp-flotante:active { transform: translateY(1px); }
+.whatsapp-flotante { position: fixed; z-index: 900; right: 24px; bottom: 24px; display: grid; width: 58px; height: 58px; place-items: center; border: 1px solid rgba(124, 239, 172, .65); border-radius: 50%; color: var(--white); background: linear-gradient(145deg, #27C978, #13824D); box-shadow: 0 10px 22px rgba(10, 85, 49, .30), 0 3px 0 rgba(3, 48, 27, .72), inset 0 1px 0 rgba(255, 255, 255, .3); font-size: 27px; }
+.whatsapp-flotante:hover { box-shadow: 0 14px 26px rgba(10, 85, 49, .34), 0 4px 0 rgba(3, 48, 27, .64), 0 0 18px rgba(32, 184, 106, .17); }
 
 /* Aparición, ampliación de portafolio */
 /* Transición entre páginas: el indicador activo se desplaza por la navegación. */
@@ -657,6 +654,7 @@ section > p:not([class^="etiqueta-"]) { max-width: 760px; color: var(--text-seco
   box-shadow: 0 5px 12px rgba(0, 0, 0, .24), inset 0 1px 0 rgba(255, 255, 255, .07);
   isolation: isolate;
   overflow: hidden;
+  transition: none;
 }
 .btn-principal::before,
 .btn-secundario::before,
@@ -677,7 +675,7 @@ section > p:not([class^="etiqueta-"]) { max-width: 760px; color: var(--text-seco
   opacity: .34;
   pointer-events: none;
   transform: translateX(0) scaleY(.88);
-  transition: transform .32s var(--ease-out), opacity .25s ease;
+  transition: none;
 }
 .btn-principal::after,
 .btn-secundario::after,
@@ -698,21 +696,11 @@ section > p:not([class^="etiqueta-"]) { max-width: 760px; color: var(--text-seco
   opacity: .34;
   pointer-events: none;
   transform: translateX(0) scaleY(.88);
-  transition: transform .32s var(--ease-out), opacity .25s ease;
-}
-:is(.btn-principal, .btn-secundario, .boton-plan, .boton-cta, .boton-whatsapp, .formulario-contacto button, .ver-proyecto):hover::before {
-  transform: translateX(-7px) scaleY(.72);
-  opacity: .68;
-}
-:is(.btn-principal, .btn-secundario, .boton-plan, .boton-cta, .boton-whatsapp, .formulario-contacto button, .ver-proyecto):hover::after {
-  transform: translateX(7px) scaleY(.72);
-  opacity: .68;
+  transition: none;
 }
 :is(.boton-plan, .boton-whatsapp, .btn-principal[href*="wa.me"], .boton-cta[href*="wa.me"]) {
   --btn-accent: #39D98A;
 }
-:is(.boton-plan, .boton-whatsapp, .btn-principal[href*="wa.me"], .boton-cta[href*="wa.me"]):hover::before,
-:is(.boton-plan, .boton-whatsapp, .btn-principal[href*="wa.me"], .boton-cta[href*="wa.me"]):hover::after { opacity: .62; }
 
 /* El mismo gesto se aplica también a los controles compactos e iconográficos */
 :is(.menu-btn, .pregunta-btn, .visor-cerrar, .whatsapp-flotante),
@@ -746,7 +734,7 @@ section > p:not([class^="etiqueta-"]) { max-width: 760px; color: var(--text-seco
   box-shadow: none;
   opacity: .42;
   pointer-events: none;
-  transition: transform .5s var(--ease-out), background-color .3s ease, opacity .3s ease;
+  transition: none;
 }
 :is(.menu-btn, .pregunta-btn, .visor-cerrar, .whatsapp-flotante)::before,
 .header .nav a[href="contacto.html"]::before {
@@ -759,16 +747,6 @@ section > p:not([class^="etiqueta-"]) { max-width: 760px; color: var(--text-seco
   right: 0;
   left: auto;
   transform: translate(var(--wave-offset), -50%);
-}
-:is(.menu-btn, .pregunta-btn, .visor-cerrar, .whatsapp-flotante):hover::before,
-.header .nav a[href="contacto.html"]:hover::before {
-  transform: translate(calc(-1 * var(--wave-inset)), -50%);
-  opacity: .55;
-}
-:is(.menu-btn, .pregunta-btn, .visor-cerrar, .whatsapp-flotante):hover::after,
-.header .nav a[href="contacto.html"]:hover::after {
-  transform: translate(var(--wave-inset), -50%);
-  opacity: .55;
 }
 :is(.menu-btn, .pregunta-btn, .visor-cerrar, .whatsapp-flotante):active::before,
 :is(.menu-btn, .pregunta-btn, .visor-cerrar, .whatsapp-flotante):active::after,
