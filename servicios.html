@@ -19,7 +19,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-  <link rel="stylesheet" href="styles.css?v=34">
+  <link rel="stylesheet" href="styles.css?v=35">
 </head>
 
 <body>
@@ -110,20 +110,48 @@
     Integramos funciones según el tipo de empresa, proceso y nivel de gestión que necesites.
   </p>
 
-  <div class="contenedor-modulos">
-      <div class="modulo-item">Login de usuarios</div>
-      <div class="modulo-item">Panel administrador</div>
-      <div class="modulo-item">Base de datos</div>
-      <div class="modulo-item">Clientes o pacientes</div>
-      <div class="modulo-item">Cobros y pagos</div>
-      <div class="modulo-item">Caja diaria</div>
-      <div class="modulo-item">Inventario</div>
-      <div class="modulo-item">Cuentas por cobrar</div>
-      <div class="modulo-item">Reportes</div>
-      <div class="modulo-item">Roles y permisos</div>
-      <div class="modulo-item">Formularios</div>
-      <div class="modulo-item">WhatsApp</div>
+  <div class="contenedor-modulos" role="region" aria-label="Carrusel informativo de módulos">
+    <div class="modulos-carril">
+      <div class="modulos-track">
+        <div class="modulos-secuencia" role="list">
+          <div class="modulo-item" role="listitem">Login de usuarios</div>
+          <div class="modulo-item" role="listitem">Panel administrador</div>
+          <div class="modulo-item" role="listitem">Base de datos</div>
+          <div class="modulo-item" role="listitem">Clientes o pacientes</div>
+          <div class="modulo-item" role="listitem">Cobros y pagos</div>
+          <div class="modulo-item" role="listitem">Caja diaria</div>
+        </div>
+        <div class="modulos-secuencia" aria-hidden="true">
+          <div class="modulo-item">Login de usuarios</div>
+          <div class="modulo-item">Panel administrador</div>
+          <div class="modulo-item">Base de datos</div>
+          <div class="modulo-item">Clientes o pacientes</div>
+          <div class="modulo-item">Cobros y pagos</div>
+          <div class="modulo-item">Caja diaria</div>
+        </div>
+      </div>
     </div>
+    <div class="modulos-carril modulos-carril-reversa">
+      <div class="modulos-track">
+        <div class="modulos-secuencia" role="list">
+          <div class="modulo-item" role="listitem">Inventario</div>
+          <div class="modulo-item" role="listitem">Cuentas por cobrar</div>
+          <div class="modulo-item" role="listitem">Reportes</div>
+          <div class="modulo-item" role="listitem">Roles y permisos</div>
+          <div class="modulo-item" role="listitem">Formularios</div>
+          <div class="modulo-item" role="listitem">WhatsApp</div>
+        </div>
+        <div class="modulos-secuencia" aria-hidden="true">
+          <div class="modulo-item">Inventario</div>
+          <div class="modulo-item">Cuentas por cobrar</div>
+          <div class="modulo-item">Reportes</div>
+          <div class="modulo-item">Roles y permisos</div>
+          <div class="modulo-item">Formularios</div>
+          <div class="modulo-item">WhatsApp</div>
+        </div>
+      </div>
+    </div>
+  </div>
   </section>
 
   <!-- BENEFICIOS -->

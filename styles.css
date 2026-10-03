@@ -436,10 +436,15 @@ section > p:not([class^="etiqueta-"]) { max-width: 760px; color: var(--text-seco
 .servicio-card-volver { align-self: flex-start; min-width: 96px; justify-content: center; }
 .modulos { padding-top: 82px; padding-bottom: 92px; }
 .modulos h2 { max-width: 780px; margin: 7px 0 14px; font: 650 clamp(1.9rem, 3.5vw, 2.7rem)/1.1 "Space Grotesk", sans-serif; letter-spacing: -.045em; }
-.contenedor-modulos { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 11px; margin-top: 32px; }
-.modulo-item { position: relative; padding: 13px 15px 13px 40px; border: 1px solid var(--line-subtle); border-radius: 12px; color: var(--text-secondary); background: rgba(25, 29, 35, .56); font-size: 13px; transition: border-color .2s, background .2s, color .2s; }
+.contenedor-modulos { display: grid; gap: 11px; margin-top: 32px; overflow: hidden; mask-image: linear-gradient(90deg, transparent, #000 4%, #000 96%, transparent); -webkit-mask-image: linear-gradient(90deg, transparent, #000 4%, #000 96%, transparent); }
+.modulos-carril { min-width: 0; overflow: hidden; }
+.modulos-track { display: flex; width: max-content; animation: modulos-carrusel 38s linear infinite; will-change: transform; }
+.modulos-carril-reversa .modulos-track { animation-duration: 44s; animation-direction: reverse; }
+.contenedor-modulos:hover .modulos-track { animation-play-state: paused; }
+.modulos-secuencia { display: flex; flex: 0 0 auto; gap: 11px; padding-right: 11px; }
+.modulo-item { position: relative; display: flex; flex: 0 0 clamp(190px, 20vw, 225px); min-height: 52px; align-items: center; padding: 12px 15px 12px 40px; border: 1px solid var(--line-subtle); border-radius: 12px; color: var(--text-secondary); background: rgba(25, 29, 35, .56); font-size: 13px; }
 .modulo-item::before { position: absolute; top: 50%; left: 17px; width: 8px; height: 8px; content: ""; border: 1px solid rgba(249, 115, 22, .7); border-radius: 3px; transform: translateY(-50%) rotate(45deg); }
-.modulo-item:hover { border-color: var(--line-accent); color: var(--text-primary); background: rgba(34, 39, 46, .72); }
+@keyframes modulos-carrusel { to { transform: translateX(-50%); } }
 
 /* Beneficios y razones para elegir */
 .beneficios { display: grid; grid-template-columns: minmax(0, 1fr) minmax(340px, .82fr); align-items: center; gap: clamp(40px, 7vw, 90px); }
@@ -640,7 +645,6 @@ section > p:not([class^="etiqueta-"]) { max-width: 760px; color: var(--text-seco
   .hero { grid-template-columns: minmax(0, 1fr) minmax(330px, .82fr); gap: 38px; }
   .hero-panel { padding: 25px; }
   .contenedor-masterfull { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .contenedor-modulos { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .tarjeta-plan { padding-inline: 20px; }
   .tarjeta-plan li { font-size: 11px; }
 }
@@ -694,7 +698,7 @@ section > p:not([class^="etiqueta-"]) { max-width: 760px; color: var(--text-seco
   .panel-info .info-box:last-child { grid-column: 1 / -1; }
   .hero::before { background-image: linear-gradient(90deg, rgba(11, 13, 16, .88), rgba(11, 13, 16, .60)), linear-gradient(0deg, #0B0D10 0%, rgba(11, 13, 16, .23) 45%, rgba(11, 13, 16, .38) 100%), url("img/honeycomb-hero.svg"); background-position: center, center, 68% 16%; background-size: cover, cover, 680px auto; opacity: .58; animation-duration: 72s; }
   .fondo-tecnologico { opacity: .12; }
-  .home-rutas-grid, .contenedor-servicios, .contenedor-modulos, .contenedor-masterfull, .contenedor-proceso, .contenedor-testimonios, .contenedor-portafolio, .contenedor-planes { grid-template-columns: 1fr; }
+  .home-rutas-grid, .contenedor-servicios, .contenedor-masterfull, .contenedor-proceso, .contenedor-testimonios, .contenedor-portafolio, .contenedor-planes { grid-template-columns: 1fr; }
   .home-ruta-card:last-child, .tarjeta-portafolio:last-child, .contenedor-planes > .tarjeta-plan:last-child { grid-column: auto; width: 100%; }
   .home-ruta-card { min-height: 190px; padding: 23px; }
   .tarjeta-servicio { min-height: 0; height: 340px; padding: 0; }
@@ -875,7 +879,12 @@ section > p:not([class^="etiqueta-"]) { max-width: 760px; color: var(--text-seco
   *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
   .hero-panel::after { animation: none; }
   .animar, .animar-left, .animar-right, .animar-zoom { opacity: 1; transform: none; }
+  .contenedor-modulos { mask-image: none; -webkit-mask-image: none; }
+  .modulos-track { display: block; width: 100%; animation: none; transform: none; will-change: auto; }
+  .modulos-secuencia { display: grid; width: 100%; grid-template-columns: repeat(3, minmax(0, 1fr)); padding-right: 0; }
+  .modulos-secuencia[aria-hidden="true"] { display: none; }
 }
+@media (max-width: 560px) and (prefers-reduced-motion: reduce) { .modulos-secuencia { grid-template-columns: 1fr; } }
 @media (forced-colors: active) {
   a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible { outline: 2px solid Highlight; }
 }
