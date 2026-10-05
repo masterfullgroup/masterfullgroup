@@ -44,7 +44,7 @@
   --shadow-lift: 0 20px 42px rgba(0, 0, 0, .34), 0 0 20px rgba(249, 115, 22, .06);
   --shadow-button: 0 7px 18px rgba(0, 0, 0, .26), inset 0 1px 0 rgba(255, 255, 255, .09);
   --content-width: 1180px;
-  --header-height: 80px;
+  --header-height: 66px;
   --ease-out: cubic-bezier(.2, .75, .25, 1);
 }
 
@@ -85,21 +85,20 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 .header {
   position: fixed;
   z-index: 1000;
-  inset: 12px 0 auto;
+  inset: 0 0 auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 28px;
-  width: min(calc(100% - 32px), 1320px);
+  width: 100%;
   height: 66px;
-  margin-inline: auto;
-  padding-inline: clamp(18px, 3vw, 34px);
-  border: 1px solid rgba(248, 250, 252, .09);
-  border-radius: var(--radius-pill);
-  background: #12151A;
-  box-shadow: 0 12px 34px rgba(0, 0, 0, .34), inset 0 1px 0 rgba(255, 255, 255, .04);
-  backdrop-filter: blur(20px) saturate(120%);
-  -webkit-backdrop-filter: blur(20px) saturate(120%);
+  margin-inline: 0;
+  padding-inline: max(5%, calc((100% - 1600px) / 2));
+  border: 0;
+  border-bottom: 1px solid rgba(248, 250, 252, .08);
+  border-radius: 0;
+  background: #071826;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, .24);
 }
 .logo, .footer h3 {
   color: var(--white);
