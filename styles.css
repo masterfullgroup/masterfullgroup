@@ -954,3 +954,11 @@ section > p:not([class^="etiqueta-"]) { max-width: 760px; color: var(--text-seco
 @media (min-width: 821px) {
   .hero-texto { margin-block-start: -24px; }
 }
+@media (min-width: 821px) and (max-width: 1280px) {
+  .hero { grid-template-columns: minmax(0, 1fr); gap: 38px; text-align: center; }
+  .hero-texto { width: min(100%, 1060px); max-width: none; margin: 0 auto; }
+  .hero h1 { max-width: 1060px; margin-inline: auto; font-size: clamp(2.45rem, 5vw, 4rem); }
+  .hero .descripcion { margin-inline: auto; }
+  .hero-botones, .hero-confianza { justify-content: center; }
+  .hero-panel { width: min(100%, 760px); max-width: 760px; justify-self: center; }
+}
