@@ -307,7 +307,7 @@ section > p:not([class^="etiqueta-"]) { max-width: 760px; color: var(--text-seco
 .hero-panel {
   position: relative;
   width: 100%;
-  max-width: 760px;
+  max-width: 1100px;
   justify-self: end;
   overflow: hidden;
   padding: clamp(28px, 3.3vw, 42px);
@@ -876,7 +876,7 @@ section > p:not([class^="etiqueta-"]) { max-width: 760px; color: var(--text-seco
 /* Ajustes exclusivos del hero de inicio */
 .hero-texto.animar,
 .hero-panel.animar { transition: opacity .65s var(--ease-out), transform .65s var(--ease-out); }
-.hero-panel { max-width: 650px; }
+.hero-panel { max-width: 1100px; }
 .hero-panel::after {
   background: conic-gradient(from var(--hero-panel-angle), transparent 0deg 274deg, rgba(249, 115, 22, .2) 292deg, rgba(249, 115, 22, .58) 310deg, rgba(251, 191, 36, .48) 326deg, rgba(251, 146, 60, .18) 344deg, transparent 360deg);
 }
@@ -959,7 +959,7 @@ section > p:not([class^="etiqueta-"]) { max-width: 760px; color: var(--text-seco
   .hero h1 { max-width: 1500px; margin-inline: auto; font-size: clamp(2.45rem, 5vw, 4rem); line-height: 1.16; letter-spacing: -.02em; }
   .hero .descripcion { margin-inline: auto; }
   .hero-botones, .hero-confianza { justify-content: center; }
-  .hero-panel { width: min(100%, 760px); max-width: 760px; justify-self: center; }
+  .hero-panel { width: min(100%, 1100px); max-width: 1100px; justify-self: center; }
 }
 .hero h1 {
   color: #fff;
