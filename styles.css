@@ -898,18 +898,19 @@ section > p:not([class^="etiqueta-"]) { max-width: 760px; color: var(--text-seco
 .hero .btn-secundario:hover { transform: translateY(-2px); }
 .hero .btn-secundario.btn-ejemplos { padding-right: 52px; }
 .hero .btn-ejemplos-icono {
-  color: var(--orange-hover);
-  background: transparent;
-  box-shadow: none;
-  transition: transform .24s var(--ease-out), color .24s var(--ease-out);
+  z-index: 0;
+  color: #15110D;
+  background: linear-gradient(135deg, #F97316, #FB923C 58%, #FBBF24);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .2), 0 2px 8px rgba(249, 115, 22, .12);
+  transition: width .3s var(--ease-out), box-shadow .3s var(--ease-out);
 }
-.hero .btn-secundario.btn-ejemplos:hover { color: var(--text-primary); background: #191D23; }
+.hero .btn-ejemplos-icono svg { position: absolute; right: 6px; }
+.hero .btn-secundario.btn-ejemplos:hover { color: #15110D; background: #12151A; }
 .hero .btn-secundario.btn-ejemplos:hover .btn-ejemplos-icono {
-  width: 34px;
-  color: var(--white);
-  background: transparent;
-  box-shadow: none;
-  transform: translateX(3px);
+  width: calc(100% - 8px);
+  color: #15110D;
+  background: linear-gradient(135deg, #F97316, #FB923C 58%, #FBBF24);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .24), 0 3px 12px rgba(249, 115, 22, .20);
 }
 @media (min-width: 821px) {
   .hero { grid-template-columns: minmax(0, 1.05fr) minmax(360px, .95fr); }
