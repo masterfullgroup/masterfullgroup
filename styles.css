@@ -961,3 +961,14 @@ section > p:not([class^="etiqueta-"]) { max-width: 760px; color: var(--text-seco
   .hero-botones, .hero-confianza { justify-content: center; }
   .hero-panel { width: min(100%, 760px); max-width: 760px; justify-self: center; }
 }
+.hero h1 {
+  color: #fff;
+  font-family: Inter, Arial, sans-serif;
+  font-weight: 700;
+  letter-spacing: -.02em;
+}
+.hero h1 .hero-acento {
+  color: #fff;
+  background: none;
+  -webkit-text-fill-color: #fff;
+}
