@@ -824,15 +824,15 @@ section > p:not([class^="etiqueta-"]) { max-width: 760px; color: var(--text-seco
 :is(.btn-principal, .boton-cta, .boton-plan, .boton-whatsapp, .formulario-contacto button) i.fa-whatsapp { color: var(--whatsapp); }
 :is(.boton-plan, .boton-whatsapp, .btn-principal[href*="wa.me"], .boton-cta[href*="wa.me"]) { --btn-accent: #25D366; }
 
-/* Barrido de color del CTA final de WhatsApp */
-.boton-cta-whatsapp {
+/* Barrido de izquierda a derecha para los CTA naranjas principales */
+:is(.boton-cta, .hero .btn-principal, .tarjeta-plan.destacada .boton-plan) {
   isolation: isolate;
   overflow: hidden;
   transition: color .26s var(--ease-out), transform .22s var(--ease-out), box-shadow .26s var(--ease-out);
 }
-.boton-cta-whatsapp::before {
+:is(.boton-cta, .hero .btn-principal, .tarjeta-plan.destacada .boton-plan)::before {
   position: absolute;
-  z-index: 0;
+  z-index: -1;
   top: 0;
   left: 0;
   width: 0;
@@ -844,14 +844,14 @@ section > p:not([class^="etiqueta-"]) { max-width: 760px; color: var(--text-seco
   pointer-events: none;
   transition: width .28s var(--ease-out);
 }
-.boton-cta-whatsapp:hover {
+:is(.boton-cta, .hero .btn-principal, .tarjeta-plan.destacada .boton-plan):hover {
   transform: translateY(-2px);
   color: var(--white);
   box-shadow: 0 12px 25px rgba(0, 0, 0, .28), 0 0 18px rgba(249, 115, 22, .13);
 }
-.boton-cta-whatsapp:hover::before { width: 100%; }
+:is(.boton-cta, .hero .btn-principal, .tarjeta-plan.destacada .boton-plan):hover::before { width: 100%; }
 .boton-cta-texto { position: relative; z-index: 1; }
-.boton-cta-whatsapp:active { border-color: #C2410C; }
+:is(.boton-cta, .hero .btn-principal, .tarjeta-plan.destacada .boton-plan):active { border-color: #C2410C; }
 .boton-cta-whatsapp:focus-visible {
   outline: 3px solid var(--orange);
   outline-offset: 3px;
