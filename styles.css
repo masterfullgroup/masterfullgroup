@@ -228,8 +228,6 @@ section > p:not([class^="etiqueta-"]) { max-width: 760px; color: var(--text-seco
 .hero::after {
   content: none;
 }
-.fondo-tecnologico { position: absolute; z-index: 1; inset: 0; overflow: hidden; opacity: .24; pointer-events: none; mix-blend-mode: screen; }
-.fondo-tecnologico canvas { display: block; width: 100%; height: 100%; }
 .hero-texto { max-width: 690px; }
 .hero-texto .etiqueta { margin-bottom: 20px; }
 .hero h1 { max-width: 720px; margin: 0; font-size: clamp(2.65rem, 5.15vw, 4.7rem); line-height: 1.06; }
@@ -688,7 +686,6 @@ section > p:not([class^="etiqueta-"]) { max-width: 760px; color: var(--text-seco
   .info-box span { font-size: 11px; }
   .panel-info { grid-template-columns: 1fr 1fr; }
   .panel-info .info-box:last-child { grid-column: 1 / -1; }
-  .fondo-tecnologico { opacity: .12; }
   .home-rutas-grid, .contenedor-servicios, .contenedor-masterfull, .contenedor-proceso, .contenedor-testimonios, .contenedor-portafolio, .contenedor-planes { grid-template-columns: 1fr; }
   .home-ruta-card:last-child, .tarjeta-portafolio:last-child, .contenedor-planes > .tarjeta-plan:last-child { grid-column: auto; width: 100%; }
   .home-ruta-card { min-height: 190px; padding: 23px; }
