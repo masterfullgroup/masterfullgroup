@@ -1,48 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 720" fill="none">
-  <defs>
-    <linearGradient id="cell" x1="0" y1="0" x2="1" y2="1">
-      <stop stop-color="#22272E" stop-opacity=".8"/>
-      <stop offset=".48" stop-color="#191D23" stop-opacity=".56"/>
-      <stop offset="1" stop-color="#0B0D10" stop-opacity=".82"/>
-    </linearGradient>
-    <linearGradient id="facet" x1="0" y1="0" x2="0.9" y2="1">
-      <stop stop-color="#FBBF24" stop-opacity=".18"/>
-      <stop offset="1" stop-color="#F97316" stop-opacity=".035"/>
-    </linearGradient>
-    <linearGradient id="edge" x1="0" y1="0" x2="1" y2="1">
-      <stop stop-color="#FB923C" stop-opacity=".74"/>
-      <stop offset=".5" stop-color="#F97316" stop-opacity=".42"/>
-      <stop offset="1" stop-color="#FB923C" stop-opacity=".16"/>
-    </linearGradient>
-    <radialGradient id="light">
-      <stop stop-color="#F97316" stop-opacity=".25"/>
-      <stop offset="1" stop-color="#0B0D10" stop-opacity="0"/>
-    </radialGradient>
-    <filter id="shadow" x="-30%" y="-30%" width="160%" height="170%" color-interpolation-filters="sRGB">
-      <feGaussianBlur in="SourceAlpha" stdDeviation="2.5" result="blur"/>
-      <feOffset dy="4" result="offset"/>
-      <feComponentTransfer><feFuncA type="linear" slope=".42"/></feComponentTransfer>
-      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
-    </filter>
-    <filter id="glow" x="-100%" y="-100%" width="300%" height="300%" color-interpolation-filters="sRGB">
-      <feGaussianBlur stdDeviation="4" result="blur"/>
-      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-    </filter>
-    <pattern id="cells" width="72" height="84" patternUnits="userSpaceOnUse">
-      <path d="M24 2 48 2 70 42 48 82 24 82 2 42Z" fill="url(#cell)" stroke="url(#edge)" stroke-width="1.15"/>
-      <path d="M24 3 48 3 36 42Z" fill="url(#facet)"/>
-      <path d="M24 4 48 4M3 42l21-38" stroke="#FB923C" stroke-opacity=".12" stroke-width="1"/>
-      <path d="M48 81 24 81M69 42 48 81" stroke="#12151A" stroke-opacity=".75" stroke-width="1.5"/>
-    </pattern>
-  </defs>
-  <ellipse cx="672" cy="283" rx="350" ry="315" fill="url(#light)"/>
-  <g filter="url(#shadow)">
-    <rect width="960" height="720" fill="url(#cells)"/>
-    <path d="m601 3 24 40-22 40m94 0 22 41-23 41m-165 43 23 41-23 41m191 0 22 41-22 40" stroke="#FB923C" stroke-opacity=".92" stroke-width="1.9" filter="url(#glow)"/>
-    <path d="m625 43 24 41m94 0 23 41m-141 84 23 42m168-1 23 41" stroke="#F97316" stroke-opacity=".78" stroke-width="1.4"/>
-    <path d="M601 3 625 43l-22 40h-47l-24-41 23-39Zm118 80 24 41-23 41h-46l-23-41 22-41Zm-141 168 23 41-23 41h-47l-23-41 23-41Zm191 0 22 41-22 40h-47l-23-40 23-41Z" stroke="#FB923C" stroke-opacity=".28" stroke-width="1.1"/>
-    <circle cx="625" cy="43" r="3" fill="#FBBF24" filter="url(#glow)"/>
-    <circle cx="743" cy="124" r="2.6" fill="#FBBF24" filter="url(#glow)"/>
-    <circle cx="578" cy="292" r="2.4" fill="#FBBF24" filter="url(#glow)"/>
+  <rect width="960" height="720" fill="#0B0D10"/>
+  <g stroke="#FBBF24" stroke-opacity=".72" stroke-width="2.2" stroke-linecap="round">
+    <path d="m602 4 24 40-23 40m95 0 23 40-23 41m-166 43 23 41-23 41m191 0 22 41-22 40"/>
+    <path d="m626 44 24 41m94 39 23 41m-141 84 23 42m168-1 23 41" stroke-opacity=".48" stroke-width="1.6"/>
+  </g>
+  <g fill="#FBBF24" fill-opacity=".82">
+    <circle cx="626" cy="44" r="3.2"/>
+    <circle cx="744" cy="124" r="2.8"/>
+    <circle cx="579" cy="293" r="2.6"/>
   </g>
 </svg>
