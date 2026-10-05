@@ -345,7 +345,7 @@ section > p:not([class^="etiqueta-"]) { max-width: 760px; color: var(--text-seco
 .info-box { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
 .info-box strong { color: var(--orange-hover); font: 650 24px/1.2 "Space Grotesk", sans-serif; }
 .info-box span { color: var(--text-tertiary); font-size: 14px; line-height: 1.45; }
-.hero-web-circuit { width: min(100%, 820px); margin: 16px auto -12px; padding-top: 12px; border-top: 1px solid var(--line-subtle); }
+.hero-web-circuit { width: min(100%, 720px); margin: 16px auto -12px; padding-top: 12px; border-top: 1px solid var(--line-subtle); }
 .hero-web-circuit svg { display: block; width: 100%; height: auto; overflow: visible; }
 .circuit-track, .circuit-flow { fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
 .circuit-track { stroke: #303640; }
