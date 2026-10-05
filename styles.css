@@ -824,37 +824,33 @@ section > p:not([class^="etiqueta-"]) { max-width: 760px; color: var(--text-seco
 :is(.btn-principal, .boton-cta, .boton-plan, .boton-whatsapp, .formulario-contacto button) i.fa-whatsapp { color: var(--whatsapp); }
 :is(.boton-plan, .boton-whatsapp, .btn-principal[href*="wa.me"], .boton-cta[href*="wa.me"]) { --btn-accent: #25D366; }
 
-/* Revelado animado exclusivo del CTA principal de WhatsApp del Hero */
+/* Barrido de color del CTA final de WhatsApp */
 .boton-cta-whatsapp {
   isolation: isolate;
   overflow: hidden;
-  user-select: none;
-  border: 3px ridge #EA7414;
-  transition: border-color 1s, color 1s, transform .22s var(--ease-out), box-shadow 1s;
-}
-.boton-cta-whatsapp::before,
-.boton-cta-whatsapp::after {
-  position: absolute;
-  z-index: 0;
-  left: 3%;
-  display: block;
-  width: 95%;
-  height: 40%;
-  background: #12151A;
-  transform-origin: center;
-  content: "";
-  pointer-events: none;
-  transition: transform 500ms ease;
+  transition: color .26s var(--ease-out), transform .22s var(--ease-out), box-shadow .26s var(--ease-out);
 }
 .boton-cta-whatsapp::before {
-  top: -10px;
+  position: absolute;
+  z-index: 0;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: inherit;
+  content: "";
+  background: #191D23;
+  box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, .27);
+  pointer-events: none;
+  transition: width .28s var(--ease-out), height .28s var(--ease-out), top .28s var(--ease-out), left .28s var(--ease-out);
 }
-.boton-cta-whatsapp::after {
-  top: 80%;
+.boton-cta-whatsapp:hover {
+  transform: translateY(-2px);
+  color: var(--white);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, .28), 0 0 18px rgba(249, 115, 22, .13);
 }
-.boton-cta-whatsapp:hover::before,
-.boton-cta-whatsapp:hover::after { transform: scale(0); }
-.boton-cta-whatsapp:hover { box-shadow: inset 0 0 25px rgba(234, 148, 20, .58), 0 12px 25px rgba(249, 115, 22, .2); }
+.boton-cta-whatsapp:hover::before { top: 0; left: 0; width: 100%; height: 100%; }
+.boton-cta-whatsapp:active { transform: scale(.96); }
 .boton-cta-texto { position: relative; z-index: 1; }
 .boton-cta-whatsapp:active { border-color: #C2410C; }
 .boton-cta-whatsapp:focus-visible {
