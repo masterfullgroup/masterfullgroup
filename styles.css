@@ -322,15 +322,16 @@ section > p:not([class^="etiqueta-"]) { max-width: 760px; color: var(--text-seco
   position: absolute;
   z-index: 2;
   inset: 0;
-  padding: 1px;
+  padding: 2px;
   border-radius: inherit;
   content: "";
-  background: conic-gradient(from var(--hero-panel-angle), transparent 0deg 260deg, rgba(249, 115, 22, .42) 282deg, #F97316 305deg, #FBBF24 324deg, rgba(251, 146, 60, .4) 344deg, transparent 360deg);
+  background: conic-gradient(from var(--hero-panel-angle), transparent 0deg 250deg, rgba(249, 115, 22, .62) 270deg, #F97316 292deg, #FBBF24 310deg, #FFF0C2 318deg, #FB923C 328deg, rgba(251, 146, 60, .58) 346deg, transparent 360deg);
+  filter: drop-shadow(0 0 3px rgba(249, 115, 22, .75)) drop-shadow(0 0 9px rgba(249, 115, 22, .34));
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   mask-composite: exclude;
-  animation: hero-panel-border 18s linear infinite;
+  animation: hero-panel-border 12s linear infinite;
   pointer-events: none;
 }
 .panel-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-bottom: 22px; border-bottom: 1px solid var(--line-subtle); }
