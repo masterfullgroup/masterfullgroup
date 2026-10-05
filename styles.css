@@ -911,6 +911,64 @@ section > p:not([class^="etiqueta-"]) { max-width: 760px; color: var(--text-seco
   background: linear-gradient(135deg, #F97316, #FB923C 58%, #FBBF24);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, .24), 0 3px 12px rgba(249, 115, 22, .20);
 }
+.hero .animated-button { isolation: isolate; }
+.hero .btn-animated-circle {
+  position: absolute;
+  z-index: 0;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #F97316, #FB923C 58%, #FBBF24);
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition: width .8s cubic-bezier(.23, 1, .32, 1), height .8s cubic-bezier(.23, 1, .32, 1), opacity .2s ease;
+}
+.hero .animated-button .btn-ejemplos-texto {
+  z-index: 2;
+  transition: transform .8s cubic-bezier(.23, 1, .32, 1), color .25s ease;
+}
+.hero .animated-button .btn-animated-arrow {
+  position: absolute;
+  z-index: 3;
+  left: -25%;
+  width: 22px;
+  height: 22px;
+  overflow: visible;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: left .8s cubic-bezier(.23, 1, .32, 1), right .8s cubic-bezier(.23, 1, .32, 1), color .25s ease;
+}
+.hero .animated-button .btn-ejemplos-icono { transition: background .25s ease, box-shadow .25s ease; }
+.hero .animated-button .arr-1 { left: auto; right: 10px; }
+.hero .btn-secundario.btn-ejemplos.animated-button:hover,
+.hero .btn-secundario.btn-ejemplos.animated-button:focus-visible {
+  border-radius: 12px;
+  color: #15110D;
+}
+.hero .btn-secundario.btn-ejemplos.animated-button:hover .btn-animated-circle,
+.hero .btn-secundario.btn-ejemplos.animated-button:focus-visible .btn-animated-circle {
+  width: 360px;
+  height: 360px;
+  opacity: 1;
+}
+.hero .btn-secundario.btn-ejemplos.animated-button:hover .btn-ejemplos-texto,
+.hero .btn-secundario.btn-ejemplos.animated-button:focus-visible .btn-ejemplos-texto { transform: translateX(10px); }
+.hero .btn-secundario.btn-ejemplos.animated-button:hover .btn-animated-arrow,
+.hero .btn-secundario.btn-ejemplos.animated-button:focus-visible .btn-animated-arrow { left: 16px; color: #15110D; }
+.hero .btn-secundario.btn-ejemplos.animated-button:hover .arr-1,
+.hero .btn-secundario.btn-ejemplos.animated-button:focus-visible .arr-1 { right: -25%; }
+.hero .btn-secundario.btn-ejemplos.animated-button:hover .btn-ejemplos-icono,
+.hero .btn-secundario.btn-ejemplos.animated-button:focus-visible .btn-ejemplos-icono {
+  width: 34px;
+  background: transparent;
+  box-shadow: none;
+}
 @media (min-width: 821px) {
   .hero { grid-template-columns: minmax(0, 1.05fr) minmax(360px, .95fr); }
 }
