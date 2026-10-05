@@ -310,7 +310,7 @@ section > p:not([class^="etiqueta-"]) { max-width: 760px; color: var(--text-seco
   max-width: 1100px;
   justify-self: end;
   overflow: hidden;
-  padding: clamp(28px, 3.3vw, 42px);
+  padding: clamp(22px, 2.4vw, 30px) clamp(28px, 3.3vw, 42px);
   border: 1px solid rgba(248, 250, 252, .2);
   border-radius: var(--radius-lg);
   background: linear-gradient(145deg, rgba(34, 39, 46, .94), rgba(18, 21, 26, .96) 55%, rgba(11, 13, 16, .98));
@@ -334,17 +334,17 @@ section > p:not([class^="etiqueta-"]) { max-width: 760px; color: var(--text-seco
   animation: hero-panel-border 12s linear infinite;
   pointer-events: none;
 }
-.panel-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-bottom: 22px; border-bottom: 1px solid var(--line-subtle); }
+.panel-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-bottom: 18px; border-bottom: 1px solid var(--line-subtle); }
 .panel-top p { margin: 0 0 6px; color: var(--orange); font-size: 12px; font-weight: 700; letter-spacing: .16em; }
 .panel-top h3 { margin: 0; color: var(--text-primary); font: 650 28px/1.25 "Space Grotesk", sans-serif; }
-.panel-funciones { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; padding: 22px 0; }
+.panel-funciones { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 12px; row-gap: 9px; padding: 17px 0; }
 .funcion-item { display: flex; align-items: center; justify-content: flex-start; min-height: 58px; padding: 15px 18px; border: 1px solid rgba(248, 250, 252, .08); border-radius: 12px; color: #D8D4CE; background: rgba(25, 29, 35, .68); font-size: 16px; line-height: 1.45; text-align: left; }
 .funcion-item:first-letter { color: var(--orange); }
-.panel-info { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; padding-top: 22px; border-top: 1px solid var(--line-subtle); }
+.panel-info { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; padding-top: 17px; border-top: 1px solid var(--line-subtle); }
 .info-box { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
 .info-box strong { color: var(--orange-hover); font: 650 24px/1.2 "Space Grotesk", sans-serif; }
 .info-box span { color: var(--text-tertiary); font-size: 14px; line-height: 1.45; }
-.hero-web-circuit { width: min(100%, 820px); margin: 22px auto -14px; padding-top: 18px; border-top: 1px solid var(--line-subtle); }
+.hero-web-circuit { width: min(100%, 820px); margin: 16px auto -12px; padding-top: 12px; border-top: 1px solid var(--line-subtle); }
 .hero-web-circuit svg { display: block; width: 100%; height: auto; overflow: visible; }
 .circuit-track, .circuit-flow { fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
 .circuit-track { stroke: #303640; }
@@ -666,7 +666,7 @@ section > p:not([class^="etiqueta-"]) { max-width: 760px; color: var(--text-seco
   .hero { min-height: auto; grid-template-columns: 1fr; gap: 48px; padding-top: calc(var(--header-height) + 75px); text-align: center; }
   .hero-texto, .hero .descripcion { margin-inline: auto; }
   .hero-frase-unida { display: inline-block; white-space: nowrap; }
-  .hero h1 { margin-inline: auto; font-size: clamp(2.5rem, 6vw, 4rem); }
+  .hero h1 { margin-inline: auto; font-size: clamp(2.25rem, 5.4vw, 3.6rem); }
   .hero-botones, .hero-confianza { justify-content: center; }
   .hero-panel { justify-self: center; max-width: 700px; text-align: left; }
   .home-rutas-grid, .contenedor-servicios, .contenedor-testimonios, .contenedor-portafolio { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -957,7 +957,7 @@ section > p:not([class^="etiqueta-"]) { max-width: 760px; color: var(--text-seco
 @media (min-width: 821px) {
   .hero { grid-template-columns: minmax(0, 1fr); gap: 38px; text-align: center; }
   .hero-texto { width: min(100%, 1500px); max-width: none; margin: 0 auto; }
-  .hero h1 { max-width: 1500px; margin-inline: auto; font-size: clamp(2.45rem, 5vw, 4rem); line-height: 1.16; letter-spacing: -.02em; }
+  .hero h1 { max-width: 1500px; margin-inline: auto; font-size: clamp(2.2rem, 4.5vw, 3.6rem); line-height: 1.16; letter-spacing: -.02em; }
   .hero .descripcion { margin-inline: auto; }
   .hero-botones, .hero-confianza { justify-content: center; }
   .hero-panel { width: min(100%, 1100px); max-width: 1100px; justify-self: center; }
