@@ -825,12 +825,12 @@ section > p:not([class^="etiqueta-"]) { max-width: 760px; color: var(--text-seco
 :is(.boton-plan, .boton-whatsapp, .btn-principal[href*="wa.me"], .boton-cta[href*="wa.me"]) { --btn-accent: #25D366; }
 
 /* Barrido de izquierda a derecha para los CTA naranjas principales */
-:is(.boton-cta, .hero .btn-principal, .tarjeta-plan.destacada .boton-plan) {
+:is(.boton-cta, .tarjeta-plan.destacada .boton-plan) {
   isolation: isolate;
   overflow: hidden;
   transition: color .26s var(--ease-out), transform .22s var(--ease-out), box-shadow .26s var(--ease-out);
 }
-:is(.boton-cta, .hero .btn-principal, .tarjeta-plan.destacada .boton-plan)::before {
+:is(.boton-cta, .tarjeta-plan.destacada .boton-plan)::before {
   position: absolute;
   z-index: -1;
   top: 0;
@@ -844,14 +844,14 @@ section > p:not([class^="etiqueta-"]) { max-width: 760px; color: var(--text-seco
   pointer-events: none;
   transition: width .28s var(--ease-out);
 }
-:is(.boton-cta, .hero .btn-principal, .tarjeta-plan.destacada .boton-plan):hover {
+:is(.boton-cta, .tarjeta-plan.destacada .boton-plan):hover {
   transform: translateY(-2px);
   color: var(--white);
   box-shadow: 0 12px 25px rgba(0, 0, 0, .28), 0 0 18px rgba(249, 115, 22, .13);
 }
-:is(.boton-cta, .hero .btn-principal, .tarjeta-plan.destacada .boton-plan):hover::before { width: 100%; }
+:is(.boton-cta, .tarjeta-plan.destacada .boton-plan):hover::before { width: 100%; }
 .boton-cta-texto { position: relative; z-index: 1; }
-:is(.boton-cta, .hero .btn-principal, .tarjeta-plan.destacada .boton-plan):active { border-color: #C2410C; }
+:is(.boton-cta, .tarjeta-plan.destacada .boton-plan):active { border-color: #C2410C; }
 .boton-cta-whatsapp:focus-visible {
   outline: 3px solid var(--orange);
   outline-offset: 3px;
@@ -926,3 +926,27 @@ section > p:not([class^="etiqueta-"]) { max-width: 760px; color: var(--text-seco
   .hero-panel { padding: 19px; }
   .hero::before { opacity: .10; }
 }
+
+/* Relieve cálido del CTA WhatsApp principal del hero */
+.hero .btn-principal {
+  border: 1px solid #C65D10;
+  border-radius: 30px;
+  color: #2B1607;
+  background: linear-gradient(to top, #E56A0A 0%, #FB923C 80%, #FDBA4E 100%);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, .25), inset 0 1px 2px rgba(255, 255, 255, .28);
+  text-shadow: 0 1px rgba(255, 255, 255, .25);
+  transition: color .2s ease, box-shadow .2s ease, background .2s ease, border-color .2s ease;
+}
+.hero .btn-principal:hover {
+  transform: none;
+  color: #2B1607;
+  border-color: #FBBF24;
+  background: linear-gradient(to top, #E56A0A 0%, #FB923C 80%, #FDBA4E 100%);
+  box-shadow: 0 4px 3px 1px rgba(255, 255, 255, .04), 0 6px 8px rgba(0, 0, 0, .3), 0 -4px 4px rgba(0, 0, 0, .16), 0 -6px 4px rgba(255, 255, 255, .04), inset 0 0 3px 3px rgba(194, 65, 12, .24);
+}
+.hero .btn-principal:active,
+.hero .btn-principal:focus-visible {
+  transform: none;
+  box-shadow: 0 4px 3px 1px rgba(255, 255, 255, .04), 0 6px 8px rgba(0, 0, 0, .3), 0 -4px 4px rgba(0, 0, 0, .16), 0 -6px 4px rgba(255, 255, 255, .04), inset 0 0 5px 3px rgba(124, 45, 18, .56), inset 0 0 20px rgba(194, 65, 12, .38);
+}
+.hero .btn-principal:focus-visible { outline: 3px solid var(--amber); outline-offset: 3px; }
