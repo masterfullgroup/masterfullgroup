@@ -950,3 +950,7 @@ section > p:not([class^="etiqueta-"]) { max-width: 760px; color: var(--text-seco
   box-shadow: 0 4px 3px 1px rgba(255, 255, 255, .04), 0 6px 8px rgba(0, 0, 0, .3), 0 -4px 4px rgba(0, 0, 0, .16), 0 -6px 4px rgba(255, 255, 255, .04), inset 0 0 5px 3px rgba(124, 45, 18, .56), inset 0 0 20px rgba(194, 65, 12, .38);
 }
 .hero .btn-principal:focus-visible { outline: 3px solid var(--amber); outline-offset: 3px; }
+.hero h1 { line-height: 1.1; }
+@media (min-width: 821px) {
+  .hero-texto { margin-block-start: -24px; }
+}
