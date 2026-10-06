@@ -136,8 +136,8 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, .1), 0 -5px 16px rgba(11, 13, 16, .14);
   opacity: 0;
   pointer-events: none;
-  transform: scale(.84);
-  transition: opacity .16s ease, transform .20s var(--ease-out);
+  transform: none;
+  transition: none;
 }
 .nav-link-aura::before, .nav-link-aura::after {
   position: absolute;
@@ -157,7 +157,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   border-bottom-left-radius: 300px;
   box-shadow: -3px 3px 0 3px #191D23;
 }
-.nav a.active .nav-link-aura, .nav a[aria-current="page"] .nav-link-aura { opacity: 1; transform: scale(1); }
+.nav a.active .nav-link-aura, .nav a[aria-current="page"] .nav-link-aura { opacity: 1; }
 .nav a:hover, .nav a:focus-visible { color: #F8FAFC; }
 .nav a.active, .nav a[aria-current="page"] { color: #F8FAFC; }
 .nav a:active { transform: scale(.97); }

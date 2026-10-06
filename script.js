@@ -68,9 +68,11 @@ document.addEventListener("DOMContentLoaded", function () {
     link.addEventListener("click", function () {
       linksNav.forEach(function (item) {
         item.classList.remove("active");
+        item.removeAttribute("aria-current");
       });
 
       link.classList.add("active");
+      link.setAttribute("aria-current", "page");
       if (nav) {
         nav.classList.remove("active");
       }
