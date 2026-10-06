@@ -16,16 +16,45 @@ document.addEventListener("DOMContentLoaded", function () {
   const gsap = window.gsap;
   const reducirMovimiento = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  // Nueva interacción: cada enlace anima su propia línea, sin indicador compartido.
-  if (nav && linksNav.length && gsap && !reducirMovimiento && window.matchMedia("(min-width: 821px)").matches) {
-    gsap.from(linksNav, {
-      y: 7,
-      autoAlpha: 0,
-      duration: 0.28,
-      stagger: 0.04,
-      ease: "power3.out",
-      clearProps: "transform,opacity,visibility",
+  // Cada enlace recibe su propio halo; el movimiento responde al cursor y al teclado.
+  if (nav && linksNav.length) {
+    linksNav.forEach(function (link) {
+      const aura = document.createElement("span");
+      aura.className = "nav-link-aura";
+      aura.setAttribute("aria-hidden", "true");
+      link.prepend(aura);
+
+      if (!gsap || reducirMovimiento) return;
+
+      const activar = function () {
+        gsap.to(link, { y: -2, duration: 0.24, ease: "power3.out", overwrite: "auto" });
+        gsap.to(aura, { scale: 1, autoAlpha: 1, duration: 0.32, ease: "power3.out", overwrite: "auto" });
+      };
+      const desactivar = function () {
+        gsap.to(link, { y: 0, duration: 0.28, ease: "power3.out", overwrite: "auto" });
+        if (!link.matches(":hover, :focus-visible, .active, [aria-current='page']")) {
+          gsap.to(aura, { scale: 0.84, autoAlpha: 0, duration: 0.24, ease: "power2.out", overwrite: "auto" });
+        }
+      };
+
+      link.addEventListener("pointerenter", function (event) {
+        if (event.pointerType !== "touch") activar();
+      });
+      link.addEventListener("pointerleave", desactivar);
+      link.addEventListener("focus", activar);
+      link.addEventListener("blur", desactivar);
     });
+
+    if (gsap && !reducirMovimiento && window.matchMedia("(min-width: 821px)").matches) {
+      gsap.from(linksNav, {
+        y: 8,
+        autoAlpha: 0,
+        duration: 0.38,
+        stagger: 0.055,
+        ease: "power3.out",
+        clearProps: "transform,opacity,visibility",
+      });
+    }
   }
 
   /* =========================================================
