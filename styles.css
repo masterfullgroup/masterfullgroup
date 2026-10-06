@@ -126,15 +126,34 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 .nav-link-aura {
   position: absolute;
   z-index: -1;
-  inset: 3px 2px;
-  border: 1px solid rgba(249, 115, 22, .22);
-  border-radius: var(--radius-pill);
-  background: radial-gradient(ellipse at 50% 120%, rgba(249, 115, 22, .19), rgba(249, 115, 22, .035) 68%, transparent 100%);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .055), 0 8px 22px rgba(249, 115, 22, .08);
+  inset: 4px 0 3px;
+  border: 1px solid rgba(249, 115, 22, .2);
+  border-bottom: 0;
+  border-radius: 13px 13px 0 0;
+  background: linear-gradient(180deg, rgba(21, 44, 59, .96), rgba(16, 36, 51, .96));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .06), 0 -5px 18px rgba(249, 115, 22, .06);
   opacity: 0;
   pointer-events: none;
   transform: scale(.84);
   transition: opacity .16s ease, transform .20s var(--ease-out);
+}
+.nav-link-aura::before, .nav-link-aura::after {
+  position: absolute;
+  bottom: 0;
+  width: 10px;
+  height: 10px;
+  content: "";
+  background: var(--nav-track, #071826);
+}
+.nav-link-aura::before {
+  left: -10px;
+  border-bottom-right-radius: 300px;
+  box-shadow: 3px 3px 0 3px #102433;
+}
+.nav-link-aura::after {
+  right: -10px;
+  border-bottom-left-radius: 300px;
+  box-shadow: -3px 3px 0 3px #102433;
 }
 .nav a:hover .nav-link-aura, .nav a:focus-visible .nav-link-aura,
 .nav a.active .nav-link-aura, .nav a[aria-current="page"] .nav-link-aura { opacity: 1; transform: scale(1); }
@@ -638,7 +657,7 @@ section > p:not([class^="etiqueta-"]) { max-width: 760px; color: var(--text-seco
   :root { --header-height: 72px; }
   .header { padding-inline: 5%; }
   .menu-btn { display: grid; }
-  .nav { position: absolute; top: calc(var(--header-height) - 1px); right: 0; left: 0; display: none; flex-direction: column; align-items: stretch; gap: 2px; margin: 0; padding: 12px 5% 20px; border-bottom: 1px solid var(--line-default); background: rgba(11, 13, 16, .98); box-shadow: 0 20px 30px rgba(0, 8, 19, .28); }
+  .nav { --nav-track: #0B0D10; position: absolute; top: calc(var(--header-height) - 1px); right: 0; left: 0; display: none; flex-direction: column; align-items: stretch; gap: 2px; margin: 0; padding: 12px 5% 20px; border-bottom: 1px solid var(--line-default); background: rgba(11, 13, 16, .98); box-shadow: 0 20px 30px rgba(0, 8, 19, .28); }
   .nav.active { display: flex; }
   .nav a { width: 100%; min-height: 48px; padding: 0 12px; border-radius: 12px; font-size: 14px; }
   .nav a::before { right: auto; bottom: 4px; left: 12px; width: 30px; }
