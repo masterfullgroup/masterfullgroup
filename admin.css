@@ -51,21 +51,6 @@ button { cursor: pointer; }
   border-bottom: 1px solid var(--admin-border-subtle);
 }
 
-.brand-mark {
-  display: grid;
-  width: 42px;
-  height: 42px;
-  place-items: center;
-  border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, .08);
-  color: #fff;
-  background: var(--admin-surface-raised);
-  font-size: 19px;
-  font-weight: 800;
-  text-decoration: none;
-  box-shadow: inset 0 -3px 0 var(--admin-accent);
-}
-
 .brand-name, .brand-caption { margin: 0; }
 .brand-name { color: var(--admin-text); font-size: 14px; font-weight: 800; letter-spacing: 0.12em; }
 .brand-caption { margin-top: 3px; color: var(--admin-muted); font-size: 12px; }
