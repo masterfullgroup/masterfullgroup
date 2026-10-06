@@ -983,16 +983,22 @@ section > p:not([class^="etiqueta-"]) { margin-inline: auto; text-align: center;
   text-align: center;
   text-wrap: balance;
 }
-.contacto { grid-template-columns: minmax(0, 1fr); gap: 38px; }
-.contacto-texto { width: min(100%, 1000px); margin-inline: auto; text-align: center; }
-.contacto-texto > p:not([class]) { max-width: 720px; margin-inline: auto; }
-.contacto-beneficios { justify-content: center; }
-.contacto-texto .boton-whatsapp { margin-inline: auto; }
-.formulario-contacto { width: min(100%, 760px); margin-inline: auto; }
+.contacto { grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); align-items: center; gap: clamp(36px, 6vw, 80px); }
+.contacto-texto { width: 100%; max-width: 600px; margin: 0; text-align: left; }
+.contacto-texto h1 { max-width: 580px; margin: 5px 0 19px; text-align: left; }
+.contacto-texto > p:not([class]) { max-width: 550px; margin: 0; text-align: left; }
+.contacto-beneficios { justify-content: flex-start; }
+.contacto-texto .boton-whatsapp { margin-inline: 0; }
+.formulario-contacto { width: 100%; max-width: 680px; margin: 0; justify-self: start; }
 .servicios > .servicios-descripcion { max-width: 760px; margin: 0 auto; font-size: clamp(1rem, 1.3vw, 1.125rem); line-height: 1.72; text-align: center; }
 @media (max-width: 560px) {
   .servicios > h1, .planes > h1, .proceso > h1, .portafolio > h1, .contacto h1 {
     font-size: clamp(2rem, 9vw, 2.85rem);
     line-height: 1.1;
   }
+}
+@media (max-width: 900px) {
+  .contacto { grid-template-columns: minmax(0, 1fr); gap: 34px; }
+  .contacto-texto { max-width: 720px; }
+  .formulario-contacto { width: 100%; max-width: 720px; justify-self: stretch; }
 }
