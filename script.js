@@ -13,6 +13,129 @@ document.addEventListener("DOMContentLoaded", function () {
   const menuBtn = document.getElementById("menuBtn");
   const nav = document.getElementById("nav");
   const linksNav = document.querySelectorAll(".nav a");
+  const gsap = window.gsap;
+  const reducirMovimiento = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  let efectosNav = null;
+
+  if (nav && linksNav.length && gsap) {
+    const indicador = document.createElement("span");
+    const brillo = document.createElement("span");
+    indicador.className = "nav-indicator";
+    indicador.setAttribute("aria-hidden", "true");
+    brillo.className = "nav-indicator-glint";
+    indicador.appendChild(brillo);
+    nav.prepend(indicador);
+    nav.classList.add("has-indicator");
+
+    const enlaceActual = function () {
+      return nav.querySelector('[aria-current="page"]') || nav.querySelector(".active") || linksNav[0];
+    };
+
+    const moverIndicador = function (enlace, inmediato, destello) {
+      if (!enlace || !nav.clientWidth) return;
+
+      const destino = {
+        x: enlace.offsetLeft,
+        y: enlace.offsetTop + (enlace.offsetHeight - indicador.offsetHeight) / 2,
+        scaleX: enlace.offsetWidth / nav.clientWidth,
+        opacity: 1,
+      };
+
+      if (inmediato || reducirMovimiento) {
+        gsap.set(indicador, destino);
+        indicador.style.willChange = "auto";
+      } else {
+        indicador.style.willChange = "transform, opacity";
+        gsap.to(indicador, {
+          ...destino,
+          duration: 0.38,
+          ease: "power3.out",
+          overwrite: "auto",
+          onComplete: function () { indicador.style.willChange = "auto"; },
+        });
+      }
+
+      if (destello && !reducirMovimiento) {
+        gsap.fromTo(brillo, { xPercent: -20, autoAlpha: 0 }, {
+          xPercent: 420,
+          autoAlpha: 0.9,
+          duration: 0.52,
+          ease: "power2.out",
+          overwrite: "auto",
+          onComplete: function () { gsap.set(brillo, { autoAlpha: 0 }); },
+        });
+      }
+    };
+
+    if (!reducirMovimiento && window.matchMedia("(min-width: 821px)").matches) {
+      gsap.timeline({ defaults: { ease: "power3.out" } })
+        .fromTo(linksNav, { y: 8, autoAlpha: 0 }, {
+          y: 0,
+          autoAlpha: 1,
+          duration: 0.32,
+          stagger: 0.045,
+          clearProps: "transform,opacity,visibility",
+        });
+    }
+
+    moverIndicador(enlaceActual(), true, false);
+
+    linksNav.forEach(function (enlace) {
+      enlace.addEventListener("pointerenter", function (evento) {
+        if (evento.pointerType === "touch") return;
+        moverIndicador(enlace, reducirMovimiento, true);
+        if (!reducirMovimiento) {
+          gsap.to(enlace, { y: -2, scale: 1.035, duration: 0.2, ease: "power2.out", overwrite: "auto" });
+        }
+      });
+
+      enlace.addEventListener("pointerleave", function (evento) {
+        if (evento.pointerType === "touch") return;
+        if (reducirMovimiento) gsap.set(enlace, { y: 0, scale: 1 });
+        else gsap.to(enlace, { y: 0, scale: 1, duration: 0.2, ease: "power2.out", overwrite: "auto" });
+        if (!nav.contains(document.activeElement)) moverIndicador(enlaceActual(), false, false);
+      });
+
+      enlace.addEventListener("focus", function () {
+        moverIndicador(enlace, false, true);
+      });
+
+      enlace.addEventListener("blur", function () {
+        requestAnimationFrame(function () {
+          moverIndicador(nav.querySelector(":focus") || enlaceActual(), false, false);
+        });
+      });
+    });
+
+    let entradaMovil;
+    efectosNav = {
+      activar: function (enlace) { moverIndicador(enlace, false, true); },
+      abrirMovil: function () {
+        requestAnimationFrame(function () {
+          moverIndicador(enlaceActual(), true, false);
+          if (!reducirMovimiento) {
+            entradaMovil = gsap.timeline({ defaults: { ease: "power3.out" } })
+              .fromTo(linksNav, { y: 10, autoAlpha: 0 }, {
+                y: 0,
+                autoAlpha: 1,
+                duration: 0.24,
+                stagger: 0.035,
+                clearProps: "transform,opacity,visibility",
+              });
+          }
+        });
+      },
+      cerrarMovil: function () {
+        if (entradaMovil) entradaMovil.kill();
+        gsap.set(linksNav, { clearProps: "transform,opacity,visibility" });
+      },
+      reajustar: function () { moverIndicador(enlaceActual(), true, false); },
+    };
+
+    window.addEventListener("resize", function () {
+      requestAnimationFrame(function () { efectosNav?.reajustar(); });
+    }, { passive: true });
+  }
 
   /* =========================================================
      MENÚ MÓVIL
@@ -24,6 +147,8 @@ document.addEventListener("DOMContentLoaded", function () {
       const menuAbierto = nav.classList.contains("active");
       menuBtn.setAttribute("aria-expanded", String(menuAbierto));
       menuBtn.setAttribute("aria-label", menuAbierto ? "Cerrar menú" : "Abrir menú");
+      if (menuAbierto) efectosNav?.abrirMovil();
+      else efectosNav?.cerrarMovil();
     });
   }
 
@@ -38,6 +163,7 @@ document.addEventListener("DOMContentLoaded", function () {
       });
 
       link.classList.add("active");
+      efectosNav?.activar(link);
 
       if (nav) {
         nav.classList.remove("active");
