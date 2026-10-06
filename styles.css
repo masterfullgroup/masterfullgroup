@@ -957,3 +957,33 @@ section > p:not([class^="etiqueta-"]) { max-width: 760px; color: var(--text-seco
   background: none;
   -webkit-text-fill-color: #fff;
 }
+
+/* Jerarquía centrada común: la portada marca el ritmo de todas las páginas. */
+.etiqueta, [class^="etiqueta-"] { margin-inline: auto; }
+section > h2 { margin-inline: auto; text-align: center; }
+section > p:not([class^="etiqueta-"]) { margin-inline: auto; text-align: center; }
+.servicios > h1, .planes > h1, .proceso > h1, .portafolio > h1, .contacto h1 {
+  max-width: 1500px;
+  margin: 0 auto 22px;
+  color: #fff;
+  font-family: Inter, Arial, sans-serif;
+  font-size: clamp(2.2rem, 4.5vw, 3.6rem);
+  font-weight: 700;
+  line-height: 1.16;
+  letter-spacing: -.02em;
+  text-align: center;
+  text-wrap: balance;
+}
+.contacto { grid-template-columns: minmax(0, 1fr); gap: 38px; }
+.contacto-texto { width: min(100%, 1000px); margin-inline: auto; text-align: center; }
+.contacto-texto > p:not([class]) { max-width: 720px; margin-inline: auto; }
+.contacto-beneficios { justify-content: center; }
+.contacto-texto .boton-whatsapp { margin-inline: auto; }
+.formulario-contacto { width: min(100%, 760px); margin-inline: auto; }
+.servicios > .servicios-descripcion { max-width: 760px; margin: 0 auto; font-size: clamp(1rem, 1.3vw, 1.125rem); line-height: 1.72; text-align: center; }
+@media (max-width: 560px) {
+  .servicios > h1, .planes > h1, .proceso > h1, .portafolio > h1, .contacto h1 {
+    font-size: clamp(2rem, 9vw, 2.85rem);
+    line-height: 1.1;
+  }
+}
