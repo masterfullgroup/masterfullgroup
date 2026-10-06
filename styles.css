@@ -107,9 +107,11 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   letter-spacing: .09em;
   white-space: nowrap;
 }
-.logo { font-size: 23px; }
-.logo span, .footer h3 span { color: var(--orange); }
-.nav { --nav-track: #F97316; position: relative; isolation: isolate; display: flex; align-items: center; gap: 2px; margin-left: auto; padding: 8px 8px 0; border-radius: .5rem .5rem 0 0; background: #F97316; }
+.logo { font-size: 23px; color: #191D23; }
+.logo span { color: #191D23; }
+.footer h3 span { color: var(--orange); }
+.nav { --nav-track: #F97316; position: relative; isolation: isolate; display: flex; align-items: center; gap: 2px; margin-left: auto; padding: 8px 8px 0; border-radius: .5rem .5rem 0 0; background: transparent; }
+.nav::before { position: absolute; z-index: -1; top: 0; bottom: 0; left: 50%; width: 100vw; content: ""; background: #F97316; transform: translateX(-50%); }
 .nav a {
   position: relative;
   isolation: isolate;
