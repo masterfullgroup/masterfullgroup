@@ -110,7 +110,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 .logo { font-size: 23px; }
 .logo span { color: var(--orange); }
 .footer h3 span { color: var(--orange); }
-.nav { --nav-track: #F97316; --nav-edge: max(5vw, calc((100vw - 1600px) / 2)); position: relative; isolation: isolate; display: flex; align-items: center; gap: 2px; margin-left: auto; margin-right: calc(0px - var(--nav-edge)); padding: 8px var(--nav-edge) 0; border-radius: .5rem .5rem 0 0; background: #F97316; }
+.nav { --nav-track: #F97316; --nav-edge: max(3vw, calc((100vw - 1600px) / 2 - 24px)); position: relative; isolation: isolate; display: flex; align-items: center; gap: 2px; margin-left: auto; margin-right: calc(0px - var(--nav-edge)); padding: 8px var(--nav-edge) 0; border-radius: .5rem .5rem 0 0; background: #F97316; }
 .nav a {
   position: relative;
   z-index: 1;
