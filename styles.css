@@ -111,6 +111,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 .logo span { color: var(--orange); }
 .footer h3 span { color: var(--orange); }
 .nav { --nav-track: #F97316; position: relative; isolation: isolate; display: flex; align-items: center; gap: 2px; margin-left: auto; padding: 8px 0 0; border-radius: .5rem .5rem 0 0; background: #F97316; }
+.nav::after { position: absolute; z-index: 0; top: 0; right: -14px; bottom: 0; width: 14px; content: ""; border-top-right-radius: .5rem; background: #F97316; pointer-events: none; }
 .nav a {
   position: relative;
   z-index: 1;
@@ -645,6 +646,7 @@ section > p:not([class^="etiqueta-"]) { max-width: 760px; color: var(--text-seco
   .header { padding-inline: 5%; }
   .menu-btn { display: grid; }
   .nav { position: absolute; top: calc(var(--header-height) - 1px); right: 0; left: 0; display: none; flex-direction: column; align-items: stretch; gap: 2px; margin: 0; padding: 12px 5% 20px; border-radius: 0 0 .5rem .5rem; background: #F97316; box-shadow: 0 20px 30px rgba(29, 29, 41, .16); }
+  .nav::after { display: none; }
   .nav.active { display: flex; }
   .nav a { width: 100%; min-height: 48px; padding: 0 12px; border-radius: 12px; font-size: 14px; }
   .hero { min-height: auto; grid-template-columns: 1fr; gap: 48px; padding-top: calc(var(--header-height) + 75px); text-align: center; }
