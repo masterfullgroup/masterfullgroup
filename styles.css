@@ -123,7 +123,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   color: #191D23;
   font-size: 13px;
   font-weight: 600;
-  transition: color .2s ease, background-color .24s ease;
+  transition: color .12s ease-out;
 }
 .nav-link-aura {
   position: absolute;
@@ -160,7 +160,6 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 .nav a.active .nav-link-aura, .nav a[aria-current="page"] .nav-link-aura { opacity: 1; }
 .nav a:hover, .nav a:focus-visible { color: #F8FAFC; }
 .nav a.active, .nav a[aria-current="page"] { color: #F8FAFC; }
-.nav a:active { transform: scale(.97); }
 .menu-btn {
   display: none;
   width: 48px;

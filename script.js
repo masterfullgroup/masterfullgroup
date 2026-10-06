@@ -13,8 +13,6 @@ document.addEventListener("DOMContentLoaded", function () {
   const menuBtn = document.getElementById("menuBtn");
   const nav = document.getElementById("nav");
   const linksNav = document.querySelectorAll(".nav a");
-  const gsap = window.gsap;
-  const reducirMovimiento = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   // El tab seleccionado conserva su placa grafito; el resto solo aclara el texto al interactuar.
   if (nav && linksNav.length) {
@@ -24,17 +22,6 @@ document.addEventListener("DOMContentLoaded", function () {
       aura.setAttribute("aria-hidden", "true");
       link.prepend(aura);
     });
-
-    if (gsap && !reducirMovimiento && window.matchMedia("(min-width: 821px)").matches) {
-      gsap.from(linksNav, {
-        y: 8,
-        autoAlpha: 0,
-        duration: 0.22,
-        stagger: 0.02,
-        ease: "power3.out",
-        clearProps: "transform,opacity,visibility",
-      });
-    }
   }
 
   /* =========================================================
@@ -47,42 +34,8 @@ document.addEventListener("DOMContentLoaded", function () {
       const menuAbierto = nav.classList.contains("active");
       menuBtn.setAttribute("aria-expanded", String(menuAbierto));
       menuBtn.setAttribute("aria-label", menuAbierto ? "Cerrar menú" : "Abrir menú");
-      if (menuAbierto && gsap && !reducirMovimiento) {
-        gsap.fromTo(linksNav, { y: 7, autoAlpha: 0 }, {
-          y: 0,
-          autoAlpha: 1,
-          duration: 0.14,
-          stagger: 0.015,
-          ease: "power3.out",
-          clearProps: "transform,opacity,visibility",
-        });
-      }
     });
   }
-
-  /* =========================================================
-     MENÚ ACTIVO Y CIERRE EN CELULAR
-     ========================================================= */
-
-  linksNav.forEach(function (link) {
-    link.addEventListener("click", function () {
-      linksNav.forEach(function (item) {
-        item.classList.remove("active");
-        item.removeAttribute("aria-current");
-      });
-
-      link.classList.add("active");
-      link.setAttribute("aria-current", "page");
-      if (nav) {
-        nav.classList.remove("active");
-      }
-
-      if (menuBtn) {
-        menuBtn.setAttribute("aria-expanded", "false");
-        menuBtn.setAttribute("aria-label", "Abrir menú");
-      }
-    });
-  });
 
   /* Tarjetas de servicios: giro con control accesible para mouse, teclado y móvil */
   document.querySelectorAll(".tarjeta-servicio").forEach(function (tarjeta) {
