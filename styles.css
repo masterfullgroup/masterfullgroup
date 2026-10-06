@@ -157,9 +157,8 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   border-bottom-left-radius: 300px;
   box-shadow: -3px 3px 0 3px #191D23;
 }
-.nav a:hover .nav-link-aura, .nav a:focus-visible .nav-link-aura,
 .nav a.active .nav-link-aura, .nav a[aria-current="page"] .nav-link-aura { opacity: 1; transform: scale(1); }
-.nav a:hover, .nav a:focus-visible { color: #0B0D10; }
+.nav a:hover, .nav a:focus-visible { color: #F8FAFC; }
 .nav a.active, .nav a[aria-current="page"] { color: #F8FAFC; }
 .nav a:active { transform: scale(.97); }
 .menu-btn {
