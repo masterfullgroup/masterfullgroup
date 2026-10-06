@@ -134,7 +134,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   opacity: 0;
   pointer-events: none;
   transform: scale(.84);
-  transition: opacity .24s ease, transform .34s var(--ease-out);
+  transition: opacity .16s ease, transform .20s var(--ease-out);
 }
 .nav a:hover .nav-link-aura, .nav a:focus-visible .nav-link-aura,
 .nav a.active .nav-link-aura, .nav a[aria-current="page"] .nav-link-aura { opacity: 1; transform: scale(1); }

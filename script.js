@@ -27,13 +27,13 @@ document.addEventListener("DOMContentLoaded", function () {
       if (!gsap || reducirMovimiento) return;
 
       const activar = function () {
-        gsap.to(link, { y: -2, duration: 0.24, ease: "power3.out", overwrite: "auto" });
-        gsap.to(aura, { scale: 1, autoAlpha: 1, duration: 0.32, ease: "power3.out", overwrite: "auto" });
+        gsap.to(link, { y: -2, duration: 0.13, ease: "power3.out", overwrite: "auto" });
+        gsap.to(aura, { scale: 1, autoAlpha: 1, duration: 0.16, ease: "power3.out", overwrite: "auto" });
       };
       const desactivar = function () {
-        gsap.to(link, { y: 0, duration: 0.28, ease: "power3.out", overwrite: "auto" });
+        gsap.to(link, { y: 0, duration: 0.15, ease: "power3.out", overwrite: "auto" });
         if (!link.matches(":hover, :focus-visible, .active, [aria-current='page']")) {
-          gsap.to(aura, { scale: 0.84, autoAlpha: 0, duration: 0.24, ease: "power2.out", overwrite: "auto" });
+          gsap.to(aura, { scale: 0.84, autoAlpha: 0, duration: 0.14, ease: "power2.out", overwrite: "auto" });
         }
       };
 
@@ -49,8 +49,8 @@ document.addEventListener("DOMContentLoaded", function () {
       gsap.from(linksNav, {
         y: 8,
         autoAlpha: 0,
-        duration: 0.38,
-        stagger: 0.055,
+        duration: 0.22,
+        stagger: 0.02,
         ease: "power3.out",
         clearProps: "transform,opacity,visibility",
       });
@@ -71,8 +71,8 @@ document.addEventListener("DOMContentLoaded", function () {
         gsap.fromTo(linksNav, { y: 7, autoAlpha: 0 }, {
           y: 0,
           autoAlpha: 1,
-          duration: 0.22,
-          stagger: 0.03,
+          duration: 0.14,
+          stagger: 0.015,
           ease: "power3.out",
           clearProps: "transform,opacity,visibility",
         });
