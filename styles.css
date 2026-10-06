@@ -95,13 +95,13 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   margin-inline: 0;
   padding-inline: max(5%, calc((100% - 1600px) / 2));
   border: 0;
-  border-bottom: 1px solid rgba(29, 29, 41, .12);
+  border-bottom: 1px solid rgba(248, 250, 252, .08);
   border-radius: 0;
-  background: #F8FAFC;
-  box-shadow: 0 6px 18px rgba(29, 29, 41, .1);
+  background: #191D23;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, .24);
 }
 .logo, .footer h3 {
-  color: #1d1d29;
+  color: #F8FAFC;
   font-family: "Space Grotesk", "Inter", sans-serif;
   font-weight: 700;
   letter-spacing: .09em;
