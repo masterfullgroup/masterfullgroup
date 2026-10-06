@@ -958,8 +958,17 @@ section > p:not([class^="etiqueta-"]) { max-width: 760px; color: var(--text-seco
   -webkit-text-fill-color: #fff;
 }
 
-/* Jerarquía centrada común: la portada marca el ritmo de todas las páginas. */
-.etiqueta, [class^="etiqueta-"] { margin-inline: auto; }
+/* Mantener la etiqueta de sección alineada a la izquierda en todas las páginas. */
+.hero-texto > .etiqueta,
+.servicios > .etiqueta-servicios,
+.planes > .etiqueta-planes,
+.proceso > .etiqueta-proceso,
+.portafolio > .etiqueta-portafolio,
+.contacto-texto > .etiqueta-contacto {
+  margin-left: 0;
+  margin-right: 0;
+  text-align: left;
+}
 section > h2 { margin-inline: auto; text-align: center; }
 section > p:not([class^="etiqueta-"]) { margin-inline: auto; text-align: center; }
 .servicios > h1, .planes > h1, .proceso > h1, .portafolio > h1, .contacto h1 {
